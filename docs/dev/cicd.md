@@ -72,6 +72,96 @@ aws configure set aws_secret_access_key XXX
 
 默认克隆在`C:\ProgramData\Jenkins\.jenkins\workspace`目录下。
 
+
+## [Gitlab 安装](https://blog.csdn.net/GoodburghCottage/article/details/131683475)
+Gitlab镜像拉取和安装
+```shell
+docker run --name gitlab --restart always -p 9980:9980 -p 222:22 -v /usr/local/docker/gitlab/config:/etc/gitlab -v /usr/local/docker/gitlab/logs:/var/log/gitlab -v /usr/local/docker/gitlab/data:/var/opt/gitlab -d gitlab/gitlab-ce
+```
+配置
+```shell
+# 进入容器
+docker exec -it gitlab bash
+
+vi /etc/gitlab/gitlab.rb
+#gitlab访问地址，可以写域名。如果端口不写的话默认为80端口
+external_url 'http://172.21.108.56:9980' 
+#ssh主机ip
+gitlab_rails['gitlab_ssh_host'] = '172.21.108.56'
+#ssh连接端口
+gitlab_rails['gitlab_shell_ssh_port'] = 9922
+
+# 重新编译gitlab配置文件
+gitlab-ctl reconfigure
+# 重启gitlab服务
+gitlab-ctl restart
+
+#退出容器
+exit
+# 重启gitlab容器
+docker restart gitlab
+
+# 查看初始密码
+docker exec -it gitlab cat /etc/gitlab/initial_root_password
+```
+
+访问：[http://172.21.108.56:9980/](http://172.21.108.56:9980/)
+
+数据持久化参考 [链接](https://blog.csdn.net/qq934235475/article/details/112864332) 。
+
+问题：`HTTP 502: Waiting for GitLab to boot`
+
+错误排查：
+```shell
+gitlab-ctl tail
+```
+
+
+## 虚幻引擎
+
+根据UE4.sln找到对应的vs工程文件为`Engine\Intermediate\ProjectFiles\UE4.vcxproj`，得到构建虚幻引擎的命令为：
+```shell
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" Engine\Intermediate\ProjectFiles\UE4.vcxproj
+```
+
+步骤同上，但是由于UnrealEngine是私有项目，在填写`Repository URL`时，需要带上github账户的Token，比如： `https://{token}@github.com/OpenHUTB/UnrealEngine.git`。
+
+拉取 [中文版gitlab](https://hub.docker.com/r/twang2218/gitlab-ce-zh) 镜像
+```shell
+https://hub.docker.com/r/twang2218/gitlab-ce-zh
+```
+
+```shell
+git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
+```
+
+
+## [gitlab提交代码触发Jenkins构建](https://blog.csdn.net/Habo_/article/details/123379435)
+
+1.Jenkins页面中，系统管理 -> 插件管理 -> 可选插件 -> 搜索要安装的插件(`gitlab-plugin` 和　`Generic Webhook Trigger`)
+
+
+2.在Jenkins的UnrealEngine项目的配置中勾选`Generic Webhook Trigger` ，点 `Generate` 生成 token，这个 token 用于填写到 gitlab 的 webhook 里（防止其他人触发CICD）。按 [链接](https://blog.csdn.net/qq_31594665/article/details/136995439) 中的说明进行设置：
+
+    2.1 Variable中的 Name of variable设置为：`ref`(在构建过程中需要使用到的变量名)，`Expression`设置为 `$.ref`(获取变量的值)，勾选`JSONPath`
+    2.2 设置生成的 Token（要保证在Jenkins中唯一）
+    2.3 Optional filter 中的 Expression为：`^(refs/heads/jenkins)$` （匹配构建条件的正则表达式），`Text`为：`$ref` （匹配的值，可使用上面配置的任意变量或组合，构建只有在此处的值与给定的正则匹配时才会触发）。
+
+
+3.Gitlab的项目页面：设置->导入所有仓库->链接(URL) 中填入`http://172.21.108.56:8080/generic-webhook-trigger/invoke?token=TOKEN` （该token和Jenkins->UnrealEngine->Configuration->Triggers->Token里一致），取消`开启SSL证书验证`，点击 Test-> Push events 来触发 Jeinkins 的构建。
+
+
+
+##### 添加钩子时报错：`Urlis blocked: Requests to the local network are not allowed`
+> 原因：向同一台机器的IP发送请求不允许
+> 
+> 解决：Gitlab主页中的工具栏中的扳手->设置->外发请求，勾选`允许钩子和服务访问本地网络`（注意不是项目的设置）
+
+
+参考：[Generic Webhook Trigger 插件](https://www.cnblogs.com/jiaxzeng/p/17104250.html)
+
+
+
 ## 高级配置
 
 ##### [配置构建失败时发送邮件](https://juejin.cn/post/6844904119707123719)

@@ -31,6 +31,9 @@ git apply --reject xxx.patch
 git config core.sparsecheckout true
 ```
 
+
+
+
 ## 保存到Gitlab
 ```shell
 git remote add xj http://172.20.46.154:8090/traffic/carla.git

@@ -425,6 +425,31 @@ CARLA\Build\boost-1.72.0-install\lib\libboost_python 37 -vc141-mt-x64-1_72.lib
 
 ---
 
+## 虚幻引擎
+
+### UnrealEngine\Engine\Source\Runtime\RenderCore\Private\RenderGraphPrivate.cpp(180): error C4756: 常量算法中溢出
+出错代码：`return FLinearColor(INFINITY, INFINITY, INFINITY, INFINITY);`
+> 分析：
+> 对比新版本SDK的“INFINITY”宏的宏定义：
+> 
+> 原定义（Windows SDK 10.0.19041.0 所使用）：#define INFINITY ((float)(_HUGE_ENUF * _HUGE_ENUF))
+> 
+> 新定义：#define INFINITY ((float)(_HUGE_ENF))
+> 
+> “_HUGE_ENUF”宏并没有改变，这一调整导致了常量算法溢出的问题。
+> 
+> 原因：Windows SDK 和 MSVC 的版本对源码编译有所影响。
+> 
+> 添加`UnrealEngine\Engine\Saved\UnrealBuildTool\BuildConfiguration.xml`中指定windows SDK的配置（通过配置手动选择所需版本，参考 [链接](https://blog.csdn.net/qq_41032419/article/details/148902525) ）：
+```xml
+  <WindowsPlatform>
+    <WindowsSdkVersion>10.0.19041.0</WindowsSdkVersion>
+  </WindowsPlatform>
+```
+
+
+---
+
 ## 打包
 
 ### make package 时报错
