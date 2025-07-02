@@ -73,12 +73,12 @@ aws configure set aws_secret_access_key XXX
 默认克隆在`C:\ProgramData\Jenkins\.jenkins\workspace`目录下。
 
 
-## [Gitlab 安装](https://blog.csdn.net/GoodburghCottage/article/details/131683475)
+## [Gitlab 安装](https://hub.docker.com/r/twang2218/gitlab-ce-zh)
 Gitlab镜像拉取和安装
 ```shell
-docker run --name gitlab --restart always -p 9980:9980 -p 222:22 -v /usr/local/docker/gitlab/config:/etc/gitlab -v /usr/local/docker/gitlab/logs:/var/log/gitlab -v /usr/local/docker/gitlab/data:/var/opt/gitlab -d gitlab/gitlab-ce
+docker run -d -p 3000:80 twang2218/gitlab-ce-zh:11.1.4
 ```
-配置
+配置(不适合中文版)
 ```shell
 # 进入容器
 docker exec -it gitlab bash
@@ -135,6 +135,9 @@ https://hub.docker.com/r/twang2218/gitlab-ce-zh
 git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 ```
 
+!!! 注意
+    虚幻引擎编译命令参考 [链接](https://www.cnblogs.com/kekec/p/8684068.html)
+
 
 ## [gitlab提交代码触发Jenkins构建](https://blog.csdn.net/Habo_/article/details/123379435)
 
@@ -163,6 +166,23 @@ git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 
 
 ## 高级配置
+
+##### 将运行中的gitlab容器打包为镜像
+1.将运行中的Docker容器保存为镜像
+```shell
+# 容器ID使用 docker ps 查看
+docker commit <容器ID或名称> <镜像名称>:<标签> 
+```
+
+2.将镜像保存为tar文件
+```shell
+docker save -o <tar文件名>.tar <镜像名称>:<标签>
+```
+
+3.将镜像tar文件复制到本地
+```shell
+docker load -i <tar文件名>.tar
+```
 
 ##### [配置构建失败时发送邮件](https://juejin.cn/post/6844904119707123719)
 

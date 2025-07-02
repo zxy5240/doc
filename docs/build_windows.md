@@ -76,9 +76,11 @@ pip3 install --user wheel
 从 [此处](https://developerinsider.co/download-visual-studio-2019-web-installer-iso-community-professional-enterprise) 获取 2019 版 Visual Studio 。选择 __社区__ 作为免费版本。使用 __Visual Studio 安装程序__ 安装三个附加元素： 
 ![](./img/build/download_vs_2019.png)
 
-* __Windows 8.1 SDK.__ 在右侧的 _Installation details_ 部分中选择它，或者转到 _Indivdual Components_ 选项卡并在 _SDKs, libraries, and frameworks_ 标题下查看。
-* __x64 Visual C++ Toolset.__ 在 _Workloads_ 部分中，选择 __Desktop development with C++__ 。这将启用用于构建的 x64 命令提示符。通过按 `Windows` 按钮并搜索 `x64` 来检查它是否已正确安装。小心 __不要打开`x86_x64`提示__。
-* __.NET framework 4.6.2__. 在 _Workloads_ 部分中，选择 __.NET desktop development__ ，然后在右侧的安装详细信息面板中选择 `.NET Framework 4.6.2 development tools`。这是构建虚幻引擎所必需的。
+* __.NET framework 4.6.2__. 在 _Workloads_ 部分中，选择 __.NET 桌面开发__ ，然后在右侧的安装详细信息面板中选择 `.NET Framework 4.6.2 development tools`。这是构建虚幻引擎所必需的。
+* __x64 Visual C++ Toolset.__ 在 _工作负载_ 部分中，选择 __使用 C++ 的桌面开发__ 。这将启用用于构建的 x64 命令提示符。通过按 `Windows` 按钮并搜索 `x64` 来检查它是否已正确安装。小心 __不要打开`x86_x64`提示__。
+* __Windows 10 SDK 10.0.18362.0__ 在右侧的 _安装详细信息_ 部分中选择它，或者转到 _Indivdual Components_ 选项卡并在 _SDKs, libraries, and frameworks_ 标题下查看。
+
+
 ![](./img/build/vs_2019_install_options.png)
 
 !!! 重要
