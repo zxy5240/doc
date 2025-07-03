@@ -233,6 +233,14 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+
+###### [使用VS2022 时，make launch 编译 CesiumForUnreal 插件报错](https://stackoverflow.com/questions/3121825/error-c2039-string-is-not-a-member-of-std-header-file-problem)
+> 报错信息第一个：`D:\work\workspace\carla\Unreal\CarlaUE4\Plugins\Marketplace\CesiumForUnreal\Source\ThirdParty\include\CesiumGeospatial\S2CellID.h(108): error C2039: "string": 不是 "std" 的成员`
+> 
+> 解决：头文件中加入：
+> 
+> `#include <string>`
+
 ###### [安装VS2022时出现无法卸载旧版 MSI的错误](https://blog.csdn.net/qq_34988204/article/details/135039621)
 > 完整错误信息：错误代码 1714:无法卸载旧版 MSI你的计算机上安装了旧版 MSl。需要先将其卸载才可安装 Visual Studio。
 > 
