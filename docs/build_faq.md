@@ -233,7 +233,20 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
-##### [编译时卡在：`LogInit: Display: Running engine for game: CarlaUE4`](https://github.com/carla-simulator/carla/discussions/4644)
+###### [安装VS2022时出现无法卸载旧版 MSI的错误](https://blog.csdn.net/qq_34988204/article/details/135039621)
+> 完整错误信息：错误代码 1714:无法卸载旧版 MSI你的计算机上安装了旧版 MSl。需要先将其卸载才可安装 Visual Studio。
+> 
+> 快捷键 Win + R 打开运行窗口，输入命令 regedit 并回车，打开注册表编辑器
+> 
+> 在注册表编辑器中，找到并删除以下注册表项（删除整个Products目录）：
+>
+> `HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Products`
+> 
+> 打开 Visual Studio Installer，点击重试，重新安装 Visual Studio。
+
+
+
+###### [编译时卡在：`LogInit: Display: Running engine for game: CarlaUE4`](https://github.com/carla-simulator/carla/discussions/4644)
 
 > 原因：UE找不到GPU spec
 > 
