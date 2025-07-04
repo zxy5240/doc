@@ -144,14 +144,16 @@ git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 1.Jenkins页面中，系统管理 -> 插件管理 -> 可选插件 -> 搜索要安装的插件(`gitlab-plugin` 和　`Generic Webhook Trigger`)
 
 
-2.在Jenkins的UnrealEngine项目的配置中勾选`Generic Webhook Trigger` ，点 `Generate` 生成 token，这个 token 用于填写到 gitlab 的 webhook 里（防止其他人触发CICD）。按 [链接](https://blog.csdn.net/qq_31594665/article/details/136995439) 中的说明进行设置：
+2.在**接收方**，即Jenkins项目（比如UnrealEngine）的配置中勾选`Generic Webhook Trigger` ，点 `Generate` 生成 token，这个 token 用于填写到 gitlab 的 webhook 里（防止其他人触发CICD）。按 [链接](https://blog.csdn.net/qq_31594665/article/details/136995439) 中的说明进行设置：
 
-    2.1 Variable中的 Name of variable设置为：`ref`(在构建过程中需要使用到的变量名)，`Expression`设置为 `$.ref`(获取变量的值)，勾选`JSONPath`
-    2.2 设置生成的 Token（要保证在Jenkins中唯一）
-    2.3 Optional filter 中的 Expression为：`^(refs/heads/jenkins)$` （匹配构建条件的正则表达式），`Text`为：`$ref` （匹配的值，可使用上面配置的任意变量或组合，构建只有在此处的值与给定的正则匹配时才会触发）。
+2.1 在 Post content parameters 中定义post请求的变量。Variable中的 Name of variable设置为：`ref`(在构建过程中需要使用到的变量名)，`Expression`设置为 `$.ref`(获取变量的值)，勾选 `JSONPath`
+
+2.2 设置生成的 Token（自己设置，要保证在 Jenkins 中唯一，在第三步中URL中使用）
+
+2.3 Optional filter 中的 Expression为：`^(refs/heads/hutb)$` （匹配构建条件的正则表达式，这里的hutb是匹配的分支名，可根据实际的分支名情况修改），`Text`为：`$ref` （匹配的值，可使用上面配置的任意变量或组合，构建只有在此处的值与给定的正则匹配时才会触发）。
 
 
-3.Gitlab的项目页面：设置->导入所有仓库->链接(URL) 中填入`http://172.21.108.56:8080/generic-webhook-trigger/invoke?token=TOKEN` （该token和Jenkins->UnrealEngine->Configuration->Triggers->Token里一致），取消`开启SSL证书验证`，点击 Test-> Push events 来触发 Jeinkins 的构建。
+3.在**请求方**，即Gitlab的项目页面：设置->导入所有仓库->链接(URL) 中填入`http://172.21.108.56:8080/generic-webhook-trigger/invoke?token=TOKEN` （该token和上面第2.2步Jenkins->UnrealEngine->Configuration->Triggers->Token里一致），取消`开启SSL证书验证`，点击 Test-> Push events 来触发 Jeinkins 的构建。
 
 
 
@@ -166,6 +168,9 @@ git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 
 
 ## 高级配置
+
+##### 清除历史的构建的包
+每次所构建的包位于`存放的路径是jobs/JOB_NAME/builds/BUILD_NUMBER/archive`，比如：`C:\ProgramData\Jenkins\.jenkins\jobs\carla\builds`，可能非常大，需要定时清除。
 
 ##### 将运行中的gitlab容器打包为镜像
 1.将运行中的Docker容器保存为镜像
