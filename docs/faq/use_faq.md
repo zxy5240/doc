@@ -1,18 +1,22 @@
+## 入门示例
 
-# Python 调用
+!!! 注意
+    当机器性能一般时启动`CarlaUE4.exe`报错：`Out of video memory...`，可以通过命令来降低画质启动：`CarlaUE4.exe -quality-level=Low`，以获得更流畅的效果；甚至使用`CarlaUE4.exe -nullrhi`禁用所有渲染（无需 GPU）。如果运行CarlaUE4.exe时候报错：缺少Microsoft Visual C++ Runtime、DirectX Runtime，则需要安装 [vs_community__2019.exe](https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/) （勾选`.NET桌面开发`和`使用C++的桌面开发`）和 [directx_Jun2010_redist.zip](https://www.microsoft.com/zh-CN/download/details.aspx?id=8109)  （解压后运行`DXSETUP.bat`）。如果发现手动控制车按前进键不能移动，可能是输入法默认是中文，按`Shift`切换成英文输入法即可解决。
+
+## Python 调用
 
 * 运行`world.get_blueprint_library()`报错：ValueError: role_name: colors must have 3 channels (R,G,B)
 
 > 服务端和客户端版本不一致，比如服务端是ue4-dev的最新代码，而客户端为0.9.15的代码。
 
 
-# 库的问题
+## 库的问题
 * matplotlib 调用`plt.plot()`报错：`TypeError: int() argument must be a string, a bytes-like object or a number, not 'KeyboardModifier'`
 
 > 将您 Python 升级到 3.8 或者更高、Matplotlib 升级到 3.6.2 或更高版本
 > 
 
-# 编辑器
+## 虚幻编辑器
 
 * RuntimeError: internal error: unable to find spectator
 
@@ -20,7 +24,7 @@
 
 * 运行场景时弹出`Locate main RenderDoc executable...`选择程序对话框
 
-# 场景
+## 场景
 
 > 解决：下载并安装 图形调试工具 [renderdoc](https://renderdoc.org/) ，然后在选择程序对话框中选择`C:\Program Files\RenderDoc\qrenderdoc.exe`。
 
@@ -36,3 +40,8 @@ LowLevelFatalError [File:Unknown] [Line: 136]Exception thrown: bind: ??h????E???
 > 解决：重启电脑
 
 
+## 其他
+
+[__构建问题__](../build_faq.md) — 解决构建代码时候最常见的问题
+
+[__虚幻引擎问题__](../ue/ue_faq.md) - 虚幻引擎的一些专业问题

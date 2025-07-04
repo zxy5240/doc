@@ -2,9 +2,8 @@ title: 主页
 
 # [人车模拟](https://carla.readthedocs.io/en/latest/)
 
-欢迎使用人车模拟文档，该页面包含所有内容的索引。运行 [入门](#primary) 示例后可以按自己喜欢的顺序随意阅读（可使用 [DeepSeek大模型](software/llm.md) 来辅助开发）。默认为打开 UE 4.26 的 Carla 文档，支持 UE 5.5 的 Carla 文档请查看 [链接](ue5/index.md) 。
+欢迎使用人车模拟文档，该页面包含所有内容的索引。阅读 [基础](#primary) 部分相关内容后可以按自己喜欢的顺序随意阅读。
 
-如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/doc) 中的 [Issues](https://github.com/OpenHUTB/doc/issues) 页面进行提问或者提交 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) 直接修改文档。
 
 * [__简介__](#primary)  
     * [入门](#introduction)
@@ -28,17 +27,21 @@ title: 主页
 ---
 
 ## 简介 <span id="introduction"></span>
-1. 下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的`software/hutb`中的文件并解压；
-2. 运行`WindowsNoEditor`文件夹下的`CarlaUE4.exe`启动场景，进入场景后按`W`、`S`、`A`、`D`移动场景视角；
-3. 使用`pip install hutb` 安装Python功能包（或者安装`WindowsNoEditor/PythonAPI/carla/dist/hutb-*.whl`），然后运行脚本 [generate_traffic.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/generate_traffic.py) 在场景中生成交通流和运行 [python manual_control.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/manual_control.py) 生成一辆键盘控制的车。
+
+**入门示例**
+
+1. 下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的`software/car/DReyeVR/hutb_*.zip`并解压；
+
+2. 运行`WindowsNoEditor`文件夹下的`CarlaUE4.exe`启动场景，按`W`、`S`、`A`、`D` 进行操作；
+
+3. 使用`pip install hutb` 安装 Python 功能包（或者使用 pip 安装`PythonAPI/carla/dist/hutb-*.whl`），然后运行`PythonAPI/examples`中的脚本： [generate_traffic.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/generate_traffic.py) 生成交通流、[manual_control.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/manual_control.py) 生成一辆键盘控制的车。如果运行报错，请参考 [解决方法](faq/use_faq.md)。
 
 
-!!! 注意
-    当机器性能一般时启动`CarlaUE4.exe`报错：`Out of video memory...`，可以通过命令来降低画质启动：`CarlaUE4.exe -quality-level=Low`，以获得更流畅的效果；甚至使用`CarlaUE4.exe -nullrhi`禁用所有渲染（无需 GPU）。如果运行CarlaUE4.exe时候报错：缺少Microsoft Visual C++ Runtime、DirectX Runtime，则需要安装 [vs_community__2019.exe](https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/) （勾选`.NET桌面开发`和`使用C++的桌面开发`）和 [directx_Jun2010_redist.zip](https://www.microsoft.com/zh-CN/download/details.aspx?id=8109)  （解压后运行`DXSETUP.bat`）。如果发现手动控制车按前进键不能移动，可能是输入法默认是中文，按`Shift`切换成英文输入法即可解决。
 
 
 
-### 入门 <span id="primary"></span>
+
+### 基础 <span id="primary"></span>
 
 [__介绍__](start_introduction.md) — 对 Carla 的期望
 
@@ -67,7 +70,7 @@ title: 主页
 
 [__边界框__](tuto_G_bounding_boxes.md) — 将  Carla 对象的边界框投影到相机中
 
-[__使用常见问题__](faq/use_faq.md) — 一些最常见的使用问题
+[__使用常见问题__](faq/use_faq.md) — 解决最常见的使用问题
 
 
 ### 车辆 <span id="vehicle"></span>
@@ -117,7 +120,7 @@ title: 主页
 ---
 
 
-## 模拟器 <span id="simulator"></span>
+## 模拟 <span id="simulator"></span>
 
 ### 概念 <span id="concept"></span>
 <!-- Carla 原理 -->
@@ -186,7 +189,7 @@ title: 主页
 ---
 
 
-## 模拟场景  <span id="scene"></span>
+## 场景  <span id="scene"></span>
 
 ### 地图孪生 <span id="map_twin"></span>
 <!-- 地图、建筑等静态资产 -->
@@ -313,6 +316,11 @@ title: 主页
 
 [__Carla 相关的第三方链接__](./third.md) — 中文交流社区
 
+
+[__UE 5.5 的 Carla 文档__](ue5/index.md) - 基于 UE5.5 的相关功能代码，不作为该文档描述的主要内容
+
+[__DeepSeek大模型__](software/llm.md) - 部署本地大模型的流程，可用于辅助开发
+
 [__待做列表__](todo.md) — 待完成的功能
 
 [__应用Carla的仓库列表__](used_by.md) - 收集引用了Carla的相关库
@@ -346,3 +354,4 @@ title: 主页
 [__发布版本__](tuto_D_make_release.md) — 如何发布 Carla
 
 
+如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/doc) 中的 [问题](https://github.com/OpenHUTB/doc/issues) 页面讨论或者提交 [拉取请求](https://zhuanlan.zhihu.com/p/153381521) 直接修改文档。

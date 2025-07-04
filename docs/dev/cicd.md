@@ -141,19 +141,19 @@ git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 
 ## [gitlab提交代码触发Jenkins构建](https://blog.csdn.net/Habo_/article/details/123379435)
 
-1.Jenkins页面中，系统管理 -> 插件管理 -> 可选插件 -> 搜索要安装的插件(`gitlab-plugin` 和　`Generic Webhook Trigger`)
+1.Jenkins页面中，系统管理 -> 插件管理 -> 可选插件 -> 搜索要**安装的插件**(`gitlab-plugin` 和　`Generic Webhook Trigger`)
 
 
-2.在**接收方**，即Jenkins项目（比如UnrealEngine）的配置中勾选`Generic Webhook Trigger` ，点 `Generate` 生成 token，这个 token 用于填写到 gitlab 的 webhook 里（防止其他人触发CICD）。按 [链接](https://blog.csdn.net/qq_31594665/article/details/136995439) 中的说明进行设置：
+2.在 Jenkins 的项目（**接收方**）配置中勾选`Generic Webhook Trigger` （按 [链接1](https://blog.csdn.net/qq_31594665/article/details/136995439) 和 [链接2](https://www.cnblogs.com/jiaxzeng/p/17104250.html) 中的说明进行设置）：
 
-2.1 在 Post content parameters 中定义post请求的变量。Variable中的 Name of variable设置为：`ref`(在构建过程中需要使用到的变量名)，`Expression`设置为 `$.ref`(获取变量的值)，勾选 `JSONPath`
+2.1 在 Post content parameters 中定义 post 请求的变量。Variable 中的 Name of variable 设置为：`ref`(在构建过程中需要使用到的变量名；将匹配到的值，复制给 ref 变量)，`Expression`设置为 `$.ref`(获取变量的值，匹配 gitlab 请求的参数)，勾选 `JSONPath`；
 
-2.2 设置生成的 Token（自己设置，要保证在 Jenkins 中唯一，在第三步中URL中使用）
+2.2 输入 Token（比如`hutb-admin-dev`），这个 token 在第 3 步中填写到 gitlab 的 webhook 链接的最后（防止其他人触发CICD），要保证在 Jenkins 中唯一；
 
-2.3 Optional filter 中的 Expression为：`^(refs/heads/hutb)$` （匹配构建条件的正则表达式，这里的hutb是匹配的分支名，可根据实际的分支名情况修改），`Text`为：`$ref` （匹配的值，可使用上面配置的任意变量或组合，构建只有在此处的值与给定的正则匹配时才会触发）。
+2.3 Optional filter 中的 Expression为：`^(refs/heads/dev)$` （匹配构建条件的正则表达式，这里的hutb是匹配的分支名，可根据实际的分支名情况修改），`Text`为：`$ref` （匹配的值，可使用上面配置的任意变量或组合，构建只有在此处的值与给定的正则匹配时才会触发）。
 
 
-3.在**请求方**，即Gitlab的项目页面：设置->导入所有仓库->链接(URL) 中填入`http://172.21.108.56:8080/generic-webhook-trigger/invoke?token=TOKEN` （该token和上面第2.2步Jenkins->UnrealEngine->Configuration->Triggers->Token里一致），取消`开启SSL证书验证`，点击 Test-> Push events 来触发 Jeinkins 的构建。
+3.在Gitlab（**请求方**）的项目页面：设置->导入所有仓库->链接(URL) 中填入`http://172.21.108.56:8080/generic-webhook-trigger/invoke?token=TOKEN` （该token和上面第2.2步Jenkins->UnrealEngine->Configuration->Triggers->Token里一致），取消`开启SSL证书验证`，点击 Test-> Push events 来触发 Jeinkins 的构建。
 
 
 
@@ -163,7 +163,7 @@ git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 > 解决：Gitlab主页中的工具栏中的扳手->设置->外发请求，勾选`允许钩子和服务访问本地网络`（注意不是项目的设置）
 
 
-参考：[Generic Webhook Trigger 插件](https://www.cnblogs.com/jiaxzeng/p/17104250.html)
+参考：
 
 
 
