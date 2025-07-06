@@ -75,6 +75,23 @@ error: failed to push some refs to 'http://172.20.46.154:8090/traffic/carla.git'
 4.下载并覆盖本地的文件
 
 
+## 使用dev分支开发
+
+### 删除dev分支
+
+```shell
+# 位于dev分支，切换到其他分支
+git checkout hutb
+# 删除dev分支
+git branch -d dev
+# 删除远程分支
+git push origin --delete dev
+git push hutb --delete dev
+# 新建dev分支
+git checkout -b dev
+git push hutb
+```
+
 
 ## 其他
 
