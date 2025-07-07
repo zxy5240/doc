@@ -233,6 +233,11 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+###### [make: Nothing to be done for `check'.]
+> Windows.mk中check:标签下一行前面应该是Tab键而不是4个空格。
+> check:
+> 	 @"${CARLA_BUILD_TOOLS_FOLDER}/Check.bat" --all
+> 
 
 ###### [使用VS2022 时，make launch 编译 CesiumForUnreal 插件报错](https://stackoverflow.com/questions/3121825/error-c2039-string-is-not-a-member-of-std-header-file-problem)
 > 报错信息第一个：`D:\work\workspace\carla\Unreal\CarlaUE4\Plugins\Marketplace\CesiumForUnreal\Source\ThirdParty\include\CesiumGeospatial\S2CellID.h(108): error C2039: "string": 不是 "std" 的成员`
