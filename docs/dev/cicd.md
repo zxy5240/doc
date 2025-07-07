@@ -169,6 +169,12 @@ git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 
 ## 高级配置
 
+##### Jenkins关闭静默期
+
+提交通常会以突发的方式出现。这主要有两个原因：一是人们有时会忘记提交某些文件；二是人们在等待 SCM 完成提交的过程中，有时会意识到提交中的问题，并迅速进行后续修改。传统观点认为，CI 服务器应该等待突发提交完成后再尝试构建。据说这可以降低构建失败的风险，有时也有助于缩短构建时间较长的平均周转时间。
+
+关闭静默期可以实现提交代码后立即开始编译：Manage Jenkins -> System -> 静默期 设置为0。
+
 ##### 清除历史的构建的包
 每次所构建的包位于`存放的路径是jobs/JOB_NAME/builds/BUILD_NUMBER/archive`，比如：`C:\ProgramData\Jenkins\.jenkins\jobs\carla\builds`，可能非常大，需要定时清除。
 

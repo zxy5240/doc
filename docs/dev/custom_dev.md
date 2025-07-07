@@ -102,8 +102,13 @@ git push hutb
 > 
 > 3.修改.git/config文件，指向旧仓库的地址
 
+##### 补充
+
+[持续集成](cicd.md)
 
 ## 参考
+
+
 
 [git 生成补丁文件及打补丁](https://blog.csdn.net/xiewenhao12/article/details/117923288)
 
