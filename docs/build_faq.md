@@ -438,10 +438,10 @@ build\lib.win-amd64-cpython-37\carla\libcarla.cp37-win_amd64.pyd : fatal error L
 > 因此，请确保默认情况下始终找到相同版本的 Python，并且它是 64 位的。
 > 
 > 您可以通过查看此处的文件来检查 boost 所使用的 python：
-CARLA\Build\boost-1.72.0-install\lib\libboost_python 37 -vc141-mt-x64-1_72.lib
+CARLA\Build\boost-1.80.0-install\lib\libboost_python37-vc142-mt-x64-1_80.lib
 其中 ..37.. 是 Python 的版本，在本例中为 3.7
 > 
-> 要重建，只需删除CARLA\Build\boost-1.72.0-install文件夹，然后尝试使用make PythonAPI 再次构建 PythonAPI。
+> 要重建，只需删除CARLA\Build\boost-1.80.0-install文件夹，然后尝试使用make PythonAPI 再次构建 PythonAPI。
 > 参考[链接](https://github.com/carla-simulator/carla/issues/3621) 。
 
 ---
