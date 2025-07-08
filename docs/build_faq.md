@@ -233,7 +233,52 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
-###### [make: Nothing to be done for `check'.]
+###### 升级到vs2022后，编译boost-1.80.0报错：[-[install_boost]: [B2 ERROR] An error ocurred while installing using "b2.exe".](https://github.com/boostorg/boost/issues/914#issuecomment-2327689539)
+
+> 将 boost 版本从 1.80.0 升级到 1.86.0 可以解决（可以生成lib中的文件）
+> 
+> 分析过程：
+> 
+> `.\Util\InstallersWin\install_boost.bat --build-dir "D:\work\workspace\carla\Build" --toolset msvc-14.3 --version 1.80.0 -j 8`报错
+> 
+> 进入目录`Build\boost-1.80.0-source\`，运行`Build\boost-1.80.0-source\b2.exe address-model=64 architecture=x86`成功
+
+提取出实际运行报错的命令为：
+```shell
+# 先生成构建文件b2.exe
+call bootstrap.bat vc143
+# 编译和安装
+b2 -j8 headers --layout=versioned --build-dir=.\build    --with-system --with-filesystem --with-python --with-date_time architecture=x86     address-model=64 toolset=msvc-14.3 variant=release link=static runtime-link=shared threading=multi --prefix="D:\work\workspace\carla\Build\boost-1.80.0-install" --libdir="D:\work\workspace\carla\Build\boost-1.80.0-install\lib" --includedir="D:\work\workspace\carla\Build\boost-1.80.0-install" install
+```
+检测到报错是返回值`%errorlevel%`为1，安装的目录中头文件的文件名不对、Lib中的库文件没有生成。
+
+[解读](https://www.bfgroup.xyz/b2/tutorial.html) ：b2 headers ： 生成头文件
+
+`--layout=<layout>`：确定是否选择库名称和头文件位置，以便在同一系统上可以使用多个版本的 Boost 或多个编译器。
+
+    versioned: Boost 二进制文件的名称包含 Boost 版本号、编译器的名称和版本以及编码的构建属性。Boost 头文件安装在 <HDRDIR> 的子目录中，该子目录的名称包含 Boost 版本号。
+
+    tagged: Boost 二进制文件的名称包含编码的构建属性，例如变体和线程模型，但不包含编译器名称和版本，也不包含 Boost 版本。如果您使用相同的编译器构建多个 Boost 变体，此选项很有用。
+
+    system: 二进制文件的名称中不包含 Boost 版本号或编译器的名称及版本号。Boost 头文件会直接安装到 <HDRDIR> 目录下。这个选项是专为系统集成商构建的分发包而设计。
+
+    在 Windows 系统中，默认值为“versioned”，而在 Unix 系统中则为“system”。
+
+`address-model=64`：生成 16 位、32 位或 64 位代码。（可选值为 16, 32, 64, 32_64）
+
+`toolset`: 在条件属性中使用此功能，若某些特性取决于工具集则适用。
+
+`runtime-link=shared`：链接到单线程或线程安全的运行时库。（shared, static）
+
+`--with-python`: 仅编译 python。`b2.exe --show-libraries` 查看 Boost 包含的所有库
+
+```
+set PYTHON_ROOT=C:\\Users\\Administrator\\.conda\\envs\\carla_dev\\python.exe
+set PYTHON_VERSION=3.7
+```
+
+
+###### [make: Nothing to be done for `check'.]()
 > Windows.mk中check:标签下一行前面应该是Tab键而不是4个空格。
 > check:
 > 	 @"${CARLA_BUILD_TOOLS_FOLDER}/Check.bat" --all
@@ -630,6 +675,12 @@ make: *** [package] 错误 1
 
 ## 其他
 <!-- ======================================================================= -->
+
+###### 每次打开后都需要进入hutb目录，比较麻烦
+> 通过搜索找到`x64 Native Tools Command Prompt for VS 2022`的快捷方式，右键，在`目标(T)`中添加进入目录的参数，成为：
+> 
+> `%comspec% /k "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" && D: && cd D:\work\workspace\carla`
+
 
 ###### Fatal error: 'version.h' has been modified since the precompiled header. <span id="fatal-error-versionh-has-been-modified-since-the-precompiled-header"></span>
 
