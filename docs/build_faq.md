@@ -233,6 +233,35 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+###### [使用make PythonAPI编译报错：build\lib.win-amd64-cpython-37\carla\libcarla.cp37-win_amd64.pyd : fatal error LNK1169: 找到一个或多个多重定义的符号](https://github.com/carla-simulator/carla/issues/3621)
+出错命令`python setup.py bdist_egg bdist_wheel`。
+
+完整报错信息：
+```text
+libboost_python37-vc143-mt-x64-1_86.lib(errors.obj) : error LNK2005: "public: static struct boost::python::detail::exception_handler * boost::python::detail::exception_handler::chain" (?chain@exception_handler@detail@python@boost@@2PEAU1234@EA) 已经在 libboost_python37-vc142-mt-x64-1_80.lib(errors.obj) 中定义
+libboost_python37-vc143-mt-x64-1_86.lib(errors.obj) : error LNK2005: "private: static struct boost::python::detail::exception_handler * boost::python::detail::exception_handler::tail" (?tail@exception_handler@detail@python@boost@@0PEAU1234@EA) 已经在 libboost_python37-vc142-mt-x64-1_80.lib(errors.obj) 中定义
+  正在创建库 build\temp.win-amd64-cpython-37\Release\source/libcarla\libcarla.cp37-win_amd64.lib 和对象 build\temp.win-amd64-cpython-37\Release\source/libcarla\libcarla.cp37-win_amd64.exp
+build\lib.win-amd64-cpython-37\carla\libcarla.cp37-win_amd64.pyd : fatal error LNK1169: 找到一个或多个多重定义的符号
+error: command 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX86\\x64\\link.exe' failed with exit code 1169
+```
+解决：删除`boost-1.86.0-install`和`boost-1.86.0-source`后重新构建，只删除`boost-1.86.0-install`不行。
+
+
+###### CICD 时找不到.whl文件
+报错信息：
+```text
+(carla_dev) C:\ProgramData\Jenkins\.jenkins\workspace\carla>chcp 65001 
+Active code page: 65001
+-[Check]: [Batch params]: --smoke
+Unreal service is launching with command: start C:\ProgramData\Jenkins\.jenkins\workspace\carla\Build\UE4Carla\v2.0.0-22-g2f520474d\WindowsNoEditor\CarlaUE4.exe -RenderOffscreen ...
+The syntax of the command is incorrect.
+C:\software\anaconda3\envs\carla_dev\Scripts\pip.exe install --force-reinstall  C:\ProgramData\Jenkins\.jenkins\workspace\carla\Build\UE4Carla\v2.0.0-22-g2f520474d\WindowsNoEditor\PythonAPI\carla\dist\hutb-1.0.0-cp37-cp37m-win_amd64.whl
+WARNING: Requirement 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\carla\\Build\\UE4Carla\\v2.0.0-22-g2f520474d\\WindowsNoEditor\\PythonAPI\\carla\\dist\\hutb-1.0.0-cp37-cp37m-win_amd64.whl' looks like a filename, but the file does not exist
+Processing c:\programdata\jenkins\.jenkins\workspace\carla\build\ue4carla\v2.0.0-22-g2f520474d\windowsnoeditor\pythonapi\carla\dist\hutb-1.0.0-cp37-cp37m-win_amd64.whl
+ERROR: Could not install packages due to an OSError: [Errno 2] No such file or directory: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\carla\\Build\\UE4Carla\\v2.0.0-22-g2f520474d\\WindowsNoEditor\\PythonAPI\\carla\\dist\\hutb-1.0.0-cp37-cp37m-win_amd64.whl'
+```
+
+
 ###### 升级到vs2022后，编译boost-1.80.0报错：[-[install_boost]: [B2 ERROR] An error ocurred while installing using "b2.exe".](https://github.com/boostorg/boost/issues/914#issuecomment-2327689539)
 
 > 将 boost 版本从 1.80.0 升级到 1.86.0 可以解决（可以生成lib中的文件）
@@ -248,8 +277,16 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 # 先生成构建文件b2.exe
 call bootstrap.bat vc143
 # 编译和安装
-b2 -j8 headers --layout=versioned --build-dir=.\build    --with-system --with-filesystem --with-python --with-date_time architecture=x86     address-model=64 toolset=msvc-14.3 variant=release link=static runtime-link=shared threading=multi --prefix="D:\work\workspace\carla\Build\boost-1.80.0-install" --libdir="D:\work\workspace\carla\Build\boost-1.80.0-install\lib" --includedir="D:\work\workspace\carla\Build\boost-1.80.0-install" install
+b2 -j8 headers --layout=versioned --build-dir=.\build    --with-system --with-filesystem --with-python --with-date_time architecture=x86     address-model=64 toolset=msvc-14.3 variant=release link=static runtime-link=shared threading=multi --prefix="D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\boost-1.86.0-install" --libdir="D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\boost-1.86.0-install\lib" --includedir="D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\boost-1.86.0-install" install
 ```
+
+开发打包编辑器（使用x64 Native Tools可以，但是`call "%PROGRAMFILES%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"` || exit /b 不行）
+```shell
+%comspec% /k "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" && D: && cd D:\work\workspace\carla
+call bootstrap.bat vc143
+b2 -j24 headers --layout=versioned     --build-dir=.\build    --with-system     --with-filesystem    --with-python     --with-date_time    architecture=x86    address-model=64    toolset=msvc-14.3    variant=release    link=static    runtime-link=shared    threading=multi    --prefix="D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\boost-1.86.0-install"    --libdir="D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\boost-1.86.0-install\lib"    --includedir="D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\boost-1.86.0-install"    install
+```
+
 检测到报错是返回值`%errorlevel%`为1，安装的目录中头文件的文件名不对、Lib中的库文件没有生成。
 
 [解读](https://www.bfgroup.xyz/b2/tutorial.html) ：b2 headers ： 生成头文件
@@ -276,6 +313,37 @@ b2 -j8 headers --layout=versioned --build-dir=.\build    --with-system --with-fi
 set PYTHON_ROOT=C:\\Users\\Administrator\\.conda\\envs\\carla_dev\\python.exe
 set PYTHON_VERSION=3.7
 ```
+
+
+###### [vs2022 下 xerces 编译报错](https://github.com/HARPLab/DReyeVR/issues/86)
+
+报错信息：`error LNK2019: 无法解析的外部符号 u_charType_58，函数 "public: static unsigned short __cdecl xercesc_3_2::XMLUniCharacter::getType(char16_t)"`
+
+```shell
+cmake .. -G "Visual Studio 17 2022" -A x64  -DCMAKE_INSTALL_PREFIX="D:/work/workspace/carla/Build/UE4Carla/hutb_editor/carla1/Build/xerces-c-3.2.3-install/"  -DBUILD_SHARED_LIBS=OFF  "D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\xerces-c-3.2.3-source"
+```
+需要添加`-Dtranscoder=windows`选项：
+```shell
+cmake .. -G %GENERATOR% %PLATFORM%^
+  -DCMAKE_INSTALL_PREFIX="%XERCESC_INSTALL_DIR:\=/%"^
+  -DBUILD_SHARED_LIBS=OFF^
+  -Dtranscoder=windows^
+  "%BUILD_DIR%%XERCESC_BASENAME%-%XERCESC_VERSION%-source"
+```
+
+###### [osm2odr报错]()
+VS2019升级为2022
+
+```shell
+cmake -G "Visual Studio 16 2022" -A x64       -DCMAKE_CXX_FLAGS_RELEASE="/MD /MP"         -DCMAKE_INSTALL_PREFIX="D:/work/workspace/carla/Build/UE4Carla/hutb_editor/carla1/PythonAPI/carla/dependencies/"         -DPROJ_INCLUDE_DIR=D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\\proj-install\include         -DPROJ_LIBRARY=D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\\proj-install\lib\proj.lib         -DXercesC_INCLUDE_DIR=D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\\xerces-c-3.2.3-install\include         -DXercesC_LIBRARY=D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\\xerces-c-3.2.3-install\lib\xerces-c.lib         "D:\work\workspace\carla\Build\UE4Carla\hutb_editor\carla1\Build\osm2odr-source\"
+```
+
+
+###### [boost报错](https://github.com/boostorg/log/issues/113)
+
+报错信息：`carla1\LibCarla\source\carla\FileSystem.cpp(43,14): error C2039: "directory_iterator": 不是 "boost::filesystem" 的成员`，英文：` error C2039: 'directory_iterator': is not a member of 'boost::filesystem'`
+
+解决：[引入丢失的filesystem头文件](https://github.com/boostorg/log/pull/112) 。
 
 
 ###### [make: Nothing to be done for `check'.]()

@@ -44,6 +44,36 @@ PIE和SIE切换
 你也可以点击 控制（Possess） 功能的快捷键（F10）来从在编辑器中模拟（SIE）切换到在编辑器中运行（PIE）。
 
 
+## 加速构建过程
+
+每次执行hutb的make的操作时，都会出现
+```text
+Using 'git status' to determine working set for adaptive non-unity build (D:\work\workspace\UnrealEngine).
+Waiting for 'git status' command to complete
+Target is up to date
+Total execution time: 2.38 seconds
+```
+可以 [移除虚幻引擎的`.git`目录](https://github.com/adamrehn/ue4-docker/commit/9cf1375c33098a2787b5f514fd0ff36167a12b96) 来禁用 UBT 的 `git status` 调用，达到加速构建流程的作用。
+
+此功能用于从 Unity 构建中排除大多数迭代文件。这应该会降低编译速度（如果你经常构建引擎，这个功能确实很有用，但大多数情况下并非如此）。
+
+要禁用此行为，您可以更改 `Engine\Saved\UnrealBuildTool\BuildConfiguration.xml` 里的`<Configuration> </Configuration>`中添加：
+```text
+  <SourceFileWorkingSet> 
+	<Provider>None</Provider> 
+	<RepositoryPath></RepositoryPath> 
+	<GitPath></GitPath> 
+  </SourceFileWorkingSet>
+```
+改后生效，但是报错：
+```text
+Creating makefile for CarlaUE4Editor (BuildConfiguration.xml is newer)
+UnrealBuildTool: WARNING: No Visual C++ installation was found. Please download and install Visual Studio 2017 with C++ components.
+UnrealBuildTool: ERROR: Visual Studio 2019 must be installed in order to build this target.
+make: *** [CarlaUE4Editor] 错误 6
+```
+
+
 ## 参考链接
 * [UE4初学者系列教程合集-全中文新手入门教程](https://www.bilibili.com/video/BV164411Y732/?share_source=copy_web&vd_source=d956d8d73965ffb619958f94872d7c57  )
 

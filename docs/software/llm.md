@@ -12,6 +12,9 @@ ollama run deepseek-r1:7b
 ```
 下载完成即可通过命令行进行对话。
 
+!!! 说明
+     ollama.exe的默认安装路径为：`C:\Users\Administrator\AppData\Local\Programs\Ollama\ollama.exe`。
+
 ## 2.安装 WebUI
 2.1 以管理员身份运行 PowerShell，执行以下命令启动Hyper-V：
 ```shell

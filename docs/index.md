@@ -113,7 +113,7 @@ title: 主页
 
 [__行人建模__](tuto_content_authoring_pedestrians.md) — 在三维建模软件中对人进行建模
 
-[__行为交互__](interbehavior.md) — 针对行为和交互研究的虚拟现实驾驶仿真器
+[__行为交互__](interbehavior.md) — 基于 DReyeVR 的针对行为和交互研究的虚拟现实驾驶仿真器
 
 [__行人物理场模拟__](pedestrian/tuto_content_chrono_opensim.md) — Chrono OpenSim 解析器
 
@@ -323,7 +323,7 @@ title: 主页
 
 [__待做列表__](todo.md) — 待完成的功能
 
-[__应用Carla的仓库列表__](used_by.md) - 收集引用了Carla的相关库
+[__使用 Carla 的仓库列表__](used_by.md) - 收集引用了Carla的相关库
 
 
 ### 基准测试 <span id="test"></span>
