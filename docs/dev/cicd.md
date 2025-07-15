@@ -222,8 +222,12 @@ docker load -i <tar文件名>.tar
 
 > 将`Manage Jenkins -> Security`中的`跨站请求伪造保护`中的`启用代理兼容`勾选。
 
-其中的`Test e-mail recipient`为接收方邮箱地址（QQ邮箱为发送方）。
+其中的`Test e-mail recipient`为接收方邮箱地址（QQ邮箱为发送方）。[open3d_lidar.py](../../../carla/PythonAPI/examples/open3d_lidar.py)
 
+
+## Github Action 配置
+
+UE4 发布工作流程需要手动触发，并且必须按照命名约定`ue4/x.y.z`在分支上执行。
 
 ## 参考
 

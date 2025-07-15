@@ -12,7 +12,7 @@
 
     * 车辆控制（EgoVehicle）：处理驾驶逻辑、输入映射、物理模拟。
     * 传感器处理（EgoSensor）：集成眼动追踪、焦点计算、帧捕获。
-    * 用户界面（FlatHUD）：绘制 HUD 元素（文本、纹理、十字准星）。
+    * 用户界面（[FlatHUD](VR/FlatHUD.md) ）：绘制 HUD 元素（文本、纹理、十字准星）。
     * 游戏模式（ [DReyeVRGameMode](VR/DReyeVRGameMode.md) ）：管理玩家、输入、重播和音效。
 
 

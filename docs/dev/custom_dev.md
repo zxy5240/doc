@@ -18,7 +18,7 @@ git apply 【path/to/xxx.patch】
 
 
 ## 冲突解决
-
+[open3d_lidar.py](../../../carla/PythonAPI/examples/open3d_lidar.py)
 强制打补丁
 ```shell
 git apply --reject xxx.patch
@@ -80,14 +80,17 @@ error: failed to push some refs to 'http://172.20.46.154:8090/traffic/carla.git'
 ### 删除dev分支
 
 ```shell
-# 位于dev分支，切换到其他分支
+:: 位于dev分支，切换到其他分支
 git checkout hutb
-# 删除dev分支
+:: 删除dev分支
 git branch -d dev
-# 删除远程分支
+:: 删除远程分支
 git push origin --delete dev
 git push hutb --delete dev
-# 新建dev分支
+:: 更新最新的修改
+git pull origin hutb:hutb --rebase
+git push hutb
+:: 新建dev分支
 git checkout -b dev
 git push hutb
 ```

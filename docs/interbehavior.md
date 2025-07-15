@@ -30,11 +30,12 @@
   - 虽然我们还没有测试其他耳机，但如果 SteamVR 支持，它们仍然可以用于基本的虚拟现实用途（非眼动追踪）。
   - 由于我们使用 [SRanipal](https://forum.htc.com/topic/5641-sranipal-faq/) 作为眼动追踪器 SDK，因此眼动追踪目前**仅**支持 HTC Vive Pro Eye。我们很乐意通过贡献添加其他 SDK 来支持更多设备。
 - 车辆控制：
-  - 通用键盘 WASD + 鼠标
+  - 通用键盘 WASD + 鼠标，按`D`表示倒车
   - 使用此开源 [LogitechWheelPlugin](https://github.com/HARPLab/LogitechWheelPlugin) 支持 Logitech 方向盘
     - 包括方向盘的力反馈。
     - 我们使用了 [Logitech G923 赛车方向盘和踏板](https://www.logitechg.com/en-us/products/driving/driving-force-racing-wheel.html)
       - 虽然我们可以在没有经过测试的情况下保证开箱即用的功能，但是可以在 [此处](https://github.com/HARPLab/LogitechWheelPlugin/blob/master/README.md) 找到受支持设备的完整列表。
+  - 编辑器模式下按`2`（非数字键）表示脱离第一视角车辆控制，按`1`表示进入第一视角车辆控制。
 
 - 逼真的（可参数化的）后视镜和侧视镜
 
@@ -163,9 +164,11 @@
 - 请参阅 [`Development.md`](interbehavior/Development.md) 以开始 DReyeVR 开发并添加新功能
 - 请参阅 [`interbehavior/Tutorials/`](interbehavior/Tutorials/) 查看多个 DReyeVR 教程，例如自定义 EgoVehicle、添加自定义标志/道具等。
 - [自定义自主车辆](interbehavior/Tutorials/CustomEgo.md)
-- 功能实现分析参阅 [链接](interbehavior/implementation.md) 。
+- [问题分析](interbehavior/implementation.md) 。
+- [模块分析](modules/DReyeVR.md)
 
 ## 引用
+
 如果你想使用该工作，请参考对应的 [论文](https://arxiv.org/abs/2201.01931):
 
 - 此 repo 包含来自 Hewlett-Packard Development Company, LP 的一些代码。请参阅 [nvidia.ph](Tools/Diagnostics/collectl/nvidia.ph) 。

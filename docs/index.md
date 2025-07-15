@@ -73,7 +73,7 @@ title: 主页
 [__使用常见问题__](faq/use_faq.md) — 解决最常见的使用问题
 
 
-### 车辆 <span id="vehicle"></span>
+### 车 <span id="vehicle"></span>
 <!-- 车辆代理：单个 -> 多个 -->
 
 [__手动控制车辆__](tuto_G_pygame.md) — 使用 PyGame 显示相机传感器的输出
@@ -98,8 +98,10 @@ title: 主页
 
 
 
-### 行人 <span id="pedestrian"></span>
+### 人 <span id="pedestrian"></span>
 <!-- 行人代理 -->
+
+[__行为交互__](interbehavior.md) — 基于 DReyeVR 的针对行为和交互研究的虚拟现实驾驶仿真模块
 
 [__行人导航__](tuto_G_pedestrian_navigation.md) — 使用骨骼为行人设置动画
 
@@ -112,8 +114,6 @@ title: 主页
 [__生成行人导航__](tuto_M_generate_pedestrian_navigation.md) — 获取行人四处走动所需的信息
 
 [__行人建模__](tuto_content_authoring_pedestrians.md) — 在三维建模软件中对人进行建模
-
-[__行为交互__](interbehavior.md) — 基于 DReyeVR 的针对行为和交互研究的虚拟现实驾驶仿真器
 
 [__行人物理场模拟__](pedestrian/tuto_content_chrono_opensim.md) — Chrono OpenSim 解析器
 

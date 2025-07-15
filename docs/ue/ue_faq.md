@@ -73,6 +73,17 @@ UnrealBuildTool: ERROR: Visual Studio 2019 must be installed in order to build t
 make: *** [CarlaUE4Editor] 错误 6
 ```
 
+## 插件
+### USD
+Universal Scene Description (USD) 是通用场景描述，一个开放且可扩展的生态系统，用于在 3D 世界中描述、组合、模拟和协作，最初由皮克斯动画工作室发明；是 Omniverse 使用的文件格式，人称元宇宙的 HTML。
+
+
+什么是仿真就绪（SimReady）素材
+
+
+仿真就绪（SimReady）素材是虚拟世界的基础模块，SimReady 素材不仅仅是 3D 物件，它们包含基于 Universal Scene Description (USD) 构建的准确物理属性、行为和连接的数据流。
+
+
 
 ## 参考链接
 * [UE4初学者系列教程合集-全中文新手入门教程](https://www.bilibili.com/video/BV164411Y732/?share_source=copy_web&vd_source=d956d8d73965ffb619958f94872d7c57  )

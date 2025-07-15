@@ -4,7 +4,7 @@
 
 
 ## 配置
-默认的引擎配置在`carla\Unreal\CarlaUE4\Config/DefaultEngine.ini`文件中进行修改：
+默认的引擎配置在`carla\Unreal\CarlaUE4\Config\DefaultEngine.ini`文件中进行修改：
 ```shell
 # 传统模式
 # GlobalDefaultServerGameMode=/Game/Carla/Blueprints/Game/CarlaGameMode.CarlaGameMode_C
@@ -21,6 +21,7 @@ GlobalDefaultServerGameMode=/Script/CarlaUE4.DReyeVRGameMode
 
 
 ## 在最新的版本上编译
+解决问题的过程：
 
 InputComponent != nullptr是空
 
@@ -146,4 +147,11 @@ Expression: (bytes)==(sizeof(message_size_type) +message->size())
 ```cpp
 DEBUG_ASSERT_EQ(bytes, sizeof(message_size_type) + message->size());
 ```
+
+
+## 各个模块
+
+
+
+### 头显模块
 
