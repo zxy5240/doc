@@ -233,6 +233,11 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+
+######  添加 SimReady Converter Plugins 后报错：[无法打开包括文件: “WheeledVehicle.h”](无法打开包括文件: “WheeledVehicle.h”)
+
+完整报错信息：`C:\workspace\carla\Unreal\CarlaUE4\Plugins\Carla\Source\Carla\Vehicle/CarlaWheeledVehicle.h(9): fatal error C1083: 无法打开包括文件: “WheeledVehicle.h”: No such file or directory`
+
 ###### [使用make PythonAPI编译报错：build\lib.win-amd64-cpython-37\carla\libcarla.cp37-win_amd64.pyd : fatal error LNK1169: 找到一个或多个多重定义的符号](https://github.com/carla-simulator/carla/issues/3621)
 出错命令`python setup.py bdist_egg bdist_wheel`。
 
