@@ -22,6 +22,36 @@
 
 ## 内容
 
+### [实现加载等待页面Loading Screen设计（进度条异步加载）](https://www.uejoy.com/archives/1071)
+
+启动软件会黑屏半天，或是切换地图黑屏一下，体验不好。
+
+黑屏是因为计算机在启动软件后需要加载磁盘资产，加载过程是需要时间消耗的，但是有时候需要加载的资产又多，然后磁盘读取效率又低，所以导致等待时间过长。在加载的时候，软件窗口是空闲的，但是又没有其他渲染任务，所以就黑屏了。
+
+
+加载进度条等待页面，有进度条可以直观看到加载进度情况。
+
+整个过程我们需要借助两个函数（全局函数）
+
+* LoadPackageAsync：完成后台的异步加载
+* GetAsyncLoadPercentage：获取加载过程中的完成进度（值0-100）
+
+
+[添加开场mp4视频](https://blog.csdn.net/qq_25580197/article/details/73460060)
+
+[切换虚幻引擎启动时加载的图片Splash](https://blog.csdn.net/qq_31263521/article/details/80567736)
+
+在`项目设置->平台->Windows->Splash->游戏启动画面`中进行图片选择。
+
+Icon默认为：`UnrealEngine\Engine\Build\Windows\Resources\Default.ico`；
+新建的Icon放在：`UnrealEngine\Engine\Content\Splash`。
+
+PPT编辑文字，导出PDF，然后裁剪，导出为图片。
+
+图片转icon：https://www.icoconverter.com/
+
+黑白反转：https://invert.imageonline.co/cn/
+
 ### 编译
 [编译配置参考](https://docs.unrealengine.com/4.26/zh-CN/ProductionPipelines/DevelopmentSetup/BuildConfigurations/)
 
@@ -38,6 +68,8 @@
 * 增加`matlab`插件进行虚幻引擎编译，导致启动虚幻编辑器启动失败，原因不明。
 
 * 如果启动虚幻编辑器时出现选择`renderdocui.exe`的选项，则从 [RenderDoc](https://renderdoc.org/) 中下载并安装软件，然后选择相应的exe文件即可启动。
+
+
 
 ## [Git 版本管理](https://zhuanlan.zhihu.com/p/104197715)
 

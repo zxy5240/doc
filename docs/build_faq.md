@@ -252,6 +252,15 @@ error: command 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\
 解决：删除`boost-1.86.0-install`和`boost-1.86.0-source`后重新构建，只删除`boost-1.86.0-install`不行。
 
 
+###### [Chrono库找不到]()
+报错信息：
+```text
+UnrealBuildTool: ERROR: Unhandled exception: Source file 'C:\ProgramData\Jenkins\.jenkins\workspace\carla\Unreal\CarlaUE4\Plugins\Carla\CarlaDependencies\dll\ChronoEngine.dll' does not exist
+                        while creating runtime dependencies for module 'Carla'
+```
+编译目录`Build/chrono-install`目录为空，原因是源代码下载失败。
+
+
 ###### CICD 时找不到.whl文件
 报错信息：
 ```text
