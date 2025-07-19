@@ -77,6 +77,10 @@ PPT编辑文字，导出PDF，然后裁剪，导出为图片。
 2. Git路径选择Git安装后bin文件中的启动程序；选择`接收设置`
 
 
+## [升级到 4.27-plus]
+
+[Change version 4.27.1](https://github.com/EpicGames/UnrealEngine/commits/4.27-plus/?before=c79de00e3ba31b0b96220f8a0591a93d6770a3e3+665)
+
 
 ## [法律风险](https://www.3dcat.live/share/ue4-vsualization-software/) 
 

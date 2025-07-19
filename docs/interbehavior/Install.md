@@ -79,12 +79,14 @@ make PythonAPI && make launch # 构建最初的 Carla
 #####################################################
 ############## 安装 DReyeVR 插件 ##############
 #####################################################
-# (可选) 安装 SRanipal (眼动跟踪) SRanipal plugin
+# (可选) 安装 SRanipal (眼动跟踪) SRanipal plugin 
+# 安装手册：https://github.com/Tomaso-Zanardi/SRanipal-Eye-Tracking-Manual/tree/main
 mv /PATH/TO/SRANIPALPLUGIN/SDK/03_Unreal/Plugins/SRanipal Unreal/CarlaUE4/Plugins/ 
 
-# (可选) 安装 LogitechWheelPlugin (steering wheel)
+# (可选) 安装 LogitechWheelPlugin (steering wheel) 
+# 已合并到 [hutb仓库](https://github.com/OpenHUTB/hutb/tree/hutb/Unreal/CarlaUE4/Plugins) 
 git clone https://github.com/HARPLab/LogitechWheelPlugin
-mv LogitechWheelPlugin/LogitechWheelPlugin Unreal/CarlaUE4/Plugins/ # install to carla
+mv LogitechWheelPlugin/LogitechWheelPlugin Unreal/CarlaUE4/Plugins/ # 安装到 carla
 
 cd .. # 回到主目录
 
@@ -113,10 +115,10 @@ cd ..
 ################## 构建所有 #########################
 #####################################################
 cd carla
-make PythonAPI  # build the PythonAPI (and LibCarla) again
-make launch     # launch in editor
-make package    # create an optimized package
-make check      # run Carla unit tests
+make PythonAPI  # 再次构建 PythonAPI (和 LibCarla)
+make launch     # 启动虚幻编辑器
+make package    # 创建优化过的包
+make check      # 运行 Carla 单元测试
 ```
 </details>
 
@@ -133,7 +135,7 @@ bool UseLogitechPlugin = true;
 ...
 /////////////////////////////////////////////////////////////
 ```
-- 注意：仅当启用了 `UseSRanipalPlugin` 时才需要安装 SRanipal 插件，同样，仅当启用了 `UseLogitechPlugin` 时才需要安装 Logitech 插件。
+- 注意：仅当启用了 `UseSRanipalPlugin` 时才需要安装 SRanipal 插件，同样，仅当启用了 `UseLogitechPlugin` 时才需要安装 Logitech 插件（插件已合并到 [hutb仓库](https://github.com/OpenHUTB/hutb/tree/hutb/Unreal/CarlaUE4/Plugins) 中）。
 
 !!! 注意
     在虚幻编辑器中运行时，需要点击工具栏中的 [`控制`](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/playing-and-simulating?application_version=4.27) （显示`弹出`）才有进入驾驶模式。每次点击`控制`都会调用 `carla\unreal\carlaue4\Source\CarlaUE4\DReyeVR\DReyeVRPawn.cpp` 文件中 `void ADReyeVRPawn::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)` 的 `Super::SetupPlayerInputComponent(PlayerInputComponent);`，每次持有棋子时都会调用一次，从而 InputComponent 不为空。 
@@ -180,7 +182,7 @@ bool UseLogitechPlugin = true;
         - 图片来源：[MariosBikos](https://forum.htc.com/topic/7434-getting-started-with-vrs-foveated-rendering-using-htc-vive-pro-eye-unreal-engine)
 
 ### **安装 SRanipal UE4 插件**
-  - 下载 `.zip` 文件后，解压后应出现类似如下的目录
+  - 下载 `.zip` 文件后，解压后应出现类似如下的目录（相关 [链接](https://github.com/VARID-XR/VARID-plugin-unreal) ,`software/VR/*`）
 
  ```text
  SDK

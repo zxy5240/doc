@@ -92,6 +92,84 @@ Universal Scene Description (USD) 是通用场景描述，一个开放且可扩�
 仿真就绪（SimReady）素材是虚拟世界的基础模块，SimReady 素材不仅仅是 3D 物件，它们包含基于 Universal Scene Description (USD) 构建的准确物理属性、行为和连接的数据流。
 
 
+## 编译
+
+###### 编译AirSim后，启动编译器崩溃
+报错信息：
+```text
+Assertion failed: ResourceTableFrameCounter == INDEX_NONE [File:D:/work/workspace/UnrealEngine/Engine/Source/Runtime/Windows/D3D11RHI/Private/D3D11Texture.cpp] [Line: 2260]
+
+UE4Editor_Core!AssertFailedImplV() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Core\Private\Misc\AssertionMacros.cpp:104]
+UE4Editor_Core!FDebug::CheckVerifyFailedImpl() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Core\Private\Misc\AssertionMacros.cpp:461]
+UE4Editor_D3D11RHI!FD3D11DynamicRHI::RHIUpdateTextureReference() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Windows\D3D11RHI\Private\D3D11Texture.cpp:2260]
+UE4Editor_RHI!FRHICommandListImmediate::UpdateTextureReference() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\RHI\Private\RHICommandList.cpp:2730]
+UE4Editor_Engine!FStreamableTextureResource::FinalizeStreaming() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Engine\Private\Rendering\StreamableTextureResource.cpp:220]
+UE4Editor_Engine!FTexture2DUpdate::DoFinishUpdate() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Engine\Private\Streaming\Texture2DUpdate.cpp:158]
+UE4Editor_Engine!FTexture2DStreamIn_DDC_AsyncCreate::Finalize() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Engine\Private\Streaming\Texture2DStreamIn_DDC_AsyncCreate.cpp:84]
+UE4Editor_Engine!TRenderAssetUpdate<FTexture2DUpdateContext>::TickInternal() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Engine\Private\Streaming\RenderAssetUpdate.inl:76]
+UE4Editor_Engine!<lambda_c13beac94fedf293002b1e0b20710a81>::operator()() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Engine\Private\Streaming\RenderAssetUpdate.cpp:270]
+UE4Editor_Engine!TEnqueueUniqueRenderCommandType<`FRenderAssetUpdate::ScheduleRenderTask'::`2'::RenderAssetUpdateCommandName,<lambda_c13beac94fedf293002b1e0b20710a81> >::DoTask() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\RenderCore\Public\RenderingThread.h:183]
+UE4Editor_Engine!TGraphTask<TEnqueueUniqueRenderCommandType<`FRenderAssetUpdate::ScheduleRenderTask'::`2'::RenderAssetUpdateCommandName,<lambda_c13beac94fedf293002b1e0b20710a81> > >::ExecuteTask() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Core\Public\Async\TaskGraphInterfaces.h:886]
+UE4Editor_Core!FNamedTaskThread::ProcessTasksNamedThread() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Core\Private\Async\TaskGraph.cpp:709]
+UE4Editor_Core!FNamedTaskThread::ProcessTasksUntilQuit() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Core\Private\Async\TaskGraph.cpp:601]
+UE4Editor_RenderCore!RenderingThreadMain() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\RenderCore\Private\RenderingThread.cpp:373]
+UE4Editor_RenderCore!FRenderingThread::Run() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\RenderCore\Private\RenderingThread.cpp:509]
+UE4Editor_Core!FRunnableThreadWin::Run() [D:\work\workspace\UnrealEngine\Engine\Source\Runtime\Core\Private\Windows\WindowsRunnableThread.cpp:86]
+```
+
+> [原因](https://github.com/carla-simulator/carla/issues/6201#issuecomment-1436199677) ：把Ue4NoEditor的附加地图包和从源码编译的ue4editor搞混了，所以把附加地图的引擎文件夹文件放到了unreal4.26.2的文件夹里。
+> 
+> 未使用的 [暂时解决办法](https://github.com/carla-simulator/carla/issues/6075#issuecomment-1623373687) ：直接注释掉 D3D11Texture.cpp 中引发错误的那行代码 (l. 2260) 。 或者 [改配置文件](https://forums.unrealengine.com/t/ue-4-26-built-from-source-crashes-when-opening-project/739873/10)
+
+
+Carla 编辑器运行崩溃：
+```text
+LoginId:bc22576a452b36c1831fe8942b55e57a
+EpicAccountId:77cf3795af004e58a037e9c9d4a5aa0d
+
+Unhandled Exception: EXCEPTION_STACK_OVERFLOW
+
+user32
+user32
+sdk_legacy_steering_wheel_x64
+user32
+user32
+sdk_legacy_steering_wheel_x64
+```
+
+
+###### 使用vs2022编译UE4.26时候报错
+```text
+LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64\UE4Editor-Engine.dll”
+LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64\UE4Editor-UnrealEd.dll”
+LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64\UE4Editor-Chaos.dll”
+LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64\UE4Editor-DetailCustomization.dll”
+```
+在对应目录中存在。
+
+[解决](https://forums.unrealengine.com/t/link-fatal-error-lnk1104-cannot-open-file/287530/11) ：删除[ProjectPath]/Engine/Binaries/Win64下的所有文件，然后重新构建（如果少了文件，从原来的拷贝）。如果刪除不了，需要使用`资源监视器`删除对应的进程（UEEditor.exe）
+
+###### 编译警告：Detected compiler newer than Visual Studio 2019, please update min version checking in WindowsPlatformCompilerSetup.h
+
+
+
+
+##### 如何修改编译使用的CPU核心数量
+
+修改Engine\Saved\UnrealBuildTool\BuildConfiguration.xml文件中的配置：
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns="https://www.unrealengine.com/BuildConfiguration">
+    <ProjectFileGenerator>
+        <Format>VisualStudio2019</Format>
+    </ProjectFileGenerator>
+    <ParallelExecutor>
+        <ProcessorCountMultiplier>0.75</ProcessorCountMultiplier>
+        <MaxProcessorCount>24</MaxProcessorCount>
+    </ParallelExecutor>
+</Configuration>
+```
+
 
 ## 参考链接
 * [UE4初学者系列教程合集-全中文新手入门教程](https://www.bilibili.com/video/BV164411Y732/?share_source=copy_web&vd_source=d956d8d73965ffb619958f94872d7c57  )

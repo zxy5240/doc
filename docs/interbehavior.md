@@ -30,7 +30,7 @@
   - 虽然我们还没有测试其他耳机，但如果 SteamVR 支持，它们仍然可以用于基本的虚拟现实用途（非眼动追踪）。
   - 由于我们使用 [SRanipal](https://forum.htc.com/topic/5641-sranipal-faq/) 作为眼动追踪器 SDK，因此眼动追踪目前**仅**支持 HTC Vive Pro Eye。我们很乐意通过贡献添加其他 SDK 来支持更多设备。
 - 车辆控制：
-  - 通用键盘 WASD + 鼠标，按`D`表示倒车
+  - 通用键盘 WASD + 鼠标，按`Z`表示倒车
   - 使用此开源 [LogitechWheelPlugin](https://github.com/HARPLab/LogitechWheelPlugin) 支持 Logitech 方向盘
     - 包括方向盘的力反馈。
     - 我们使用了 [Logitech G923 赛车方向盘和踏板](https://www.logitechg.com/en-us/products/driving/driving-force-racing-wheel.html)
@@ -166,6 +166,7 @@
 - [自定义自主车辆](interbehavior/Tutorials/CustomEgo.md)
 - [问题分析](interbehavior/implementation.md) 。
 - [模块分析](modules/DReyeVR.md)
+- [FAQ](interbehavior/VR_faq.md)
 
 ## 引用
 
