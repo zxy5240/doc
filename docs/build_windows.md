@@ -99,10 +99,10 @@ pip3 install --user wheel
 
 要构建虚幻引擎的修改版本：
 
-__1.__ 在Git终端中，导航到要保存虚幻引擎的位置并克隆 _carla_ 分支：
+__1.__ 在Git终端中，导航到要保存虚幻引擎的位置并克隆 _carla_ 分支（需要加入社区）：
 
 ```sh
-git clone --depth 1 -b carla https://github.com/CarlaUnreal/UnrealEngine.git .
+git clone --depth 1 -b carla https://github.com/OpenHUTB/UnrealEngine.git .
 ```
 
 或者打开 [UnrealEngine](https://github.com/CARLAUnreal/UnrealEngine) 进行项目文件下载：
@@ -120,7 +120,7 @@ GenerateProjectFiles.bat
 
 __3.__ 编译修改后的引擎：
 
->1. 使用 Visual Studio 2019打开源文件夹内的文件`UE4.sln`。
+>1. 使用 Visual Studio 2019 （或 Visual Studio 2022）打开源文件夹内的文件`UE4.sln`。
 
 >2. 在构建栏中，确保您已选择`Development Editor`、`Win64`和`UnrealBuildTool`选项。如果您需要任何帮助，请查看 [本指南](https://docs.unrealengine.com/en-US/ProductionPipelines/DevelopmentSetup/BuildingUnrealEngine/index.html) 。
         
