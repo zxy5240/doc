@@ -105,7 +105,7 @@ __1.__ 在Git终端中，导航到要保存虚幻引擎的位置并克隆 _carla
 git clone --depth 1 -b carla https://github.com/OpenHUTB/UnrealEngine.git .
 ```
 
-或者打开 [UnrealEngine](https://github.com/CARLAUnreal/UnrealEngine) 进行项目文件下载：
+或者打开 [UnrealEngine](https://github.com/OpenHUTB/UnrealEngine) 进行项目文件下载：
 ![](./img/build/unreal_engine_download.png)
 
 !!! 笔记 
