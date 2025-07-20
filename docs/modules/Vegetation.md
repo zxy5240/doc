@@ -16,9 +16,9 @@
 
 ## 1. 模块概述
 
-本模块用于 CARLA 模拟器中的植物物理动画控制，结合弹簧力学与骨骼动力学建模，实现植物对象（如草、树枝）的自然运动模拟。
+本模块用于人车模拟器中的植物物理动画控制，结合弹簧力学与骨骼动力学建模，实现植物对象（如草、树枝）的自然运动模拟。
 
-该模块主要由以下四个核心文件组成：
+该模块主要由以下 4 个核心文件组成：
 
 - `BaseVegetationActor.h` / `.cpp`
 - `SpringBasedVegetationComponent.h` / `.cpp`
@@ -54,7 +54,7 @@
 
 ### 2.3 植被基类（ABaseVegetationActor）
 
-该类继承自 UE 的 `AActor`，主要职责：
+该类继承自引擎的 `AActor`，主要职责：
 
 - 维护并提供 `FSpringBasedVegetationParameters` 的管理接口。
 - 支持蓝图接口，如 `SetParametersToComponent()`、`GetParametersFromComponent()`。
@@ -167,5 +167,3 @@ for each SkeletonNode {
 → 修改 BaseSpringStrength / Gravity 等参数
 → 调用 GetParametersFromComponent 查看反馈结果
 ```
-
-
