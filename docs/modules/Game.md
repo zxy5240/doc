@@ -8,7 +8,7 @@
 
 ## 简介
 
-CARLA（Car Learning to Act）是一个基于 Unreal Engine 的开源自动驾驶模拟器。本项目的 CarlaEngine.cpp 负责管理 CARLA 的核心引擎功能，如固定时间步长、RPC 服务器线程数等。
+CARLA（CAR Learning to Act）是一个基于 Unreal Engine 的开源自动驾驶模拟器。本项目的 CarlaEngine.cpp 负责管理 CARLA 的核心引擎功能，如固定时间步长、RPC 服务器线程数等。
 
 ## 环境依赖
 本模块依赖以下组件： Unreal Engine 、CARLA 源码 、ROS2（可选） 、多 GPU 支持库
