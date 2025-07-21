@@ -1,4 +1,4 @@
-# Util模块技术文档
+# Util 模块技术文档
 
 # 目录
 - [1. 概述](#1-概述)
@@ -29,7 +29,7 @@
 
 ## 1. 概述
 
-  CARLA的Util模块提供了一系列底层的C++工具类，用于简化对Unreal世界中各种对象、集合体、导航、随机数以及调试绘制等功能的操作。Util模块位于源码路径`Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Util`下，包含29个源文件和头文件，涵盖从附件管理、随机引擎到导航网络、文件解析、调试绘制等多方面工具。
+人车模拟器的 Util 模块提供了一系列底层的 C++ 工具类，用于简化对引擎世界中各种对象、集合体、导航、随机数以及调试绘制等功能的操作。Util 模块位于源码路径`Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Util`下，包含29个源文件和头文件，涵盖从附件管理、随机引擎到导航网络、文件解析、调试绘制等多方面工具。
 
 ### 1.1 Util模块与其它模块的调用关系图
 ```mermaid
@@ -172,10 +172,10 @@ flowchart TD
 | NonCopyable                               | 禁止拷贝、仅允许移动的基类模板，用于防止资源误拷贝                                                 | `Util/NonCopyable.h`                                                                                          |
 | ListView                                  | 封装 Unreal Slate/UMG 列表视图控件的常用操作                                                       | `Util/ListView.h`                                                                                             |
 
-## 2. Util核心功能类
+## 2. Util 核心功能类
 ### 2.1 UActorAttacher：Actor 附加器
 #### 2.1.1 概要
-`UActorAttacher`是 CARLA Unreal 插件中用于在运行时将“子” Actor（如传感器、摄像头等）附加到“父” Actor（如车辆、建筑物等）上的静态工具类，支持三种常用的附加模式：
+`UActorAttacher`是 HUTB 模拟器引擎插件中用于在运行时将 “子” Actor（如传感器、摄像头等）附加到“父” Actor（如车辆、建筑物等）上的静态工具类，支持 3 种常用的附加模式：
 - 刚性附加（Rigid）：调用 `Child->AttachToActor(Parent, FAttachmentTransformRules::KeepRelativeTransform)`；
 - 弹簧臂附加（SpringArm）：调用`UActorAttacher_AttachActorsWithSpringArm(Child, Parent)`；
 - “幽灵”弹簧臂附加（SpringArmGhost）：调用`UActorAttacher_AttachActorsWithSpringArmGhost(Child, Parent)`。
@@ -238,7 +238,7 @@ static void UActorAttacher_AttachActorsWithSpringArm(AActor *Child, AActor *Pare
 
 ### 2.2 AActorWithRandomEngine：随机引擎注入器
 #### 2.2.1 概要
-`AActorWithRandomEngine` 是 CARLA 插件中用于支持确定性随机行为的抽象 Actor 基类， 位于 `CarlaUE4/Plugins/Carla/Source/Carla/Util/ActorWithRandomEngine.*`。该类内置了一个 `URandomEngine` 实例，并通过固定或可配置的种子（Seed）初始化，从而实现可重现的随机数序列。并在 `Blueprint/C++` 中通过`GetRandomEngine`、`GetSeed`、`SetSeed` 提供访问与修改接口。
+`AActorWithRandomEngine` 是 HUTB 插件中用于支持确定性随机行为的抽象 Actor 基类， 位于 `CarlaUE4/Plugins/Carla/Source/Carla/Util/ActorWithRandomEngine.*`。该类内置了一个 `URandomEngine` 实例，并通过固定或可配置的种子（Seed）初始化，从而实现可重现的随机数序列。并在 `Blueprint/C++` 中通过`GetRandomEngine`、`GetSeed`、`SetSeed` 提供访问与修改接口。
 
 该类支持在编辑器中配置种子值，或启用自动生成随机种子。在构造阶段（Construction）或属性变更时，内部的随机引擎会根据当前种子重新初始化，确保每次仿真运行的随机行为可控且可复现。
 #### 2.2.2 关键方法详解
@@ -302,7 +302,7 @@ public:
 ## 2.3 BoundingBox相关类
 ### 2.3.1 FBoundingBox：边界框结构
 #### 概要
-`FBoundingBox`是一个BlueprintType的USTRUCT，用于在C++与BluePrint间传递和操作三维边界框信息。CARLA 中所有 Actor（车辆、行人、交通标志、静态网格等）均可通过该结构表示其局部边界框，方便后续在世界或摄像机坐标下进行投影、碰撞检测或可视化渲染。
+`FBoundingBox`是一个BlueprintType的USTRUCT，用于在C++与BluePrint间传递和操作三维边界框信息。HUTB 中所有 Actor（车辆、行人、交通标志、静态网格等）均可通过该结构表示其局部边界框，方便后续在世界或摄像机坐标下进行投影、碰撞检测或可视化渲染。
 #### 成员详解
 ```cpp
 USTRUCT(BlueprintType)
@@ -412,7 +412,7 @@ void FShapeVisitor::operator()(const Shape::Arrow &Arrow) const {
 
 ### 2.5.1 概要
 
-`FNavigationMesh` 是 CARLA 中用于与 Unreal 导航网格系统交互的工具类，位于 `CarlaUE4/Plugins/Carla/Source/Carla/Util/NavigationMesh.*`。其主要功能是加载与指定地图名称相关联的导航网格数据，支持路径查询和导航功能。该类通过读取存储为 `.bin` 文件的导航网格数据，为仿真中的路径规划和智能体导航提供支持。
+`FNavigationMesh` 是 HUTB 中用于与引擎导航网格系统交互的工具类，位于 `CarlaUE4/Plugins/Carla/Source/Carla/Util/NavigationMesh.*`。其主要功能是加载与指定地图名称相关联的导航网格数据，支持路径查询和导航功能。该类通过读取存储为 `.bin` 文件的导航网格数据，为仿真中的路径规划和智能体导航提供支持。
 
 ### 2.5.2 关键方法详解
 
@@ -464,7 +464,7 @@ void LoadNavigationMeshData(FString MapName)
 }
 ```
 
-- **说明**：此示例展示了如何在 CARLA 仿真中加载指定地图的导航网格数据。通过调用 `FNavigationMesh::Load` 方法，可以获取导航网格的二进制数据，用于后续的路径规划和导航功能。
+- **说明**：此示例展示了如何在 HUTB 模拟中加载指定地图的导航网格数据。通过调用 `FNavigationMesh::Load` 方法，可以获取导航网格的二进制数据，用于后续的路径规划和导航功能。
 
 ### 2.5.4 注意事项
 
@@ -482,4 +482,4 @@ void LoadNavigationMeshData(FString MapName)
 - **动态更新**：
   - 支持在运行时动态更新导航网格，以适应场景中动态变化的障碍物或路径。
 
-通过 `FNavigationMesh` 类，CARLA 仿真系统能够高效地加载和管理导航网格数据，为智能体的路径规划和导航功能提供坚实的基础。
+通过 `FNavigationMesh` 类，HUTB 仿真系统能够高效地加载和管理导航网格数据，为智能体的路径规划和导航功能提供坚实的基础。
