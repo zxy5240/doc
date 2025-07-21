@@ -1,5 +1,5 @@
-# CARLA OpenDriveParser 说明文档
-本文件定义了 CARLA 模拟器中用于解析 OpenDRIVE 地图数据的 OpenDriveParser 类。该类位于 carla::opendrive 命名空间中，主要职责是从 OpenDRIVE XML 文件中读取道路网络数据，并将其转换为 CARLA 内部表示形式。
+# OpenDriveParser 说明文档
+本文件定义了人车模拟器中用于解析 OpenDRIVE 地图数据的 OpenDriveParser 类。该类位于 carla::opendrive 命名空间中，主要职责是从 OpenDRIVE XML 文件中读取道路网络数据，并将其转换为内部表示形式。
 
 ##  什么是 OpenDRIVE？
 [点击这里访问ASAM OpenDRIVE](https://www.asam.net/standards/detail/opendrive/)
@@ -216,9 +216,9 @@ carla::opendrive::Map map = carla::opendrive::OpenDriveParser::Load(xodr_content
 ```
 ---
 
-# OpenDriveParser.cpp 源文件说明（CARLA）
+# OpenDriveParser.cpp 源文件说明
 
-该文件实现了 CARLA 项目中 OpenDRIVE 格式地图解析的核心模块：`OpenDriveParser`。它负责从 OpenDRIVE XML 字符串中解析并构建 CARLA 中的道路网络地图对象（`road::Map`）。
+该文件实现了 人车模拟器 项目中 OpenDRIVE 格式地图解析的核心模块：`OpenDriveParser`。它负责从 OpenDRIVE XML 字符串中解析并构建 HUTB 中的道路网络地图对象（`road::Map`）。
 
 ---
 
