@@ -72,7 +72,7 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/FisheyeSensor.cpp(229): error C2065: “FisheyeParams”: 未声明的标识符
 D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/FisheyeSensor.cpp(229): error C3861: “GenerateLongLatUnwrapFisheye”: 找不到标识符
 ```
-> 因为鱼眼相机需要修改虚幻引擎中的代码，需要同步更新 [UnrealEngine](https://github.com/OpenHUTB/UnrealEngine) 分支中的代码。
+> 因为鱼眼相机需要修改虚幻引擎中的代码，需要同步更新 [引擎仓库](https://github.com/OpenHUTB/engine) hutb 分支中的代码。
 
 ---
 

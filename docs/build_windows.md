@@ -102,10 +102,10 @@ pip3 install --user wheel
 __1.__ 在Git终端中，导航到要保存虚幻引擎的位置并克隆 _carla_ 分支（需要加入社区）：
 
 ```sh
-git clone --depth 1 -b carla https://github.com/OpenHUTB/UnrealEngine.git .
+git clone --depth 1 -b carla https://github.com/OpenHUTB/engine.git .
 ```
 
-或者打开 [UnrealEngine](https://github.com/OpenHUTB/UnrealEngine) 进行项目文件下载：
+或者打开 [UnrealEngine](https://github.com/OpenHUTB/engine) 进行项目文件下载：
 ![](./img/build/unreal_engine_download.png)
 
 !!! 笔记 

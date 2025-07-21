@@ -21,7 +21,7 @@
 
 4.2通过`Build.bat`基于`Development`、`%PACKAGE_CONFIG%`配置进行编译
 
-4.3通过 [`RunUAT.bat`](https://github.com/OpenHUTB/UnrealEngine/blob/OpenHUTB/Engine/Build/BatchFiles/RunUAT.bat) （Unreal Automation Tool，虚幻自动化工具）烘焙并打包 （报错地方）
+4.3通过 [`RunUAT.bat`](https://github.com/OpenHUTB/engine/blob/hutb/Engine/Build/BatchFiles/RunUAT.bat) （Unreal Automation Tool，虚幻自动化工具）烘焙并打包 （报错地方）
 
 
 5.给包中添加额外的文件，包括PythonAPI等

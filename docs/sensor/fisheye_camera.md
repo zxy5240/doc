@@ -39,7 +39,7 @@ $$
 
 更新3个虚幻引擎的源代码：
 
-  * [`Engine/Shaders/Private/SimpleElementPixelShader.usf`](https://github.com/OpenHUTB/UnrealEngine/blob/fisheye-camera/Engine/Shaders/Private/SimpleElementPixelShader.usf)
+  * [`Engine/Shaders/Private/SimpleElementPixelShader.usf`](https://github.com/OpenHUTB/engine/blob/hutb/Engine/Shaders/Private/SimpleElementPixelShader.usf)
   
     Unreal Shader(.usf, 着色器) 文件。 其中函数`void CubemapTexturePropertiesFisheye()`实现了鱼眼相机的畸变模型：
     $$ 
@@ -47,8 +47,8 @@ $$
     $$
     [代码实现](https://github.com/OpenHUTB/UnrealEngine/blob/83a7677378ff770073ca9544460a02d264a3ce46/Engine/Shaders/Private/SimpleElementPixelShader.usf#L410) ：`theta = r / (1.0f + d1*th2 + d2*th4 + d3*th6 + d4*th8);`。
 
-  * [`Engine/Source/Runtime/Engine/Private/CubemapUnwrapUtils.cpp`](https://github.com/OpenHUTB/UnrealEngine/blob/fisheye-camera/Engine/Source/Runtime/Engine/Private/CubemapUnwrapUtils.cpp)
-  * [`Engine/Source/Runtime/Engine/Public/CubemapUnwrapUtils.h`](https://github.com/OpenHUTB/UnrealEngine/blob/fisheye-camera/Engine/Source/Runtime/Engine/Public/CubemapUnwrapUtils.h)
+  * [`Engine/Source/Runtime/Engine/Private/CubemapUnwrapUtils.cpp`](https://github.com/OpenHUTB/engine/blob/hutb/Engine/Source/Runtime/Engine/Private/CubemapUnwrapUtils.cpp)
+  * [`Engine/Source/Runtime/Engine/Public/CubemapUnwrapUtils.h`](https://github.com/OpenHUTB/engine/blob/hutb/Engine/Source/Runtime/Engine/Public/CubemapUnwrapUtils.h)
 
 
 ### 1- 创建新传感器 <span id="1-sensor-actor"></span>

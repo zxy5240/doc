@@ -202,7 +202,7 @@ pip3 install --user wheel auditwheel
 __1.__ 将 Carla 的虚幻引擎 4.26 分支的内容克隆到本地计算机：
 
 ```sh
-git clone https://github.com/OpenHUTB/UnrealEngine.git ~/UnrealEngine_4.26
+git clone https://github.com/OpenHUTB/engine.git ~/UnrealEngine_4.26
 ```
 
 __2.__ 导航到克隆存储库的目录：
@@ -228,7 +228,7 @@ Corlib not in sync with this runtime: expected corlib version 149, found 1051600
 chmod +x Setup.sh
 chmod +x Engine/Build/BatchFiles/Linux/GitDependencies.sh
 sudo apt-get install mono-complete
-git clone https://github.com/OpenHUTB/UnrealEngine.git ~/UnrealEngine_4.26
+git clone https://github.com/OpenHUTB/engine.git ~/UnrealEngine_4.26
 ```
 
 __4.__ 打开编辑器检查虚幻引擎是否已正确安装。
