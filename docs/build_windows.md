@@ -204,8 +204,9 @@ git clone https://github.com/carla-simulator/carla
 
 ### 获取资产 <span id="get-assets"></span>
 
-通过在 Carla 根文件夹中运行以下命令，下载 __最新的__ 资产以使用当前版本的 Carla：
+下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中`software/data/Content.zip` 的 __最新的__ 资产（或者 [湖工商内网仓库链接](http://172.20.46.154:8090/traffic/Content) ，可下载和修改资产）：
 
+（原 Carla 资产通过在 根文件夹中运行以下命令）
 ```sh
 Update.bat
 ```
@@ -225,8 +226,6 @@ tar -xvzf <assets_file_name>.tar.gz.tar -C C:\path\to\carla\Unreal\CarlaUE4\Cont
 下载好后解压到下图这个文件夹（注意是把所有解压的文件放到`Unreal/CARLAUE4/Content/CARLA` 下，不是刚刚下载的压缩包解压到当前文件夹）像下面这样格式。否则后面执行 make launch 会失败。
 ![](./img/build/extracted_content.png)
 
-! 笔记
-    湖工商内网使用仓库 [http://172.20.46.154:8090/traffic/Content](http://172.20.46.154:8090/traffic/Content) 进行资产的克隆，已获取最新的资产。
 
 
 ### 构建 Carla <span id="build-carla"></span>
