@@ -204,12 +204,9 @@ git clone https://github.com/carla-simulator/carla
 
 ### 获取资产 <span id="get-assets"></span>
 
-下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中`software/data/Content.zip` 的 __最新的__ 资产（或者 [湖工商内网仓库链接](http://172.20.46.154:8090/traffic/Content) ，可下载和修改资产）：
+下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中`software/data/Content.zip` 的 __最新的__ 资产，或者通过 [湖工商内网仓库链接](http://172.20.46.154:8090/traffic/Content) 可下载和修改资产
+（原 Carla 资产通过在 根文件夹中运行`Update.bat`脚本）。
 
-（原 Carla 资产通过在 根文件夹中运行以下命令）
-```sh
-Update.bat
-```
 
 如果安装了 7zip，资源将被下载并解压到适当的位置。如果您没有安装此软件，则需要手动将文件内容解压到`Unreal\CarlaUE4\Content\Carla`。
 
@@ -376,10 +373,10 @@ echo %PATH%
 
 启动Python虚拟环境报错：`CondaError: Run 'conda init' before 'conda activate'`
 > 使用Anaconda Powershell Prompt打开，或者：
-```shell
-conda init cmd.exe  # 先执行这个，然后再激活虚拟环境
-conda activate carla_cpp
-```
+> ```shell
+> conda init cmd.exe  # 先执行这个，然后再激活虚拟环境
+> conda activate carla_cpp
+> ```
 
 报chrono模块的错：`D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/V2X/PathLossModel.cpp(176): error C3861: “DrawDebugLine”: 找不到标识符`、
 ```text
