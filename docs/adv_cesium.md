@@ -144,6 +144,17 @@ MakeUnique 使用给定的参数分配一个类型 T 的新对象并将其作为
 TCHAR_TO_UTF8(const TCHAR*): unicode到utf8的转换
 
 
+## FAQ
+
+####### VS 2022 编译时`engine\Engine\Plugins\Marketplace\CesiumForUnreal\Source\ThirdParty\include\CesiumGeospatial\S2CellID.h`报错：`error 2039: "string": 不是 "std" 的成员`
+> 原因：问题源于 VS2019 后的语法检查更加严格，缺少必要的头文件
+> 
+> 解决：增加头文件：
+> ```C++
+> #include<iostream>
+> ```
+
+
 ## 参考
 - [Cesium for Unreal快速入门](https://zhuanlan.zhihu.com/p/365834299)
 - [Cesium for Unreal 加载本地倾斜摄影](https://blog.csdn.net/ChaoChao66666/article/details/131569339)

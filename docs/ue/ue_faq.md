@@ -67,19 +67,11 @@ Total execution time: 2.38 seconds
 
 要禁用此行为，您可以更改 `Engine\Saved\UnrealBuildTool\BuildConfiguration.xml` 里的`<Configuration> </Configuration>`中添加：
 ```text
-  <SourceFileWorkingSet> 
-	<Provider>None</Provider> 
-	<RepositoryPath></RepositoryPath> 
-	<GitPath></GitPath> 
+  <SourceFileWorkingSet>
+	<Provider>None</Provider>
   </SourceFileWorkingSet>
 ```
-改后生效，但是报错：
-```text
-Creating makefile for CarlaUE4Editor (BuildConfiguration.xml is newer)
-UnrealBuildTool: WARNING: No Visual C++ installation was found. Please download and install Visual Studio 2017 with C++ components.
-UnrealBuildTool: ERROR: Visual Studio 2019 must be installed in order to build this target.
-make: *** [CarlaUE4Editor] 错误 6
-```
+
 
 ## 插件
 ### USD
@@ -93,6 +85,13 @@ Universal Scene Description (USD) 是通用场景描述，一个开放且可扩�
 
 
 ## 编译
+
+###### 编译UE时报错：使用“override”声明的成员函数不能重写基类成员
+出错位置：`D:\work\workspace\UnrealEngine\Engine\Source\Runtime\CoreUObject\Public\UObject\CoreNet.h` 345 行
+```C++
+	virtual FArchive& operator<<(FSoftObjectPath& Value) override;
+```
+
 
 ###### 编译AirSim后，启动编译器崩溃
 报错信息：
@@ -147,7 +146,8 @@ LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64
 ```
 在对应目录中存在。
 
-[解决](https://forums.unrealengine.com/t/link-fatal-error-lnk1104-cannot-open-file/287530/11) ：删除[ProjectPath]/Engine/Binaries/Win64下的所有文件，然后重新构建（如果少了文件，从原来的拷贝）。如果刪除不了，需要使用`资源监视器`删除对应的进程（UEEditor.exe）
+[解决](https://forums.unrealengine.com/t/link-fatal-error-lnk1104-cannot-open-file/287530/11) ：使用`资源监视器`找到`UEEditor.exe`对应的进程，结束进程，然后就可以启动虚幻编辑器了（原因不明）。
+
 
 ###### 编译警告：Detected compiler newer than Visual Studio 2019, please update min version checking in WindowsPlatformCompilerSetup.h
 
@@ -168,6 +168,26 @@ LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64
         <MaxProcessorCount>24</MaxProcessorCount>
     </ParallelExecutor>
 </Configuration>
+```
+
+## 源代码管理
+
+###### [从原来的仓库迁移到OpenHUTB的引擎仓库](https://www.cnblogs.com/gjmhome/p/14061090.html)
+1.修改文件`.git/config`远端的仓库地址
+```shell
+[remote "origin"]
+	url = https://github.com/OpenHUTB/engine.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+2.合并两个不相关的仓库：
+```shell
+git pull -f origin hutb --allow-unrelated-histories
+```
+
+3.丢弃本地提交，强制回到线上最新版本：
+```shell
+git reset --hard origin/hutb
 ```
 
 
