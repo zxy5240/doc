@@ -17,7 +17,7 @@
  ---
  
  ## 模块概述  
- `Navigation` 是 CARLA 模拟器中实现智能体（行人、车辆）导航的核心模块，基于 **Recast/Detour** 库实现以下功能：  
+ `Navigation` 是 HUTB 模拟器中实现智能体（行人、车辆）导航的核心模块，基于 **Recast/Detour** 库实现以下功能：  
  - **导航网格加载**：支持多瓦片（Tile）动态加载  
  - **路径规划**：基于区域类型（道路/草地）的路径搜索与优化  
  - **人群模拟**：支持500+代理的动态管理（避障、转向预测、分离行为）  
@@ -553,7 +553,7 @@ void updateAgentBehavior(Agent& agent,
 
 ## 内存管理
 
-Recast/Detour 在 CARLA 中负责导航网格的加载、切割与查询，需手动释放相应资源以防泄漏。
+Recast/Detour 在 HUTB 中负责导航网格的加载、切割与查询，需手动释放相应资源以防泄漏。
 
 * **导航网格对象 (`dtNavMesh*`)**
 
@@ -721,9 +721,21 @@ int main(int argc, char** argv)
  
  ## 附录  
  ### 依赖项  
- - **Recast/Detour**：导航网格与路径规划  
- - **CARLA 几何库**：`geom::Location`, `geom::Math`  
- 
+ - **Recast(重铸)**：负责在三维场景中构建正确的寻路网格（NavMesh）
+ - **Detour(绕行)**: 使用寻路算法（如A*和Dijkstra）在构建的网格中进行寻路。
+ - **HUTB 几何库**：`geom::Location`, `geom::Math`  
+
+
+[Recast依次执行以下步骤](https://blog.csdn.net/xia15000506007/article/details/143101166) ：
+
+1.**体素化（Voxel）**：将三维场景进行体素化，类似于二维场景中的光栅化。这一过程的主要目的是简化寻路中不必要的模型细节，以提高计算效率。
+
+2.**区域过滤**（Filter）:根据当前的导航配置，过滤出可行走的区域。通过设置可行走区域的参数，确保代理能够有效地在环境中移动。
+
+3.**多边形生成**（Poly）:将可行走区域按照一定规则切分为导航多边形。后续的寻路算法将在这些多边形基础上进行运算。
+
+
+
  ### 调试支持  
  - **断言检查**：  
    ```cpp
@@ -733,25 +745,6 @@ int main(int argc, char** argv)
    ```cpp
    logging::log("Nav: failed to create crowd");
    ```
-## 附录
-
-### 依赖项
-
-* **Recast/Detour**：导航网格与路径规划
-* **CARLA 几何库**：`geom::Location`, `geom::Math`
-
-### 调试支持
-
-* **断言检查**：
-
-  ```cpp
-  DEBUG_ASSERT(_nav_query != nullptr); // 确保查询对象已初始化
-  ```
-* **日志输出**：
-
-  ```cpp
-  logging::log("Nav: failed to create crowd");
-  ```
 
 **补充说明**：增加调试支持说明，帮助定位运行时错误和状态异常。
 
