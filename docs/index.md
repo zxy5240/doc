@@ -30,7 +30,7 @@ title: 主页
 
 **入门示例**
 
-1. 下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的`software/car/DReyeVR/hutb_*.zip`并解压；
+1. 下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的`software/hutb/hutb_*.zip`并解压；
 
 2. 运行`WindowsNoEditor`文件夹下的`CarlaUE4.exe`启动场景，按`W`、`S`、`A`、`D` 进行操作；
 
