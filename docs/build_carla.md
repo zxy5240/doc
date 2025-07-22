@@ -20,12 +20,13 @@
     这些构建指南都是针对 Carla 的虚幻引擎4.26版，如果想要构建 Carla 的虚幻引擎5.5版，请访问 [该版本的正确构建指南](https://carla-ue5.readthedocs.io/en/latest/build_carla/) 。
 
 
-### 带Carla插件的虚幻编辑器可执行版本
 
-根据 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) ，CarlaUE4 下载 `software/car/carla_unreal_v1.1.zip`，CarlaUE5 下载 `software/car/CarlaUE5_v1.0.zip`，解压后运行 `launch_*.bat` 就可以启动带Carla插件的虚幻编辑器。
+## 其他特性
 
-!!! 注意
-    CarlaUE5编辑器正常运行至少需要 8GB 显存。
+### Github 访问加速
+
+有时候 Github 访问不了，可以下载并运行 [链接](https://gitee.com/OpenHUTB/software/releases/tag/speed_up_github) 中对应平台的软件（比如 Windows 平台中下载 [fastgithub-win-x64.zip](https://gitee.com/OpenHUTB/software/releases/download/speed_up_github/fastgithub-win-x64.zip) 解压后运行`FastGithub.UI.exe`即可正常访问Github）。
+
 
 
 ### 科学上网 <span id="internet"></span>
@@ -68,9 +69,21 @@ cd $HOME/.config/clash/
 2.将`mingw64/bin/`路径添加到PATH路径，使用命令`gcc -v`验证配置已生效；
 
 
-### CI/CD
+### 带Carla插件的虚幻编辑器可执行版本
+
+根据 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) ，CarlaUE4 下载 `software/car/carla_unreal_v1.1.zip`，CarlaUE5 下载 `software/car/CarlaUE5_v1.0.zip`，解压后运行 `launch_*.bat` 就可以启动带Carla插件的虚幻编辑器。
+
+!!! 注意
+    CarlaUE5编辑器正常运行至少需要 8GB 显存。
+
+
+## CI/CD
+
+- [CI/CD环境部署](dev/cicd.md)
+
 - [Applied Intuition的解决方案](https://www.appliedintuition.com/blog/carla-orbis-basis) 
 
+<!--
 - 官方CI/CD [链接](http://158.109.8.172:8080/login?from=%2F) （西班牙 加泰罗尼亚的IP）。
-
+-->
 
