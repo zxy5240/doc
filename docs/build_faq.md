@@ -234,6 +234,24 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 <!-- ======================================================================= -->
 
 
+###### BuildCarlaUE4.bat 在jenkins的日志中中文乱码
+日志乱码开始出现的地方：
+```text
+-[BuildCarlaUE4]: Building Unreal Editor...
+```
+
+```shell
+call "%UE4_ROOT%Engine\Build\BatchFiles\Build.bat"^
+    CarlaUE4Editor^
+    Win64^
+    Development^
+    -WaitMutex^
+    -FromMsBuild^
+    "%ROOT_PATH%Unreal/CarlaUE4/CarlaUE4.uproject"
+```
+
+
+
 ######  添加 SimReady Converter Plugins 后报错：[无法打开包括文件: “WheeledVehicle.h”](无法打开包括文件: “WheeledVehicle.h”)
 
 完整报错信息：`C:\workspace\carla\Unreal\CarlaUE4\Plugins\Carla\Source\Carla\Vehicle/CarlaWheeledVehicle.h(9): fatal error C1083: 无法打开包括文件: “WheeledVehicle.h”: No such file or directory`

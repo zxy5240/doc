@@ -12,7 +12,7 @@
 
 如果您有任何疑问，希望我们的常见问题解答 [F.A.Q. 维基页面](https://github.com/HARPLab/DReyeVR/wiki/Frequently-Asked-Questions) 和 [问题页面](https://github.com/HARPLab/DReyeVR/issues?q=is%3Aissue+is%3Aclosed) 可以解答其中的一些问题。
 
-**重要提示：** 目前 DReyeVR 仅支持 Carla 版本：[0.9.13](https://github.com/carla-simulator/carla/tree/0.9.13) 、[OpenHUTB](https://github.com/OpenHUTB/carla) 和 Unreal Engine 4.26。
+**重要提示：** 目前 DReyeVR 仅支持基于 Unreal Engine 4.26 的 Carla 版本：[0.9.13](https://github.com/carla-simulator/carla/tree/0.9.13) 、[HUTB](https://github.com/OpenHUTB/hutb) 。
 
 ## 亮点
 ### 自主车辆
@@ -45,9 +45,9 @@
 
     - 速度计（默认单位为英里/小时）
 
-    - 档位指示器
+    - 档位指示器：显示的 D(Drive) 为前进档、R(Reverse) 为倒档，按键盘`Z`进行切换
 
-    - 转向信号
+    - 转向信号：按`Q`为左转向、按`E`为右转向
 
 - 动力学方向盘
 
@@ -149,7 +149,7 @@
   - 不幸的是，眼动追踪固件是专有的，无法在 Linux 上运行
     - 由于 [HTC SRanipal SDK](https://developer.vive.com/resources/knowledgebase/vive-sranipal-sdk/) 和 Tobii 的 SDK 之间存在一些专有依赖关系，因此目前仅支持 Windows。对 HTC Vive Pro 眼动追踪的 Linux 讨论感兴趣的人可以关注 [ 此处 (Vive)](https://forum.vive.com/topic/6994-eye-tracking-in-linux/) 、[此处 (Vive)](https://forum.vive.com/topic/7012-vive-pro-eye-on-ubuntu-16-or-18/) 和 [此处 (Tobii)](https://developer.tobii.com/community/forums/topic/vive-pro-eye-with-stream-engine/) 的主题。
   - 此外，我们使用的 [LogitechWheelPlugin](https://github.com/HARPLab/LogitechWheelPlugin) 目前仅支持 Windows。不过，根据 [Arch Wiki](https://wiki.archlinux.org/title/Logitech_Racing_Wheel) ，应该可以在 Linux 上使用 G923。
-- 此外，尽管 CARLA 并未正式支持 MacOS，但我们在 Apple Silicon 机器上进行了开发，并且拥有 CARLA + UE4.26 的活跃分支，支持 MacOS 12+。请注意，这主要用于开发，因为它是迄今为止最受限制的系统。
+- 此外，尽管 Carla 并未正式支持 MacOS，但我们在 Apple Silicon 机器上进行了开发，并且拥有 Carla + UE4.26 的活跃分支，支持 MacOS 12+。请注意，这主要用于开发，因为它是迄今为止最受限制的系统。
 
 
 
