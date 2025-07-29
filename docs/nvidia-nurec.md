@@ -114,3 +114,7 @@ python example_save_images.py --usdz-filename /path/to/scenario.usdz --output-di
 | -u               | --usdz-filename | (必需的)               | 包含 NuRec 场景的 USDZ 文件的路径 |
 | -c               | --camera | camera_front_wide_120fov | 用于可视化的相机名称              |
 | --move-spectator | | False                    | 移动观察者摄像机来跟随自主车辆       |
+
+## 其他
+
+[HUTB - NUREC 集成](ue/HUTB_NUREC_integration.md)
