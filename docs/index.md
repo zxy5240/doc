@@ -156,8 +156,9 @@ title: 主页
 
 [__Cesium 插件__](adv_cesium.md) — 将 3D 地理空间生态系统引入虚幻引擎
 
-[__文件说明__](file_specification.md) — 说明源代码中各个模块、文件的作用
+[__将 NVIDIA 神经重建与 HUTB 结合使用__](nvidia-nurec.md) -- 支持无缝提取真实世界数据并将其转换为适合训练和测试物理 AI 代理（包括机器人和自动驾驶系统）的模拟环境
 
+[__文件说明__](file_specification.md) — 说明源代码中各个模块、文件的作用
 
 
 ### 开发 <span id="development"></span>
