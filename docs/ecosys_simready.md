@@ -63,3 +63,7 @@ NVIDIA 的 [__SimReady__](https://developer.nvidia.com/omniverse/simready-assets
 9. 您应该会看到车辆显示在引擎中您在 *Import destination* 字段中指定的文件夹中
 10. 打开另一个地图场景（它可能已打开包含导入数据的新场景），应出现*Save Content* 提示。取消选中 *Untitled* 场景，然后单击 *Save selected* 以保存新内容
 11. 该车辆现已可在 Carla  内使用，并将通过 Python API 提供
+
+## 其他
+
+* [NVIDIA Unreal Engine SimReady OpenUSD 和 MDL 转换器插件](ue/SimReady_plugins.md)
