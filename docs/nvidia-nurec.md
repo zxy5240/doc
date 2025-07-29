@@ -117,4 +117,6 @@ python example_save_images.py --usdz-filename /path/to/scenario.usdz --output-di
 
 ## 其他
 
-[HUTB - NUREC 集成](ue/HUTB_NUREC_integration.md)
+* [HUTB - NUREC 集成](ue/HUTB_NUREC_integration.md)
+* [NUREC 集成工具](ue/tools.md)
+* [NVIDIA 神经重建引擎 gRPC 协议缓冲区](ue/grpc_proto.md)
