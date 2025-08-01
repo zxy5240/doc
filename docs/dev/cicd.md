@@ -225,9 +225,38 @@ docker load -i <tar文件名>.tar
 其中的`Test e-mail recipient`为接收方邮箱地址（QQ邮箱为发送方）。[open3d_lidar.py](../../../carla/PythonAPI/examples/open3d_lidar.py)
 
 
+##### 修改Jenkins主目录
+
+修改配置文件`C:\ProgramData\Jenkins\.jenkins\config.xml`中的
+```xml
+<workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}</workspaceDir>
+```
+然后重启。
+
+
 ## Github Action 配置
 
 UE4 发布工作流程需要手动触发，并且必须按照命名约定`ue4/x.y.z`在分支上执行。
+
+## FAQ
+
+###### make 等系统命令无法识别
+报错信息：
+```text
+'make' is not recognized as an internal or external command,
+operable program or batch file.
+'make' is not recognized as an internal or external command,
+operable program or batch file.
+```
+
+[解决办法](https://blog.csdn.net/sugar_shu/article/details/116301813) ：在 jenkins 上相应 node 的设定中（Dashboard -> Manage Jenkins -> Nodes -> Built-In Nodes，点击设置的齿轮按钮），在`节点属性`下，勾选`Environment variables`，`新增` make 的环境变量：PATH
+
+```shell
+%PATH%;C:\software\GnuWin32\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\software\anaconda3\condabin;C:\Users\Administrator\AppData\Roaming\npm;C:\software\anaconda3\envs\carla_dev;C:\jenkins\software\Git\bin
+```
+
+!!! 注意
+    除了 make 相关的要添加进去，其他的 PATH 均需要复制，不然使用jenkins调用其他命令可能出错，且需要把其他环境变量中的%SYSTEMROOT%替换为C:\Windows。已有的 PATH 路径通过`echo %PATH%`来进行查看（后缀`%PATH%`？）。
 
 ## 参考
 
