@@ -296,6 +296,59 @@ ERROR: Could not install packages due to an OSError: [Errno 2] No such file or d
 
 ###### 升级到vs2022后，编译boost-1.80.0报错：[-[install_boost]: [B2 ERROR] An error ocurred while installing using "b2.exe".](https://github.com/boostorg/boost/issues/914#issuecomment-2327689539)
 
+[解决办法](https://zhuanlan.zhihu.com/p/666616256) ：
+
+执行`b2 install address-model=64 architecture=x86`后删除源代码目录`Build/boost-1.84.0-source`，然后再执行编译就成功（原因不明）。
+但是jenkins执行时报错：
+```text
+The input line is too long.
+The syntax of the command is incorrect.
+```
+可能因为节点配置的环境路径中递归包含了PATH路径，导致递归输出信息过多，
+```shell
+http://127.0.0.1:8080/manage/computer/(built-in)/configure
+# 键
+PATH
+# 值
+%PATH%;C:\software\GnuWin32\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\software\anaconda3\condabin;C:\Users\Administrator\AppData\Roaming\npm;C:\software\anaconda3\envs\carla_dev;C:\jenkins\software\Git\bin
+```
+移除`%PATH%;`即可解决。
+
+
+
+1.[删除build，然后将carla文件夹移动到更靠近根目录的位置](https://link.zhihu.com/?target=https%3A//github.com/carla-simulator/carla/discussions/4534)
+
+2.在`Build/boost-1.84.0-source/libs/context/build/Jamfile.v2`里增加以下内容，但并没有修改编译脚本：
+```shell
+alias asm_sources
+   : asm/make_arm_aapcs_elf_gas.S
+     asm/jump_arm_aapcs_elf_gas.S
+     asm/ontop_arm_aapcs_elf_gas.S
+   : <abi>sysv
+     <address-model>32
+     <architecture>arm
+     <binary-format>elf
+     <toolset>gcc
+   ;
+ 
+alias asm_sources
+   : asm/make_arm64_aapcs_elf_gas.S
+     asm/jump_arm64_aapcs_elf_gas.S
+     asm/ontop_arm64_aapcs_elf_gas.S
+   : <abi>sysv
+     <address-model>64
+     <architecture>arm
+     <binary-format>elf
+     <toolset>gcc
+   ;
+```
+
+3.编译命令增加两个选项`address-model=64 architecture=x86`
+```shell
+b2 install address-model=64 architecture=x86
+```
+
+升级boost分析：
 > 将 boost 版本从 1.80.0 升级到 1.86.0 可以解决（可以生成lib中的文件）
 > 
 > 分析过程：
@@ -325,7 +378,7 @@ b2 -j24 headers --layout=versioned     --build-dir=.\build    --with-system     
 
 `--layout=<layout>`：确定是否选择库名称和头文件位置，以便在同一系统上可以使用多个版本的 Boost 或多个编译器。
 
-    versioned: Boost 二进制文件的名称包含 Boost 版本号、编译器的名称和版本以及编码的构建属性。Boost 头文件安装在 <HDRDIR> 的子目录中，该子目录的名称包含 Boost 版本号。
+    versioned: Boost 二进制文件的名称（libboost_filesystem-vc142-mt-x64-1_80.lib）包含 编译器的名称和版本（vc142）、编码的构建属性（mt：多线程）、Boost 版本号（1_80）。Boost 头文件安装在 <HDRDIR> 的子目录中，该子目录的名称包含 Boost 版本号。
 
     tagged: Boost 二进制文件的名称包含编码的构建属性，例如变体和线程模型，但不包含编译器名称和版本，也不包含 Boost 版本。如果您使用相同的编译器构建多个 Boost 变体，此选项很有用。
 
@@ -333,13 +386,25 @@ b2 -j24 headers --layout=versioned     --build-dir=.\build    --with-system     
 
     在 Windows 系统中，默认值为“versioned”，而在 Unix 系统中则为“system”。
 
+`--with-system`：需要 system 模块（文件系统操作库）：包括：异常处理、错误码、日志等基础功能；
+
+`--with-filesystem`：需要 [filesystem模块](https://blog.csdn.net/mp553074150/article/details/110734336) ，编译时指定--with-filesystem，包括：类摘要、文件状态、文件属性、文件操作、迭代目录
+
+`--with-python`: 仅编译 python。`b2.exe --show-libraries` 查看 Boost 包含的所有库
+
+`--with-data_time`：处理日期、时间、时间间隔以及与时区相关的操作
+
 `address-model=64`：生成 16 位、32 位或 64 位代码。（可选值为 16, 32, 64, 32_64）
 
-`toolset`: 在条件属性中使用此功能，若某些特性取决于工具集则适用。
+`toolset`: 在条件属性中使用此功能，若某些特性取决于工具集则适用。toolset=msvc:指定 Microsoft Visual C++ (MSVC) 作为编译器工具集，b2会自动检测本地可用的msvc构建器
+
+`variant=release`：variant=debug,release 表示同时编译调试和发布版本
+
+`link=shared`：生成动态链接库 (DLL) 版本的 Boost 库文件,static生成静态库文件。(这里才表示生成静态库)
 
 `runtime-link=shared`：链接到单线程或线程安全的运行时库。（shared, static）
 
-`--with-python`: 仅编译 python。`b2.exe --show-libraries` 查看 Boost 包含的所有库
+`threading=multi`: 支持多线程的库文件,single生成单线程版本的库文件
 
 ```
 set PYTHON_ROOT=C:\\Users\\Administrator\\.conda\\envs\\carla_dev\\python.exe
