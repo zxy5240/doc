@@ -258,6 +258,14 @@ operable program or batch file.
 !!! 注意
     除了 make 相关的要添加进去，其他的 PATH 均需要复制，不然使用jenkins调用其他命令可能出错，且需要把其他环境变量中的%SYSTEMROOT%替换为C:\Windows。已有的 PATH 路径通过`echo %PATH%`来进行查看（后缀`%PATH%`？）。
 
+##### 后台的 TGitCache.exe 导致文件不能正常删除
+
+原因：TortoiseGit默认启动了状态缓存
+
+解决：打开TortoiseGit设置>图标缓存部分的"Status Overlays
+In“选择”None“单击OK。
+TGitCache.exe将从进程列表中消失。
+
 ## 参考
 
 * [社区的持续集成地址](http://158.109.8.172:8080)
