@@ -1,9 +1,10 @@
 ## 测试框架
 
-Carla的测试框架目前只支持Ubuntu平台，执行命令`make smoke_tests`进行测试。
+HUTB 的测试框架目前只支持 Ubuntu 平台，执行命令`make smoke_tests`进行测试。
 
 
 ### Windows平台
+
 脚本`src\test>check.bat`用于启动windows平台下的测试，运行的第一个测试用例为：
 ```shell
 python -m nose2 -v smoke.test_client
