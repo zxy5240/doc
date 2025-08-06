@@ -1,125 +1,176 @@
-# Modifying the Vehicle Model
+# 修改车辆模型
 
-You may be interested in adding novel features to the vehicle mesh itself, outside of what we have provided with DReyeVR. In this guide, we'll help you get familiar with some of the tools and basic requirements to do so, along with an example of how we modified the vanilla CARLA Tesla static mesh to have a dynamic steering wheel. 
+您可能有兴趣在 DReyeVR 提供的功能之外，为车辆网格本身添加新功能。在本指南中，我们将帮助您熟悉一些工具和基本要求，以及我们如何修改原始 CARLA Tesla 静态网格以具有动态方向盘的示例。
 
-Note that to continue, we assume you have access to the following software:
-- Unreal Engine Editor
-- Carla (from source)
-- Blender ([Download free](https://www.blender.org/download/))
+请注意，为了继续，我们假设您可以访问以下软件：
 
-## Getting started
-The first place to look would definitely be CARLA's own excellent guide on [adding custom vehicles](https://carla.readthedocs.io/en/latest/tuto_A_add_vehicle/) if you already have one in mind. But it is still a good read to understand the underlying mechanisms at play to achieve a viable CARLA/UE4 vehicle:
-- [Bones](https://docs.unrealengine.com/4.27/en-US/AnimatingObjects/SkeletalMeshAnimation/Persona/VirtualBones/): A bone can be thought of as a rigging entity, allowing for attachments between entities to be rigid and constrained. 
-- [Skeleton](https://docs.unrealengine.com/4.26/en-US/AnimatingObjects/SkeletalMeshAnimation/Skeleton/): A skeleton contains the location and orientation of bones and their hierarchy. 
-- [Physics Mesh](https://docs.unrealengine.com/4.26/en-US/InteractiveExperiences/Physics/PhysicsAssetEditor/): Denotes the bounding boxes around important features of the mesh. Primarily used for collision detection. 
-- [Animation](https://docs.unrealengine.com/4.27/en-US/AnimatingObjects/SkeletalMeshAnimation/AnimBlueprints/): Animation blueprints control the animation of a skeletal mesh typically through some state-machine logic.
-- [Blueprint](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/UserGuide/Types/ClassBlueprint/): Combines all of the above into a highly dynamic and flexible UObject that can serve as our Vehicle agent. 
+- 虚幻引擎编辑器
 
-With all this in mind, you are probably going to be interested in:
-- Blueprints: `$CARLA_ROOT/Unreal/CarlaUE4/Content/Carla/Blueprints/Vehicles/XYZ`
-- Other: `$CARLA_ROOT/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled/XYZ`
+- Carla （从源代码编译）
 
-# Example: Adding a dynamic steering wheel
-Problen: It is quite jarring to drive without a responsive steering wheel, and since the Carla vehicle meshes were not designed for human drivers, there is no need to separate the steering wheel from the overall vehicle shell. This is problematic since the wheel is now a part of the vehicle mesh and cannot be animated during runtime. 
+- Blender ([免费下载](https://www.blender.org/download/))
 
-In our case, we elected to use the TeslaM3 mesh for our base class, so we'll be working with that here too. 
+## 入门
 
-Our plan of action will be:
-1. Extract the steering wheel mesh from the vehicle and create its own static mesh
-2. Update the vehicle mesh to remove the steering wheel 
-3. Re-attach the steering wheel back as a code-based dynamic object
+如果你已经有了一个想法，首先要看的肯定是 CARLA 自己的 [添加定制车辆](../../tuto_A_add_vehicle.md) 优秀指南。但了解实现可行的 CARLA/UE4 车辆的潜在机制仍然是一本好好的读物：
 
-For steps 1 & 2, we will be using the free & open source Blender program for the 3D modeling work:
+- [骨骼](https://docs.unrealengine.com/4.27/en-US/AnimatingObjects/SkeletalMeshAnimation/Persona/VirtualBones/): 骨骼可以被认为是装配实体，允许实体之间的连接是刚性的和受约束的。  
+- [骨架](https://docs.unrealengine.com/4.26/en-US/AnimatingObjects/SkeletalMeshAnimation/Skeleton/): 骨架包含骨骼及其层次的位置和方向。
+- [物理网格](https://docs.unrealengine.com/4.26/en-US/InteractiveExperiences/Physics/PhysicsAssetEditor/): 表示网格重要特征周围的边界框。主要用于碰撞检测。
+- [动画](https://docs.unrealengine.com/4.27/en-US/AnimatingObjects/SkeletalMeshAnimation/AnimBlueprints/): 动画蓝图通常通过某些状态机逻辑控制骨骼网格的动画。
+- [蓝图](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/UserGuide/Types/ClassBlueprint/): 将上述所有内容组合为一个高度动态和灵活的 UObject，可以用作我们的 Vehicle 代理。
 
-## 1. Extract the steering wheel
+考虑到所有这些，您可能会对以下内容感兴趣：
 
-### Exporting to FBX
-First, go to the static mesh file you wish to export, in our case we wanted to export `$CARLA_ROOT/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled/Tesla/SM_TeslaM3_v2.uasset` (notice these files should have a pink underline to indicate they are the full static mesh files). 
+- 蓝图: `$CARLA_ROOT/Unreal/CarlaUE4/Content/Carla/Blueprints/Vehicles/XYZ`
 
-### One LOD
-I recommend using the highest LOD ([Level-Of-Detail](../../LODS.md)) setting for this export, since this vehicle will be so close to the camera all the time it is pointless to have multiple LOD's, and it makes it simpler for the import to blender. 
+- 其他: `$CARLA_ROOT/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled/XYZ`
 
-To do this, simply enter the static mesh by double clicking it, and on the left "Asset Details" pane, down in "LOD Settings" drag the "Number of LODs" slider down to 1, then click "Apply Changes" as follows. 
+
+# 示例：添加动力学方向盘
+
+!!! 问题
+    在没有响应式方向盘的情况下驾驶相当不舒服，并且由于 Carla 车辆网格不是为人类驾驶员设计的，因此没有必要将方向盘与整个车辆外壳分离。这是一个问题，因为车轮现在是车辆网格的一部分，并且不能在运行时设置动画。
+
+在我们的例子中，我们选择将 TeslaM3 网格用于基类，因此我们也将在这里使用它。
+
+我们的行动计划将是：
+
+1. 从车辆中提取方向盘网格，并创建自己的静态网格
+2. 更新车辆网格以拆下方向盘 
+3. 将方向盘重新连接为基于代码的动力学对象
+
+对于步骤 1 和 2，我们将使用免费开源 Blender 软件进行 3D 建模工作：
+
+## 1. 提取方向盘
+
+### 导出到 FBX
+
+首先，转到要导出的静态网格文件，在我们的示例中，我们希望导出`$CARLA_ROOT/Unreal/CarlaUE4/Content/CARLA/static/Vehicles/4Wheeled/Tsla/SM_TeslaM3_v2.uasset`（请注意，这些文件应该有粉红色下划线，表示它们是完整的静态网格文件）。
+
+### 一个 细节层次（Level-Of-Detail, LOD）
+
+建议对此导出使用最高的 [LOD](LODs.md) 设置，因为此车辆将始终靠近相机，因此具有多个 LOD 是毫无意义的，并且它使导入到 Blender 变得更简单。
+
+
+为此，只需双击静态网格，然后在左侧的“资产详细信息(Asset Details)”窗格中，在“LOD 设置(LOD Settings)”中将“LOD数量(Number of LODs)”滑块向下拖动到1，然后单击“应用更改(Apply Changes)”，如下所示。
+
 - ![LODs](../Figures/Model/LOD1.jpg)
 
-### Export to blender
-Now, back in the `Content Browser` you can right click the file then select `Asset Actions -> Export` and designate a place for the resulting `.FBX` file to be exported. 
+### 导出到 blender
+
+现在，回到 `内容浏览器(Content Browser)`中，您可以右键单击文件，然后选择 `Asset Actions(资产操作) -> Export(导出)`，并为结果要导出的`.FBX`文件指定一个位置。
+
 - ![Export](../Figures/Model/Export.jpg)
 
-### Model in Blender
-Now, open a fresh Blender window and delete the default spawned cube. Then go to `File -> Import -> FBX (.fbx)` and select the file you just created. 
+### 在 Blender 中建模
 
-You should now be presented with a simple Blender window with the vehicle like this:
+现在，打开一个新的 Blender 窗口并删除默认生成的立方体。然后转到 `File(文件) -> Import(导入) -> FBX (.fbx)`并选择刚刚创建的文件。
+
+
+现在，您应该看到一个简单的 Blender 窗口，其中包含车辆，如下所示：
+
 - ![BlenderSolid](../Figures/Model/BlenderSolid.jpg)
 
-In order to toggle moving around using `WASD` controls, press `shift + ` `. Move inside the vehicle where you can find the steering wheel. 
+要使用 `WASD` 控件切换移动，请按 `shift + ` ` 。向车内移动可以找到方向盘的位置。
 
-The easiest way (I've found) to efficiently extract the steering wheel it so use the wireframe-mode to select all vertices, even those that aren't visible in the solid render. To go to wireframe mode press `z` then select `wireframe` (should be the left-most option). Then you should see something like this:
+最简单的方法（我发现）有效地提取方向盘，因此使用线框模式选择所有顶点，即使是那些在实体渲染中不可见的顶点。要进入线框模式，请按`z`，然后选择`wireframe(线框)`（应该是最左边的选项）。然后你应该看到这样的内容：
+
 - ![WireframeWheel](../Figures/Model/WireframeWheel.jpg)
 
-Then, to actually select the proper vertices, we're going to need to change from `Object Mode` to `Edit Mode` in the top left corner of the viewport. Then we'll need to position our camera in such a way to minimize unwanted vertices being selected, and use whatever selection technique we want (I like the lasso selection) to select the entire steering wheel like this:
-- ![SelectedWheel](../Figures/Model/SelectedWheel.jpg)
-NOTE: if you have excess vertices selected, you can always undo those with `shift+click` on individual vertices.
+然后，要实际选择正确的顶点，我们需要在视口左上角从 `Object Mode(对象模式)` 更改为 `编辑模式(Edit Mode)` 。然后，我们需要以这样的方式定位我们的相机，以尽量减少被选择不需要的顶点，并使用我们想要的任何选择技术（我喜欢套索(lasso)选择）来选择整个方向盘，如下所示：
 
-Then, you should be able to move the entire bunch out of the vehicle (or duplicate them all with `shift+d` and clean up the original) to have something like this:
-| Wireframe | Rendered |
-| --- | --- |
+- ![SelectedWheel](../Figures/Model/SelectedWheel.jpg)
+
+!!! 注意
+    如果您选择了多余的顶点，则始终可以通过在单个顶点上`shift+click`来撤消这些顶点。
+
+然后，您应该能够将整束移出车辆（或使用`shift+d`将它们全部复制并清理原始内容）以获得如下内容：
+
+| 线框(Wireframe)                                       | 已渲染(Rendered)                                     |
+|-----------------------------------------------------|---------------------------------------------------|
 | ![WireFrameGotWheel](../Figures/Model/WheelOut.jpg) | ![SolidOut](../Figures/Model/VehicleAndWheel.jpg) | 
 
-Finally, you should then be able to export the individual selections (need to export both the just-wheel and the just-vehicle models) by selecting all the vertices the same way (in wireframe) and deleting them (then undo-ing the deletion of course). Then selecting `File -> Export -> FBX(.fbx)` for best compatibility. Do this for both the Vehicle mesh as well as the steering wheel (I moved the steering wheel to the origin when exporting but I'm not sure this is necessary). 
 
-## 2. Update the vehicle mesh
+最后，您应该能够通过以相同的方式（在线框中）选择所有顶点并删除它们（当然，然后撤消删除）来导出单个选择（需要同时导出 just-wheel 和 just-vehicle 模型）。然后选择 `文件(File) -> 导出(Export) -> FBX(.fbx)` 以获得最佳兼容性。对车辆网格体和方向盘都执行此作（我在导出时将方向盘移动到原点，但我不确定这是否必要）。
 
-### Back in the Editor
-Now, back in the editor, we'll create a new directory for both the Vehicle mesh as well as the steering wheel. Most of the content from this section is a modified version of the [Carla-provided documentation](https://carla.readthedocs.io/en/latest/tuto_A_add_vehicle/).
 
-Then, in the new `Mesh` directory, we can simply right-click in the content browser and select `Import Asset` then select our FBX model. Make sure to set **Import Content Type** to `Geometry and Skinning Weights`, **Normal Import Method** to `Import Normals`, and **Material Import Method** to `Do not create materials`,  and finally uncheck **Import Textures**.
+## 2. 更新车辆网格
 
-We should now have a (pink underlined) Skeletal mesh asset, (beige underlined) physics asset, and (baby blue underlined) skeleton asset. Then, right click on the new (pink underlined) skeletal mesh asset and select `Create -> Anim Blueprint` to create a new animation blueprint. 
+### 返回编辑器
 
-In this animation blueprint, ensure the following:
-- Go to `Class settings -> Details -> Class Options -> Parent Class` and reparent the class to a `VehicleAnimInstance`. 
-- In the `My Blueprint` section, click on `AnimGraph` and copy over the same graph logic from the existing `TeslaM3` animation to look like this:
+现在，回到编辑器中，我们将为 Vehicle 网格体和方向盘创建一个新目录。本节的大部分内容是 [Carla 提供的文档](../../tuto_A_add_vehicle.md) 的修改版本。
 
-| Reparent | Animation | 
-| --- | --- | 
+
+然后，在新的`Mesh`目录中，我们只需在内容浏览器中右键点击并选择 `导入资产(Import Asset)`，然后选择我们的 FBX 模型。确保将 **导入内容类型(Import Content Type)** 设置为 `几何体和蒙皮权重(Geometry and Skinning Weights)`，将 **法线导入方法(Normal Import Method)** 设置为 `导入法线(Import Normals)`，将 **材质导入方法(Material Import Method)**  设置为 `不创建材质(Do not create materials)`，最后取消勾选 **导入纹理(Import Textures)**。
+
+
+我们现在应该有一个（粉红色下划线的）骨架网格体资源、（米色下划线的）物理资源和（淡蓝色下划线的）骨架资源。然后，右键点击新的（粉红色下划线）骨架网格体资源，然后选择 `Create -> Anim Blueprint` 以创建新的动画蓝图。
+
+
+在此动画蓝图中，请确保以下内容：
+
+- 转到 `类设置(Class settings) -> 详细信息(Details) -> 类选项(Class Options) -> 父类(Parent Class)`，并将类的父级重新设置为`VehicleAnimInstance`。
+
+- 在`我的蓝图(My Blueprint)`部分中，单击 `AnimGraph` ，然后从现有的 `TeslaM3` 动画中复制相同的图表逻辑，如下所示：
+
+| 重定父对象(Reparent)                                   | 动画                                | 
+|---------------------------------------------------|----------------------------------------------| 
 | ![Reparent](../Figures/Model/AnimClassOption.jpg) | ![AnimGraph](../Figures/Model/AnimGraph.jpg) | 
 
-Now you are done with the animation blueprint.
+现在你已经完成了动画蓝图。
 
-In my experience I had to do some additional tweaking to use the right components for my overall mesh (pink underlined) as follows:
-- `Asset Details -> Physics Asset`: Replace new with the existing `$CARLA_ROOT/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled/Tesla/SM_TeslaM3_PhysicsAsset.uasset` physics asset (NOT the `_v2_` model!)
-- `Asset Details -> Lighting`: Same as the Physics Asset
-- `Preview Scene Settings -> Animation Blueprint`: The new animation blueprint you just created. 
+根据我的经验，我必须进行一些额外的调整，才能为我的整体网格使用正确的组件（粉红色下划线），如下所示：
 
-Then finally, you can delete the newly imported PhysicsAsset file since it is no longer being used (I opted to use the vanilla TeslaM3 one instead)
+- `Asset Details -> Physics Asset`: 使用已存在的`$CARLA_ROOT/Unreal/CarlaUE4/Content/Carla/Static/Vehicles/4Wheeled/Tesla/SM_TeslaM3_PhysicsAsset.uasset` 物理资产（不是`_v2_`模型！）替换新的
 
-And in `BP_EgoVehicle_DReyeVR`, you can finally edit the `Mesh (Inherited) -> Details -> Mesh` field to use the new SM we just updated (pink underline). Since this clears the `Animation` section, you'll also need to update the `Mesh (Inherited) -> Animation -> Anim Class` field to use the new animation class we just made. 
+- `Asset Details -> Lighting`: 与物理资产相同
 
-Now the DReyeVR EgoVehicle should be fully drivable and operates just as it did before, but now with no steering wheel in the driver's seat!
+- `Preview Scene Settings -> Animation Blueprint`: 你刚刚创建的新动画蓝图。
+
+
+最后，您可以删除新导入的 PhysicsAsset 文件，因为它不再被使用（我选择使用普通的 TeslaM3 文件）
+
+
+在`BP_EgoVehicle_DReyeVR`中，您终于可以编辑`Mesh (Inherited) -> Details -> Mesh`字段，以使用我们刚刚更新的新 SM（粉红色下划线）。由于这会清除 `动画(Animation)`部分，因此您还需要更新`Mesh (Inherited) -> Animation -> Anim Class`字段以使用我们刚刚创建的新动画类。
+
+
+现在，DReyeVR EgoVehicle 应该可以完全驾驶，并且像以前一样运行，但现在驾驶座上没有方向盘了！
+
 ![NoWheel](../Figures/Model/NoWheel.jpg)
 
-## 3. Re-attach the steering wheel dynamically
-### Import to UE4
-Now we want to import the steering wheel back into the engine so we can dynamically spawn, place, and update it at runtime. 
+## 3. 重新安装动力学方向盘
+### 导入到 UE4
 
-The easiest way to do this is through importing the SteeringWheel `.fbx` just like with the Vehicle mesh, from there it should have all the original textures pre-applied and be slightly angled. 
+现在，我们想将方向盘导入回引擎，以便在运行时动态生成、放置和更新它。
 
-To get rotations of the wheel to be in the Roll axis of the wheel itself (not its attachment), I recommend slightly tilting the static mesh wheel so that it is mostly vertical and select `Make Static Mesh`. 
 
-This will allow you to create a plain simple static mesh (cyan underline) from the skeletal mesh (pink underline) as follows:
-| Rotated Skeletal Mesh | Resulting Directory | 
-| --- | --- |
+最简单的方法是导入 SteeringWheel `.fbx`，就像使用车辆网格体一样，从那里它应该预先应用了所有原始纹理，并且略微倾斜。
+
+
+要使滚轮的旋转位于滚轮本身（而不是其附件）的滚动轴上，我建议稍微倾斜静态网格体滚轮，使其大部分垂直，然后选择 `制作静态网格体(Make Static Mesh)`。
+
+
+这将允许你从骨架网格体（粉红色下划线）创建一个普通的简单静态网格体（青色下划线），如下所示：
+
+| 旋转的骨架网格体              | 生成目录 | 
+|--------------------------------------------| --- |
 | ![RotWheel](../Figures/Model/WheelRot.jpg) | ![SelectedWheel](../Figures/Model/SelectSMWheel.jpg) |
 
-### Import in code
-Now that we have a reasonable steering wheel model as a simple static mesh, it is easy to spawn it and attach it to the ego-vehicle (currently without a steering wheel) in code. Managing it in code is nice because it will allow us to `SetRelativeRotation` of the mesh dynamically on every tick, allowing it to be responsive to our inputs at runtime. 
+### 在代码中导入(Import in code)
 
-The first step to Spawn the steering wheel in code is to find its mesh in the editor. Right click on the static mesh (cyan underline) and select `Copy Reference`. For me it looks like this:
+现在我们有一个合理的方向盘模型作为简单的静态网格体，很容易在代码中生成它并将其附加到自主车辆（目前没有方向盘）。在代码中管理它很好，因为它允许我们在每次更新时动态地`SetRelativeRotation`网格，从而允许它在运行时响应我们的输入。
+
+
+在代码中生成方向盘的第一步是在编辑器中找到其网格体。右键点击静态网格体（青色下划线），然后选择`复制引用(Copy Reference)`。对我来说，它看起来像这样：
+
 - `"StaticMesh'/Game/DReyeVR/EgoVehicle/TeslaM3/SteeringWheel/Wheel_StaticMeshl_model3.Wheel_StaticMeshl_model3'"`
 
-(Note that we won't be needing any of the other steering wheel assets anymore, feel free to delete them)
+!!! 注意
+    我们将不再需要任何其他方向盘资产，请随意删除它们。
 
-The general strategy for adding Unreal components in code is to spawn them in the constructor then use their reference alongside their C++ API. For our case we'll only need a constructor and a tick method (See [EgoVehicle::ConstructSteeringWheel & EgoVehicle::TickSteeringWheel](../../DReyeVR/EgoVehicle.cpp))
 
-Now enjoy a responsive steering wheel asset attached to the EgoVehicle as you drive around!
+在代码中添加虚幻组件的一般策略是在构造函数中生成它们，然后将它们的引用与它们的 C++ API 一起使用。对于我们的例子，我们只需要一个构造函数和一个 tick 方法（参见 [EgoVehicle::ConstructSteeringWheel & EgoVehicle::TickSteeringWheel](https://github.com/OpenHUTB/hutb/blob/hutb/Unreal/CarlaUE4/Source/CarlaUE4/DReyeVR/EgoVehicle.cpp) ）。
+
+
+现在，当您四处行驶时，享受连接到 EgoVehicle 的响应灵敏方向盘资产！
