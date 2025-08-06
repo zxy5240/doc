@@ -17,6 +17,7 @@ ROS桥具有以下特点：
 
 - [__为ROS 1安装ROS桥__](ros_installation_ros1.md)
 - [__为ROS 2安装ROS桥__](ros_installation_ros2.md)
+- [__ROS2 的示例__](ros/ros2_example.md)
 
 ---
 
