@@ -425,26 +425,51 @@ Carla 内容库拥有一套全面的植被蓝图，供您为地图的越野区�
 
 ### 将地图导出为单独的包
 
+要将自定义映射导出为独立的内容包，我们使用`make package`命令。通过虚幻内容浏览器确定自定义地图在CARLA内容目录中的位置。我们建议使用`Content > CARLA > maps`目录中的现有 CARLA 地图在中创建自定义地图。在本例中，我们将地图存储在其自己的文件夹*MyMap*中。
+
+![mymap_to_export](img/tuto_content_authoring_maps/mymap_export.png)
+
+请记住，地图需要一个关联的 OpenDRIVE 文件，该文件存储在与地图资源（`.umap`文件）相同级别的名为`OpenDRIVE`的目录中。OpenDRIVE 文件应与地图本身具有相同的名称，扩展名为`.xodr`。在本例中，我将地图命名为 *MyMap*（文件在文件浏览器中显示为`MyMap.umap`），因此我的OpenDRIVE文件名为`MyMap.xodr`。
+
+![mymap_xodr](img/tuto_content_authoring_maps/mymap_xodr.png)
+
+现在，我们需要为导出过程创建一个包配置 JSON 文件。在文件浏览器（不是虚幻内容浏览器）中，导航到 `CARLA_ROOT/Unreal/CarlaUE4/content/CARLA/Config` 。在该目录中，您将看到许多 JSON 配置文件。使用与地图对应的名称和后缀`.Package.json`。在这种情况下，我们将文件命名为`exportMyMap.Package.json`。
+
+![export_mymap_config](img/tuto_content_authoring_maps/export_mymap_config.png)
+
+JSON 文件应具有以下结构：
+
 ```json
 {
-  "props": [],
-  "maps": [
-    {
-        "name": "YourMapName",
-        "path": "YourMapPath/InsideCarlaContent",
-        "use_carla_materials": true
-      }
-  ],
+    "props": [],
+    "maps": [
+        {
+            "name": "MyMap",
+            "path": "/Game/Carla/Maps/MyMap",
+            "use_carla_materials": true
+        }
+    ]
 }
 ```
 
-记住这个文件的名称（本例中为`mapToPackage.Package.json`）很重要，因为它将用作 `make package` 命令的参数。该命令如下所示：
-```sh
-make package ARGS="--packages=mapToPackage"
-```
-此命令将根据 `mapToPackage.Package.json` 文件中定义的信息创建一个包，其中仅包含指定的内容。
+`name`参数应与地图资源文件的名称相同（没有`.umap`后缀）。确保`path`参数指向地图资源（`.umap`文件）的正确目录位置。路径`CARLA_ROOT/Unreal/CarlaUE4/Content/`的第一部分应替换为`/Game/`。
 
-这些文件将保存在 Linux 上的 `Dist` 文件夹中，以及 Windows 上的 `Build/UE4Carla/` 文件夹中。
+现在，我们从`CARLA_ROOT`目录中的终端调用`make package`命令，参数如下：
+
+```sh
+make package ARGS="--packages=exportMyMap"
+```
+参数`--packages`的值应与 没有`.Package.json`后缀的 JSON配置文件的名称匹配。打包可能需要一些时间来构建，具体取决于地图的大小。
+
+导出过程完成后，导出的地图包将另存为压缩存档：
+
+* **Linux**: `.tar.gz` 存档在 `CARLA_ROOT/Dist` 目录中
+* **Windows**: `.zip` 存档在 `CARLA_ROOT/Build/UE4Carla` 目录中
+
+必须使用目标操作系统生成地图包。即，在 Linux 中构建的映射包不能导入到 Windows 的 CARLA 包中。
+
+
+要将打包的地图导入到 CARLA 的打包版本中，请将`.tar.gz`或`.zip`存档放在提取的 CARLA 包的`CARLA_ROOT/import`目录中，然后运行`ImportAssets.bin/.sh`脚本。完成后，启动 CARLA，您将在可用地图列表中找到新的自定义地图。
 
 
 ### 将地图导出为完整 CARLA 包的一部分
@@ -452,7 +477,7 @@ make package ARGS="--packages=mapToPackage"
 要将地图作为完整 CARLA 包的一部分导出，以便在启动包时可以使用该地图，请在 `CARLA_ROOT/Unreal/CarlaUE4/Config/` 中的 `DefaultGame.ini` 文件中包含以下行：
 
 ```
-+MapsToCook=(FilePath="/Game/Carla/Maps/MyMap")
++MapsToCook=(FilePath="/Game/Carla/Maps/MyMap/MyMap")
 ```
 
 这行代码应添加到 `[/Script/UnrealEd.ProjectPackagingSettings]` 部分，最好位于其他 `MapsToCook(...)` 条目旁边。然后运行 `make package` 命令构建包含地图的包。导出的包含地图的 CARLA 包将保存在 Linux 系统的 `Dist` 文件夹中，以及 Windows 系统的 `Build/UE4Carla/` 文件夹中。
