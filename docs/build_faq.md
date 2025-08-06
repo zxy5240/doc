@@ -234,6 +234,10 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 <!-- ======================================================================= -->
 
 
+###### 执行 xcopy 报 /S 无法识别
+
+解决：原目录和目的目的不能包含 `/` ，需要用`\`替换。
+
 ###### BuildCarlaUE4.bat 在jenkins的日志中中文乱码
 日志乱码开始出现的地方：
 ```text
