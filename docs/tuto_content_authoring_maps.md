@@ -193,17 +193,17 @@ Carla 内容库拥有大量有用的材料，可随时用于更改地图的外�
 ![map_materials](img/tuto_content_authoring_maps/map_materials.gif)
 
 
-# 道路画家 <span id="road-painter"></span>
+## 道路画家 <span id="road-painter"></span>
 
 道路画家是一种可用于自定义道路外观的工具，通过附加纹理、贴花和网格添加额外的真实感。
 
-## 什么是道路画家？ <span id="what-is-the-road-painter"></span>
+### 什么是道路画家？ <span id="what-is-the-road-painter"></span>
 
 道路画家工具是一个使用 OpenDRIVE 信息快速绘制道路的蓝图。它采用主材质并将其应用到道路的渲染目标以用作画布。主材质由一系列材质组成，这些材质可以使用画笔混合并用作蒙版。无需应用光度测定技术，也无需考虑几何体的 UV。
 
 道路画家使用 OpenDRIVE 信息来油漆道路。确保您的`.xodr`文件与地图同名，这样才能正常工作。
 
-## 建立道路画家、掌握材质和渲染对象 <span id="establish-the-road-painter-master-material-and-render-target"></span>
+### 建立道路画家、掌握材质和渲染对象 <span id="establish-the-road-painter-master-material-and-render-target"></span>
 
 __1. 创建 `RoadPainter` 参与者。__
 
@@ -247,7 +247,7 @@ __6. 创建道路画家和主材质之间的通信链接。__
 
 ---
 
-## 准备主材质 <span id="prepare-the-master-material"></span>
+### 准备主材质 <span id="prepare-the-master-material"></span>
 
 您创建的`Tutorial_RoadMaster`材质包含基础材质、额外材质信息以及将通过您的`Tutorial_RenderTarget`。您可以配置一种基础材质和最多三种附加材质。
 
@@ -273,7 +273,7 @@ __6. 创建道路画家和主材质之间的通信链接。__
 
 ---
 
-## 描绘道路 <span id="paint-the-road"></span>
+### 描绘道路 <span id="paint-the-road"></span>
 
 __1. 在道路画家和道路之间创建链接。__
 
