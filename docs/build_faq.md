@@ -299,7 +299,7 @@ ERROR: Could not install packages due to an OSError: [Errno 2] No such file or d
 [解决办法](https://zhuanlan.zhihu.com/p/666616256) ：
 
 执行`b2 install address-model=64 architecture=x86`后删除源代码目录`Build/boost-1.84.0-source`，然后再执行编译就成功（原因不明）。
-但是jenkins执行时报错：
+但是jenkins执行时报错信息包含：
 ```text
 The input line is too long.
 The syntax of the command is incorrect.
@@ -314,6 +314,7 @@ PATH
 ```
 移除`%PATH%;`即可解决。
 
+第二次执行b2.exe失败，可能是第一步`Build/boost-1.84.0-source`因TortoiseGit删除失败。
 
 
 1.[删除build，然后将carla文件夹移动到更靠近根目录的位置](https://link.zhihu.com/?target=https%3A//github.com/carla-simulator/carla/discussions/4534)

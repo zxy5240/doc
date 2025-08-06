@@ -104,7 +104,7 @@ __Linux.__
 ./Update.sh
 ```
 
-__Windows.__  
+__Windows.__
 
 __1.__ 删除 `Unreal\CarlaUE4\Content\Carla` 中之前的内容。  
 __2.__ 转至 `\Util\ContentVersions.txt`。  
@@ -131,6 +131,13 @@ Carla 团队使用仍在开发中的资产。这些模型和地图有一个 [公
 
 要克隆存储库，请 __转到主 Carla 目录__ 并运行以下命令。
 
+```shell
+git clone http://172.20.46.154:8090/traffic/Content.git
+cd Content
+git lfs pull  # 拉取大文件资产
+```
+
+原始 Carla 资产的获取方法：
 ```sh
 git clone https://bitbucket.org/carla-simulator/carla-content Unreal/CarlaUE4/Content/Carla
 ```
