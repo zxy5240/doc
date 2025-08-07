@@ -234,6 +234,10 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 <!-- ======================================================================= -->
 
 
+###### pip install *.whl文件找不到
+
+即使在windows平台下，*.whl文件目录中的分割符需要都是`/`。
+
 ###### 执行 xcopy 报 /S 无法识别
 
 解决：原目录和目的目的不能包含 `/` ，需要用`\`替换。

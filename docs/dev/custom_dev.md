@@ -98,6 +98,9 @@ git push hutb
 
 ## 其他
 
+##### [修改commit的记录](https://blog.csdn.net/zi__li/article/details/106604872)
+如果要只是要修改上一次commit的信息，如果是用TortoiseGit，在Commit界面选择Amend Last Commit即可修改。
+
 ##### 使用旧仓库存放新的提交记录
 > 1.删除所有文件
 > 
