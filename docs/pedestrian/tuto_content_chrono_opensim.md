@@ -76,3 +76,9 @@ for i in range(200):
 
 - [运动生物学（官方）课程](https://biomech.stanford.edu/) - [B站视频](https://www.bilibili.com/video/BV1zx7QzMEPD/?vd_source=98260b8dbf6f69741edcee62e52758ab)
 
+### 其他
+
+[AnyBody](http://github.com/AnyBody) 进行人体的有限元仿真。
+
+[Jack 做人机仿真](https://mp.weixin.qq.com/s?src=11&timestamp=1754635363&ver=6161&signature=sW7s-fAgOcIHGLsldFr0I*2DB1Oq3ve2Xk2h9L2Le9AzV518wSwIjxaIwn0OByJ--Vv-X6KUOlRpTzMm3cxg4W-ilBiwWJGJmQsiSe392DGCUxVZ03xNtlIeeQIF0e3k&new=1) 。
+

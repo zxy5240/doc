@@ -192,11 +192,13 @@ git reset --hard origin/hutb
 
 
 ## 参考链接
-* [UE4初学者系列教程合集-全中文新手入门教程](https://www.bilibili.com/video/BV164411Y732/?share_source=copy_web&vd_source=d956d8d73965ffb619958f94872d7c57  )
+* [UE4初学者系列教程合集-全中文新手入门教程](https://www.bilibili.com/video/BV164411Y732/?share_source=copy_web&vd_source=d956d8d73965ffb619958f94872d7c57)
 
 * [ue4官方文档](https://docs.unrealengine.com/4.26/zh-CN/)
 
 * [官方讨论社区](https://forums.unrealengine.com/categories?tag=unreal-engine)
 
 * [知乎的虚幻引擎社区](https://zhuanlan.zhihu.com/egc-community)
+
+* [虚幻引擎开放路线图](https://portal.productboard.com/epicgames/1-unreal-engine-public-roadmap/tabs/24-unreal-engine-4-27)
 
