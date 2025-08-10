@@ -9,7 +9,7 @@
 # Carla虚幻场景中交通信号灯（TrafficLight）技术说明
 
 ## 1. 概述
-在Carla自动驾驶仿真平台中，交通信号灯（TrafficLight）是模拟交通环境中控制车辆和行人动态行为的关键元素。它们模仿现实中的交通信号装置，通过红绿灯的变化调节交通流，确保模拟场景的真实性和可靠性。本文介绍Carla中交通信号灯的基本功能、管理方式、操作接口以及其在模拟中的应用场景。
+在 HUTB 自动驾驶仿真平台中，交通信号灯（TrafficLight）是模拟交通环境中控制车辆和行人动态行为的关键元素。它们模仿现实中的交通信号装置，通过红绿灯的变化调节交通流，确保模拟场景的真实性和可靠性。本文介绍 HUTB中交通信号灯的基本功能、管理方式、操作接口以及其在模拟中的应用场景。
 
 ---
 
@@ -53,7 +53,7 @@ traffic_lights = world.get_actors().filter('traffic.traffic_light')
 ```
 
 ### 4.2 改变信号灯状态
-可以通过API设置单个或多个信号灯的状态：
+可以通过 API 设置单个或多个信号灯的状态：
 ```python
 # 设置第一个信号灯为绿色
 traffic_lights[0].set_state(carla.TrafficLightState.Green)
@@ -61,7 +61,7 @@ traffic_lights[0].set_state(carla.TrafficLightState.Green)
 
 ### 4.3 定时控制与自动切换
 - 利用时间参数或仿真流程，设定自动切换逻辑。
-- 也可结合交通管理器TrafficManager实现智能调度。
+- 也可结合交通管理器 TrafficManager 实现智能调度。
 
 ```python
 # 例：连续切换某个信号灯状态
