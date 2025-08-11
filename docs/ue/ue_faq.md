@@ -170,6 +170,14 @@ LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64
 </Configuration>
 ```
 
+否则还可能 [报错](https://ue5wiki.com/wiki/5cc4f8a/) ：
+```text
+  c1xx: fatal error C1076: 编译器限制: 达到内部堆限制
+  [3/37] DReyeVRGameMode.gen.cpp
+  c1xx: error C3859: 未能创建 PCH 的虚拟内存
+  c1xx: note: 系统返回代码 1455: The paging file is too small for this operation to complete.
+```
+
 ## 源代码管理
 
 ###### [从原来的仓库迁移到OpenHUTB的引擎仓库](https://www.cnblogs.com/gjmhome/p/14061090.html)
