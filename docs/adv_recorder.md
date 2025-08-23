@@ -306,11 +306,11 @@ client.replay_file("col3.log", 34, 0, 173)
 
 
 ---
-现在是试验一段时间的时候了。使用记录器回放模拟、追溯事件、进行更改以查看新结果。在 Carla 论坛上就此事发表意见。
+现在是试验一段时间的时候了。使用记录器回放模拟、追溯事件、进行更改以查看新结果。在 HUTB 论坛上就此事发表意见。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="前往 Carla 论坛">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="前往 HUTB 论坛">
+HUTB 论坛</a>
 </p>
 </div>

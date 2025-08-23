@@ -9,12 +9,12 @@
 	*   [启动服务器](#launch_the_server)  
 *   [__获取开发资产__](#get_development_assets)  
 
-要发布意外问题、疑问或建议，请随时登录 Carla 论坛。
+要发布意外问题、疑问或建议，请随时登录 HUTB 论坛。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="Go to the latest CARLA release">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="Go to the latest HUTB release">
+HUTB 论坛</a>
 </p>
 </div>
 
@@ -22,7 +22,7 @@ Carla 论坛</a>
 ## 更新命令摘要 <span id="update_commands_summary"></span>
 
 <details>
-<summary> 显示更新 Carla 的命令行 </summary>
+<summary> 显示更新 HUTB 的命令行 </summary>
 
 ```sh
 # 更新 Carla 包的发行版。 

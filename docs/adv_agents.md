@@ -189,4 +189,4 @@ class CustomAgent(BasicAgent):
 
 ---
 
-您可以探索提供的代理脚本、扩展它们或将它们用作创建自己的基准。如果您对代理有任何疑问，请随时在 [论坛](https://github.com/carla-simulator/carla/discussions/) 发帖。
+您可以探索提供的代理脚本、扩展它们或将它们用作创建自己的基准。如果您对代理有任何疑问，请随时在 [论坛](https://github.com/OpenHUTB/hutb/discussions) 发帖。

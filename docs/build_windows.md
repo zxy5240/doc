@@ -4,7 +4,7 @@
 
 构建过程很长（4小时或更长时间）并且涉及多种软件。强烈建议在开始之前完整阅读该指南。
 
-如果您遇到错误或困难，请查看**[常见问题解答](build_faq.md)**页面，其中提供了最常见问题的解决方案。或者使用 [Carla 论坛](https://github.com/carla-simulator/carla/discussions) 发布您可能有的任何疑问。
+如果您遇到错误或困难，请查看**[常见问题解答](build_faq.md)**页面，其中提供了最常见问题的解决方案。或者使用 [HUTB 论坛](https://github.com/OpenHUTB/hutb/discussions) 发布您可能有的任何疑问。
 
 - [__第一部分：先决条件__](#part-one-prerequisites)
     - [系统要求](#system-requirements)
@@ -524,15 +524,15 @@ install_proj.bat --build-dir D:\work\DReyeVR\carla\Build
 
 ---
 
-有关本指南的任何问题， 请阅读 **[常见问题解答](build_faq.md)** 页面或在 [Carla 论坛](https://github.com/carla-simulator/carla/discussions) 中发帖。
+有关本指南的任何问题， 请阅读 **[常见问题解答](build_faq.md)** 页面或在 [OpenHUTB 论坛](https://github.com/OpenHUTB/hutb/discussions) 中发帖。
 
-现在您已经构建了 Carla，接下来了解如何更新 Carla 构建或在模拟中迈出第一步，并学习一些核心概念。
+现在您已经构建了 HUTB，接下来了解如何更新 HUTB 构建或在模拟中迈出第一步，并学习一些核心概念。
 
 <div class="build-buttons">
 
 <p>
 <a href="../build_update" target="_blank" class="btn btn-neutral" title="Learn how to update the build">
-更新 Carla</a>
+更新 HUTB</a>
 </p>
 
 <p>

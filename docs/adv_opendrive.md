@@ -72,14 +72,14 @@ python3 config.py -x opendrive/TownBig.xodr
 * __人行道高度__。目前，所有人行道的硬编码都是相同的。人行道必须高于道路标高才能检测到碰撞，但 RoadRunner 不会将此值导出到 OpenDRIVE 文件。高度是硬编码的，以保证碰撞。
 ---
 
-这涵盖了到目前为止关于 OpenDRIVE 独立模式的所有信息。抓住机会并使用任何 OpenDRIVE 地图在 Carla 中进行测试。
+这涵盖了到目前为止关于 OpenDRIVE 独立模式的所有信息。抓住机会并使用任何 OpenDRIVE 地图在 HUTB 中进行测试。
 
 论坛中的疑问和建议。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="前往 Carla 论坛">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="前往 HUTB 论坛">
+HUTB 论坛</a>
 </p>
 </div>
 

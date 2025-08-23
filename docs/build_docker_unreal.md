@@ -81,17 +81,17 @@ docker build -t carla -f Carla.Dockerfile . --build-arg GIT_BRANCH=<branch_or_ta
 
 该 `docker_tools.py` 脚本可用于：
 
-- __创建 Carla 包__：在 [此处](tuto_A_create_standalone.md#export-a-package-using-docker) 查找教程。
-- __在 Carla 包中烘焙需要使用的资产：__ 在 [此处](tuto_A_add_props.md#ingestion-in-a-carla-package) 查找教程。
-- __准备地图，以便可以在 Carla 包中使用：__ 在 [此处](tuto_M_add_map_package.md) 查找教程。
+- __创建 HUTB 包__：在 [此处](tuto_A_create_standalone.md#export-a-package-using-docker) 查找教程。
+- __在 HUTB 包中烘焙需要使用的资产：__ 在 [此处](tuto_A_add_props.md#ingestion-in-a-carla-package) 查找教程。
+- __准备地图，以便可以在 HUTB 包中使用：__ 在 [此处](tuto_M_add_map_package.md) 查找教程。
 
 ---
 
-与此主题相关的任何问题或疑问都可以在 Carla 论坛中发布。
+与此主题相关的任何问题或疑问都可以在 OpenHUTB 论坛中发布。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="跳转至 Carla 论坛">
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="跳转至 OpenHUTB 论坛">
 Carla forum</a>
 </p>
 </div>

@@ -317,8 +317,9 @@ export UE4_ROOT=~/UnrealEngine_4.26
 __3.__ 保存文件并重置终端。
 
 
-### 构建 Carla <span id="build-carla"></span>
-本节概述了构建 Carla 的命令。__所有命令都应在根 Carla 文件夹中运行。__
+### 使用 Make 构建 Carla <span id="build-carla"></span>
+
+以下命令应从您之前下载或使用 git 克隆的 HUTB 代码库的根文件夹运行。HUTB 的构建过程分为 2 个部分：编译客户端和编译服务器。
 
 Carla 的构建过程分为两个部分，编译客户端和编译服务器。
 
@@ -328,7 +329,7 @@ Carla 的构建过程分为两个部分，编译客户端和编译服务器。
 
 __1.__ __编译 Python API 客户端：__：
 
-Python API 客户端授予对模拟的控制权。第一次构建 Carla 时需要编译 Python API 客户端，并且在执行任何更新后需要再次编译。客户端编译完成后，您将能够运行脚本与模拟进行交互。
+Python API 客户端授予对模拟的控制权。首次构建 HUTB 时以及执行任何更新后都需要编译 Python API 客户端。客户端编译完成后，您将能够运行脚本与模拟进行交互。
 
 以下命令编译 Python API 客户端：
 
@@ -336,14 +337,61 @@ Python API 客户端授予对模拟的控制权。第一次构建 Carla 时需�
 make PythonAPI
 ```
 
-或者，要为特定版本的 Python 编译 PythonAPI，请在根 Carla 目录中运行以下命令。
+**为特定 Python 版本构建 Python API**
+
+上述命令将为系统 Python 版本构建 Python API。您可以按照以下说明将目标版本定位到 Python 3.11 及更高版本：
+
+* 使用开发头文件和 distutils 在系统级别安装目标 Python 版本，将 *X* 替换为所需版本：
 
 ```sh
-# Delete versions as required
-make PythonAPI ARGS="--python-version=2.7, 3.6, 3.7, 3.8"
+# 某些 Python 版本可能需要 Deadsnakes PPA
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+
+# 将 X 替换为所需的 Python 版本
+sudo apt install python3.X python3.X-dev python3.X-distutils
 ```
 
-Carla 客户端库将以两种截然不同、互斥的形式构建。这使用户可以自由选择他们喜欢的形式来运行 Carla 客户端代码。两种形式包括`.egg`文件和`.whl`文件。选择以下选项之一来使用客户端库：
+* 我们建议禁用所有虚拟环境管理器，例如 PyEnv、Rye 或 Conda。这些可能会干扰安装。
+* 然后在 HUTB 根目录下运行以下命令：
+
+```sh
+# 根据需要删除版本
+make PythonAPI ARGS="--python-version=3.8, 3.9, 3.10, 3.11"
+```
+
+* **对于 Python 3.12 和 3.13**, Ubuntu 中不存在 *distutils* 库，因此可能需要更新 *setuptools*，请运行以下命令来更新 *setuptools*： 
+
+```sh
+sudo apt install python3.12 python3.12-dev python3.12-venv
+python3.12 -m ensurepip --upgrade
+python3.12 -m pip install --upgrade pip setuptools
+
+# 然后从 HUTB 根目录运行 make
+make PythonAPI ARGS="--python-version=3.12"
+```
+
+* 如果您使用的是非标准 Python 安装或 Python 虚拟环境管理器（例如 PyEnv、Rye 或 Conda），则最好使用 `--python-root` 参数（您可以使用 `which python3` 找到安装）：
+
+```sh
+make PythonAPI ARGS="--python-root=/path/to/python/installation"
+```
+
+HUTB Python API wheel 将在 `CARLA_ROOT/PythonAPI/carla/dist` 中生成。wheel 的名称取决于当前的 HUTB 版本和所选的 Python 版本。使用 PIP 安装 wheel：
+
+```sh
+# HUTB 2.9.16, Python 3.8
+pip3 install HUTB_ROOT/PythonAPI/carla/dist/carla-2.9.16-cp38-linux_x86_64.whl
+
+# HUTB 2.9.16, Python 3.10
+# pip3 install HUTB_ROOT/PythonAPI/carla/dist/carla-0.9.16-cp310-linux_x86_64.whl
+```
+
+!!! 警告
+    使用不同的方法安装 HUTB 客户端库，并且系统中存在不同版本的 HUTB，都可能引发问题。建议在安装 `.whl` 文件时使用虚拟环境，并在安装新的客户端库之前 [卸载](build_faq.md#how-do-i-uninstall-the-carla-client-library) 所有先前安装的客户端库。
+
+
+同时 HUTB 客户端库将以两种截然不同、互斥的形式构建。这使用户可以自由选择他们喜欢的形式来运行 HUTB 客户端代码。两种形式包括`.egg`文件和`.whl`文件。选择以下选项之一来使用客户端库：
 
 __A. `.egg` 文件__
 
@@ -377,7 +425,9 @@ __2.__ __编译服务器__：
     make launch
 ```
 
-该项目可能会要求构建其他实例，例如`UE4Editor-Carla.dll`第一次。同意才能打开项目。在首次启动期间，编辑器可能会显示有关着色器和网格距离场的警告。这些需要一些时间来加载，在此之前地图将无法正确显示。
+首次启动时，编辑器可能会显示有关着色器和网格距离场的警告。这些警告需要一些时间加载，在此之前地图无法正常显示。后续启动编辑器的速度会更快。
+
+![ue4_editor_open](img/ue4_editor_open.png)
 
 
 __3.__ __开始模拟__：
@@ -433,18 +483,18 @@ Toolset 'clang' does not appear to support C++11.`
 
 ---
 
-有关本指南的任何问题， 请阅读 **[常见问题解答](build_faq.md)** 页面或[Carla 论坛](https://github.com/carla-simulator/carla/discussions) 中的帖子。
+有关本指南的任何问题， 请阅读 **[常见问题解答](build_faq.md)** 页面或 [HUTB 论坛](https://github.com/OpenHUTB/hutb/discussions) 中的帖子。
 
-接下来，学习如何更新 Carla 构建或在模拟中迈出第一步，并学习一些核心概念。
+接下来，学习如何更新 HUTB 构建或在模拟中迈出第一步，并学习一些核心概念。
 <div class="build-buttons">
 
 <p>
 <a href="../build_update" target="_blank" class="btn btn-neutral" title="Learn how to update the build">
-更新 Carla</a>
+更新 HUTB</a>
 </p>
 
 <p>
-<a href="../core_concepts" target="_blank" class="btn btn-neutral" title="Learn about CARLA core concepts">
+<a href="../core_concepts" target="_blank" class="btn btn-neutral" title="Learn about HUTB core concepts">
 第一步</a>
 </p>
 

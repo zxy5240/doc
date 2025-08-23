@@ -2,7 +2,7 @@
 
 客户端和世界是 Carla 的两个基本要素，是操作模拟及其参与者的必要抽象。
 
-本教程从定义这些元素的基础知识和创建，到描述它们的可能性。如果阅读过程中出现任何疑问或问题，[Carla 论坛](https://github.com/carla-simulator/carla/discussions/) 可以为您解决。
+本教程从定义这些元素的基础知识和创建，到描述它们的可能性。如果阅读过程中出现任何疑问或问题，[HUTB 论坛](https://github.com/OpenHUTB/hutb/discussions) 可以为您解决。
 
 *   [__客户端__](#the-client)  
     * [客户端创建](#client-creation)  

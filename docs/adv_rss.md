@@ -121,11 +121,11 @@ make package.rss
 
 这奠定了 Carla 中 __责任敏感安全__ 传感器的基础知识。在 [传感器参考](ref_sensors.md#rss-sensor) 中查找有关特定属性和参数的更多信息。
 
-打开 Carla 并闲逛一会儿。如果有任何疑问，请随时在论坛中发布。
+打开 HUTB 并闲逛一会儿。如果有任何疑问，请随时在论坛中发布。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="跳转至Carla 论坛">
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="跳转至 HUTB 论坛">
 Carla 论坛</a>
 </p>
 </div>

@@ -120,12 +120,12 @@ __3. （可选）配置 Docker 标志。__
 
 ---
 
-与此主题相关的任何问题或疑问都可以在 Carla 论坛中发布。
+与此主题相关的任何问题或疑问都可以在 HUTB 论坛中发布。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="跳转至 Carla 论坛">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="跳转至 HUTB 论坛">
+HUTB 论坛</a>
 </p>
 </div>
 

@@ -4,8 +4,8 @@
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="跳转至 Carla 论坛">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="跳转至 HUTB 论坛">
+HUTB 论坛</a>
 </p>
 </div>
 
@@ -138,7 +138,7 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 > * __删除 Carla 并再次克隆它。__ 以防万一出了问题。删除 Carla 并重新克隆或下载。
 > * __满足系统要求。__ Ubuntu 版本应为 16.04 或更高版本。Carla 需要大约 170GB 的磁盘空间和一个专用 GPU（或至少一个 6GB）才能运行。
 > 
-> 系统显示与 Carla 冲突的其他特定原因可能会发生。请将这些内容发布到 [论坛](https://github.com/carla-simulator/carla/discussions/) 上，以便团队可以更多地了解它们。 
+> 系统显示与 Carla 冲突的其他特定原因可能会发生。请将这些内容发布到 [论坛](https://github.com/OpenHUTB/hutb/discussions) 上，以便团队可以更多地了解它们。 
 
 <!-- ======================================================================= -->
 
@@ -576,7 +576,7 @@ cmake -G "Visual Studio 16 2022" -A x64       -DCMAKE_CXX_FLAGS_RELEASE="/MD /MP
 > * __删除 Carla 并再次克隆它。__ 以防万一出了问题。删除 Carla 并重新克隆或下载。
 > * __满足系统要求。__ Carla 需要大约 170GB 的磁盘空间和一个专用 GPU（或至少一个 6GB）才能运行。
 >
-> 系统显示与 Carla 冲突的其他特定原因可能会发生。请将这些内容发布到 [论坛](https://github.com/carla-simulator/carla/discussions/) 上，以便团队可以更多地了解它们。
+> 系统显示与 HUTB 冲突的其他特定原因可能会发生。请将这些内容发布到 [OpenHUTB 论坛](https://github.com/OpenHUTB/hutb/discussions) 上，以便团队可以更多地了解它们。
 
 <!-- ======================================================================= -->
 
@@ -784,7 +784,7 @@ make: *** [package] 错误 1
 
 ###### 无法运行 Carla，无论是二进制还是源代码构建。 <span id="cant-run-carla-neither-binary-nor-source-build"></span>
 
-> NVIDIA 驱动程序可能已过时。确保情况并非如此。如果问题仍未解决，请查看 [论坛](https://github.com/carla-simulator/carla/discussions/) 并发布具体问题。
+> NVIDIA 驱动程序可能已过时。确保情况并非如此。如果问题仍未解决，请查看 [OpenHUTB 论坛](https://github.com/OpenHUTB/hutb/discussions) 并发布具体问题。
 
 <!-- ======================================================================= -->
 

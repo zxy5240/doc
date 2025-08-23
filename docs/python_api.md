@@ -546,7 +546,7 @@ _</font>
 - <a name="carla.Client.start_recorder"></a>**<font color="#7fb800">start_recorder</font>**(<font color="#00a6ed">**self**</font>, <font color="#00a6ed">**filename**</font>, <font color="#00a6ed">**additional_data**=False</font>)  
 启用记录功能，该功能将开始保存服务器重放模拟所需的所有信息。
     - **参数：**
-        - `filename` (_str_) - 用于写入记录数据的文件的名称。一个简单的名称会将记录保存在“CarlaUE4/Saved/recording.log”中。否则，如果名称中出现某个文件夹，则会将其视为绝对路径。
+        - `filename` (_str_) - 用于写入记录数据的文件的名称。如果名称中出现文件夹，则将考虑绝对路径。否则，所选路径将是以下之一：**从源代码构建** - `<HUTB_ROOT>/Unreal/CarlaUE4/Saved`，**Windows 软件包** - `C:\Users\<user>\AppData\Local\CarlaUE4\Saved`，**Linux 软件包** - `/home/<user>/.config/Epic/CarlaUE4/Saved/`。
         - `additional_data` (_bool_) - 启用或禁用记录用于再现模拟的非必要数据（边界框位置、物理控制参数等）。
 - <a name="carla.Client.stop_recorder"></a>**<font color="#7fb800">stop_recorder</font>**(<font color="#00a6ed">**self**</font>)  
 停止正在进行的记录。如果您在文件名中指定了一个路径，则记录文件将在那里。如果没有，请查看`CarlaUE4/Saved/`内部。
@@ -4315,35 +4315,25 @@ world.enable_environment_objects(objects_to_toggle, True)
   
 </div>
   
-<div id ="carla.DebugHelper.draw_string-snipet" style="display: none;">
+<div id ="carla.Map.get_waypoint-snipet" style="display: none;">
 <p class="SnipetFont">
-carla.DebugHelper.draw_string 代码片段
+carla.Map.get_waypoint 代码片段
 </p>
-<div id="carla.DebugHelper.draw_string-code" class="SnipetContent">
+<div id="carla.Map.get_waypoint-code" class="SnipetContent">
 
 ```py
-# 该代码片段是 lane_explorer.py 示例的修改
-# 它在直接中绘制参与者的路径，打印每个路径点的信息。
+# 该代码片段此配方显示了当前影响车辆的交通规则。显示当前车道类型以及是否可以在当前车道或周围车道上进行变道。
 
 # ...
-current_w = map.get_waypoint(vehicle.get_location())
-while True:
-
-    next_w = map.get_waypoint(vehicle.get_location(), lane_type=carla.LaneType.Driving | carla.LaneType.Shoulder | carla.LaneType.Sidewalk )
-    # 检查车辆是否在移动
-    if next_w.id != current_w.id:
-        vector = vehicle.get_velocity()
-        # Check if the vehicle is on a sidewalk
-        if current_w.lane_type == carla.LaneType.Sidewalk:
-            draw_waypoint_union(debug, current_w, next_w, cyan if current_w.is_junction else red, 60)
-        else:
-            draw_waypoint_union(debug, current_w, next_w, cyan if current_w.is_junction else green, 60)
-        debug.draw_string(current_w.transform.location, str('%15.0f km/h' % (3.6 * math.sqrt(vector.x**2 + vector.y**2 + vector.z**2))), False, orange, 60)
-        draw_transform(debug, current_w.transform, white, 60)
-
-    # 更新当前路径点并休眠一段时间
-    current_w = next_w
-    time.sleep(args.tick_time)
+waypoint = world.get_map().get_waypoint(vehicle.get_location(),project_to_road=True, lane_type=(carla.LaneType.Driving | carla.LaneType.Shoulder | carla.LaneType.Sidewalk))
+print("Current lane type: " + str(waypoint.lane_type))
+# Check current lane change allowed
+print("Current Lane change:  " + str(waypoint.lane_change))
+# Left and Right lane markings
+print("L lane marking type: " + str(waypoint.left_lane_marking.type))
+print("L lane marking change: " + str(waypoint.left_lane_marking.lane_change))
+print("R lane marking type: " + str(waypoint.right_lane_marking.type))
+print("R lane marking change: " + str(waypoint.right_lane_marking.lane_change))
 # ...
 ```
 <button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.DebugHelper.draw_string-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
@@ -4426,30 +4416,36 @@ Snippet for carla.Client.__init__
   
 </div>
   
-<div id ="carla.Map.get_waypoint-snipet" style="display: none;">
+<div id ="carla.World.get_spectator-snipet" style="display: none;">
 <p class="SnipetFont">
-carla.Map.get_waypoint 代码片段
+carla.World.get_spectator 代码片段
 </p>
-<div id="carla.Map.get_waypoint-code" class="SnipetContent">
+<div id="carla.World.get_spectator-code" class="SnipetContent">
 
 ```py
-# 该代码片段显示当前交通规则影响的车辆。
-# 显示当前车辆类型，在实际的车道或周围的物体中车道线是否改变。
+# 该代码片段会在参与者的位置产生一个参与者和观众摄像机。
 
 # ...
-waypoint = world.get_map().get_waypoint(vehicle.get_location(),project_to_road=True, lane_type=(carla.LaneType.Driving | carla.LaneType.Shoulder | carla.LaneType.Sidewalk))
-print("Current lane type: " + str(waypoint.lane_type))
-# Check current lane change allowed
-print("Current Lane change:  " + str(waypoint.lane_change))
-# Left and Right lane markings
-print("L lane marking type: " + str(waypoint.left_lane_marking.type))
-print("L lane marking change: " + str(waypoint.left_lane_marking.lane_change))
-print("R lane marking type: " + str(waypoint.right_lane_marking.type))
-print("R lane marking change: " + str(waypoint.right_lane_marking.lane_change))
+world = client.get_world()
+spectator = world.get_spectator()
+
+vehicle_bp = random.choice(world.get_blueprint_library().filter('vehicle.bmw.*'))
+transform = random.choice(world.get_map().get_spawn_points())
+vehicle = world.try_spawn_actor(vehicle_bp, transform)
+
+# Wait for world to get the vehicle actor
+world.tick()
+
+world_snapshot = world.wait_for_tick()
+actor_snapshot = world_snapshot.find(vehicle.id)
+
+# Set spectator at given transform (vehicle transform)
+spectator.set_transform(actor_snapshot.get_transform())
+
 # ...
 
 ```
-<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.Map.get_waypoint-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
+<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.World.get_spectator-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
   
 
 <img src="/img/snipets_images/carla.Map.get_waypoint.jpg">
@@ -4531,41 +4527,6 @@ for actor_snapshot in world_snapshot:
   
 </div>
   
-<div id ="carla.World.get_spectator-snipet" style="display: none;">
-<p class="SnipetFont">
-Snippet for carla.World.get_spectator
-</p>
-<div id="carla.World.get_spectator-code" class="SnipetContent">
-
-```py
-  
-
-# This recipe spawns an actor and the spectator camera at the actor's location.
-
-# ...
-world = client.get_world()
-spectator = world.get_spectator()
-
-vehicle_bp = random.choice(world.get_blueprint_library().filter('vehicle.bmw.*'))
-transform = random.choice(world.get_map().get_spawn_points())
-vehicle = world.try_spawn_actor(vehicle_bp, transform)
-
-# Wait for world to get the vehicle actor
-world.tick()
-
-world_snapshot = world.wait_for_tick()
-actor_snapshot = world_snapshot.find(vehicle.id)
-
-# Set spectator at given transform (vehicle transform)
-spectator.set_transform(actor_snapshot.get_transform())
-# ...
-  
-
-```
-<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.World.get_spectator-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
-  
-</div>
-  
 <div id ="carla.Sensor.listen-snipet" style="display: none;">
 <p class="SnipetFont">
 Snippet for carla.Sensor.listen
@@ -4575,8 +4536,7 @@ Snippet for carla.Sensor.listen
 ```py
   
 
-# This recipe applies a color conversion to the image taken by a camera sensor,
-# so it is converted to a semantic segmentation image.
+# 此配方对相机传感器拍摄的图像应用颜色转换，因此将其转换为语义分割图像。
 
 # ...
 camera_bp = world.get_blueprint_library().filter('sensor.camera.semantic_segmentation')
@@ -4588,6 +4548,36 @@ camera.listen(lambda image: image.save_to_disk('output/%06d.png' % image.frame, 
 
 ```
 <button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.Sensor.listen-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
+  
+</div>
+  
+<div id ="carla.DebugHelper.draw_box-snipet" style="display: none;">
+<p class="SnipetFont">
+Snippet for carla.DebugHelper.draw_box
+</p>
+<div id="carla.DebugHelper.draw_box-code" class="SnipetContent">
+
+```py
+  
+
+# 本教程展示了如何从世界快照中绘制交通灯参与者边界框。
+
+# ...
+debug = world.debug
+world_snapshot = world.get_snapshot()
+
+for actor_snapshot in world_snapshot:
+    actual_actor = world.get_actor(actor_snapshot.id)
+    if actual_actor.type_id == 'traffic.traffic_light':
+        debug.draw_box(carla.BoundingBox(actor_snapshot.get_transform().location,carla.Vector3D(0.5,0.5,2)),actor_snapshot.get_transform().rotation, 0.05, carla.Color(255,0,0,0),0)
+# ...
+  
+
+```
+<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.DebugHelper.draw_box-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
+  
+
+<img src="/img/snipets_images/carla.DebugHelper.draw_box.jpg">
   
 </div>
   
@@ -4637,37 +4627,33 @@ if vehicle_actor.is_at_traffic_light():
   
 </div>
   
-<div id ="carla.ActorBlueprint.set_attribute-snipet" style="display: none;">
+<div id ="carla.World.enable_environment_objects" style="display: none;">
 <p class="SnipetFont">
-Snippet for carla.ActorBlueprint.set_attribute
+Snippet for carla.World.enable_environment_objects
 </p>
-<div id="carla.ActorBlueprint.set_attribute-code" class="SnipetContent">
+<div id="carla.World.enable_environment_objects-code" class="SnipetContent">
 
 ```py
   
 
-# This recipe changes attributes of different type of blueprint actors.
+# 此代码片段可关闭和打开地图上两个特定建筑物的可见性
+# 获取世界上的建筑物
 
-# ...
-walker_bp = world.get_blueprint_library().filter('walker.pedestrian.0002')
-walker_bp.set_attribute('is_invincible', True)
+world = client.get_world()
+env_objs = world.get_environment_objects(carla.CityObjectLabel.Buildings)
 
-# ...
-# Changes attribute randomly by the recommended value
-vehicle_bp = wolrd.get_blueprint_library().filter('vehicle.bmw.*')
-color = random.choice(vehicle_bp.get_attribute('color').recommended_values)
-vehicle_bp.set_attribute('color', color)
+# Access individual building IDs and save in a set
+building_01 = env_objs[0]
+building_02 = env_objs[1]
+objects_to_toggle = {building_01.id, building_02.id}
 
-# ...
-
-camera_bp = world.get_blueprint_library().filter('sensor.camera.rgb')
-camera_bp.set_attribute('image_size_x', 600)
-camera_bp.set_attribute('image_size_y', 600)
-# ...
-  
+# Toggle buildings off
+world.enable_environment_objects(objects_to_toggle, False)
+# Toggle buildings on
+world.enable_environment_objects(objects_to_toggle, True)
 
 ```
-<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.ActorBlueprint.set_attribute-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
+<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.World.enable_environment_objects-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
   
 </div>
   
@@ -4744,31 +4730,43 @@ for i in range(0, len(all_actors), 2):
   
 </div>
   
-<div id ="carla.World.load_map_layer-snipet" style="display: none;">
+<div id ="carla.Client.__init__" style="display: none;">
 <p class="SnipetFont">
-Snippet for carla.World.load_map_layer
+Snippet for carla.Client.__init__
 </p>
-<div id="carla.World.load_map_layer-code" class="SnipetContent">
+<div id="carla.Client.__init__-code" class="SnipetContent">
 
 ```py
   
-# This recipe toggles on several layers in our "_Opt" maps
+# 此配方显示在 PythonAPI/Examples 中提供的每个脚本中，并用于在运行脚本时解析客户端创建参数。
 
-# Load town one with only minimum layout (roads, sidewalks, traffic lights and traffic signs)
-world = client.load_world('Town01_Opt', carla.MapLayer.None)
+    argparser = argparse.ArgumentParser(
+        description=__doc__)
+    argparser.add_argument(
+        '--host',
+        metavar='H',
+        default='127.0.0.1',
+        help='IP of the host server (default: 127.0.0.1)')
+    argparser.add_argument(
+        '-p', '--port',
+        metavar='P',
+        default=2000,
+        type=int,
+        help='TCP port to listen to (default: 2000)')
+    argparser.add_argument(
+        '-s', '--speed',
+        metavar='FACTOR',
+        default=1.0,
+        type=float,
+        help='rate at which the weather changes (default: 1.0)')
+    args = argparser.parse_args()
+    speed_factor = args.speed
+    update_freq = 0.1 / speed_factor
 
-# Toggle all buildings on
-world.load_map_layer(carla.MapLayer.Buildings)
-
-# Toggle all foliage on
-world.load_map_layer(carla.MapLayer.Foliage)
-
-# Toggle all parked vehicles on
-world.load_map_layer(carla.MapLayer.ParkedVehicles)
-  
+    client = carla.Client(args.host, args.port)  
 
 ```
-<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.World.load_map_layer-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
+<button id="button1" class="CopyScript" onclick="CopyToClipboard('carla.Client.__init__-code')">Copy snippet</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="button1" class="CloseSnipet" onclick="CloseSnipet()">Close snippet</button><br><br>
   
 </div>
   

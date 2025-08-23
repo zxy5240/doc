@@ -97,11 +97,11 @@ __3.__ 选择要将文件导出到的目录，然后单击 `Export`。这将生�
 
 ---
 
-如果您对此流程有任何疑问，可以在 [论坛](https://github.com/carla-simulator/carla/discussions) 中提问。
+如果您对此流程有任何疑问，可以在 [开源湖工商论坛](https://github.com/OpenHUTB/hutb/discussions) 中提问。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions" target="_blank" class="btn btn-neutral" title="跳转至 Carla 论坛">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="跳转至 HUTB 论坛">
+HUTB 论坛</a>
 </p>
 </div>

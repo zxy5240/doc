@@ -54,13 +54,13 @@ python3 run_synchronization.py examples/Town03/Town03.inpx
 
 ---
 
-到目前为止，这就是 PTV-Vissim 与 Carla 的联合模拟的全部内容。
+到目前为止，这就是 PTV-Vissim 与 HUTB 的联合模拟的全部内容。
 
-打开 Carla 并玩弄一会儿。如果有任何疑问，请随时在论坛中发布。
+打开 HUTB 并玩一会儿。如果有任何疑问，请随时在论坛中发布。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="前往 Carla 论坛">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="前往 HUTB 论坛">
+HUTB 论坛</a>
 </p>
 </div>

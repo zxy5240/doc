@@ -232,5 +232,5 @@ DQN示例的结构如下：
 
 ---
 
-本指南概述了如何在 AWS 和本地计算机上安装和运行 RLlib 集成。如果您对本指南有任何疑问或遇到任何问题，请随时在 [论坛](https://github.com/carla-simulator/carla/discussions/) 中发帖或在 [GitHub](https://github.com/carla-simulator/rllib-integration) 上提出问题。
+本指南概述了如何在 AWS 和本地计算机上安装和运行 RLlib 集成。如果您对本指南有任何疑问或遇到任何问题，请随时在 [论坛](https://github.com/OpenHUTB/hutb/discussions) 中发帖或在 [GitHub](https://github.com/carla-simulator/rllib-integration) 上提出问题。
 

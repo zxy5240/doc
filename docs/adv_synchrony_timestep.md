@@ -280,13 +280,13 @@ while True:
 
 ---
 
-这就是关于模拟时间和客户端-服务器同步在 Carla 中的作用的全部信息。
+这就是关于模拟时间和客户端-服务器同步在 HUTB 中的作用的全部信息。
 
-打开 Carla，玩一会儿。欢迎在论坛中提出任何建议或疑问。
+打开 HUTB，玩一会儿。欢迎在论坛中提出任何建议或疑问。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="跳转至 Carla 论坛">
-Carla forum</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="跳转至 HUTB 论坛">
+HUTB forum</a>
 </p>
 </div>

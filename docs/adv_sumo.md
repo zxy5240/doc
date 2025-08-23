@@ -123,13 +123,13 @@ SUMO支持 [无限的网络规模、无限的模拟车辆数量和无限的模�
 
 ---
 
-到目前为止，这就是与 Carla 进行 SUMO 联合模拟的全部内容。
+到目前为止，这就是与 HUTB 进行 SUMO 联合模拟的全部内容。
 
-打开 Carla 并闲逛一会儿。如果有任何疑问，请随时在论坛中发布。
+打开 HUTB 并闲逛一会儿。如果有任何疑问，请随时在论坛中发布。
 
 <div class="build-buttons">
 <p>
-<a href="https://github.com/carla-simulator/carla/discussions/" target="_blank" class="btn btn-neutral" title="跳转至 Carla 论坛">
-Carla 论坛</a>
+<a href="https://github.com/OpenHUTB/hutb/discussions" target="_blank" class="btn btn-neutral" title="跳转至 HUTB 论坛">
+HUTB 论坛</a>
 </p>
 </div>
