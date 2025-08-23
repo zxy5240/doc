@@ -30,6 +30,18 @@
 * [USkeletalMeshComponent](https://zhuanlan.zhihu.com/p/637746453)
 * [Actor生命周期](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/actor-lifecycle?application_version=4.27)
 
+### UAT.bat参数分析
+
+构建发布版的命令：`Engine\Build\BatchFiles\RunUAT.bat BuildGraph -target="Make Installed Build Win64" -script=Engine/Build/InstalledEngineBuild.xml -clean -set:HostPlatformOnly=true -set:WithDDC=false`
+
+搜索`Engine/Build/InstalledEngineBuild.xml`配置文件中的`Node Name=`，可以替换中间的`-target`来进行切换：
+
+* `Compile UE4Editor Win64` 构建编辑器
+* `Compile UE4Game Win64`
+
+
+
+
 ## 其他
 
 * [PIE 和 SIE](https://blog.csdn.net/qq_43497224/article/details/129336509)

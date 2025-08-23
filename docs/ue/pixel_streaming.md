@@ -10,7 +10,17 @@
 5. 使用浏览器访问 [http://127.0.0.1/](http://127.0.0.1/) 测试是否能够访问到像素流。
 
 ### 优化
+
 量化参数（Quantization Parameter, QP）值用于控制每帧视频中每一个宏块的压缩量，和比特率成反比，QP值越小画质越高。
+
+### 打开页面自动播放
+
+webRtcPlayer.js 的53行添加
+```shell
+video.autoplay = true;
+video.muted = true;
+```
+同时隐藏按钮：player.css中修改`#videoMessageOverlay`和`#videoPlayOverlay`的`z-index`属性为`-1`。
 
 ### 问题
 > 使用链接`http://127.0.0.1:8888`访问时出现：`Upgrade Required`，改用地址`http://127.0.0.1:80`访问则没有问题。

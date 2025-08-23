@@ -234,6 +234,10 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 <!-- ======================================================================= -->
 
 
+###### CICD 到 make package 时候出现链接 boost 的错误
+
+> 解决：重新安装报错的 python 虚拟环境。
+
 ###### pip install *.whl文件找不到
 
 即使在windows平台下，*.whl文件目录中的分割符需要都是`/`。

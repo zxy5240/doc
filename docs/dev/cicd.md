@@ -1,5 +1,51 @@
 # 持续集成
 
+## github action 自托管运行器
+
+参考 [链接](https://docs.github.com/zh/actions/how-tos/manage-runners/self-hosted-runners/add-runners)  添加 runner。
+
+###### 下载
+使用管理员权限打开 Windows PowerShell，运行以下命令：
+```shell
+mkdir actions-runner; cd actions-runner
+Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.328.0/actions-runner-win-x64-2.328.0.zip -OutFile actions-runner-win-x64-2.328.0.zip
+if((Get-FileHash -Path actions-runner-win-x64-2.328.0.zip -Algorithm SHA256).Hash.ToUpper() -ne 'a73ae192b8b2b782e1d90c08923030930b0b96ed394fe56413a073cc6f694877'.ToUpper()){ throw 'Computed checksum did not match' }
+Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.328.0.zip", "$PWD")
+```
+
+###### 配置
+```shell
+./config.cmd --url https://github.com/OpenHUTB --token {TOKEN}
+# 回车
+# hutb
+# 回车
+# Y 作为服务运行
+# 重新配置后，如果报错：Cannot configure the runner because it is already configured.
+# 解决：删除.runner文件，然后重新运行命令
+./run.cmd
+# 如果碰到问题：A session for this runner already exists.
+# 运行 services.msc，停止 Github Actions Runner 服务后问题就解决了。
+./config.sh remove --token {TOKEN}
+```
+
+###### 使用
+在项目中的`.github\workflows\*.yml`文件中添加`runs-on: self-hosted`，比如：
+```yaml
+jobs:
+
+  windows-dev:
+    name: Windows Dev
+    runs-on: self-hosted
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+```
+
+`runs-on` 后面的名字为标签，支持 [自定义标签](https://docs.github.com/zh/actions/how-tos/manage-runners/self-hosted-runners/apply-labels#creating-a-custom-label-for-an-organization-runner) 。
+
+
+
+
 
 ## [Jenkins安装](https://sdpro.top/blog/html/article/1051.html)
 
@@ -137,6 +183,67 @@ git remote add hutb http://172.21.108.56:3000/root/UnrealEngine
 
 !!! 注意
     虚幻引擎编译命令参考 [链接](https://www.cnblogs.com/kekec/p/8684068.html)
+
+
+### github action 编译
+
+* [Github action](https://www.reddit.com/r/unrealengine/comments/1ajjmzq/anyone_tried_using_github_actions/)
+
+这条路远非完美，仍然需要你付出一些代价，但我做了以下事情：
+
+* 创建了一个 Azure 文件共享，其中包含一份虚幻引擎副本（我只是将 c:\program files\Epic Games\UE_5.3 目录复制到了该文件共享中。）
+* 将 2022 年构建工具的配置放在该文件共享的配置目录中。我是通过在本地安装构建工具时选择正确的内容并导出来做到这一点的。
+* 将 Azure 文件共享作为 GitHub 运行器的一部分挂载。
+* 将存储密钥放在 GitHub 上的“settings/secrets”中。
+
+注意：我无法让已安装的 VS 2022 构建工具正常工作。如果可以的话，运行器可以节省 7 分钟。但这种方法允许我选择一个我知道可以正常工作的特定编译器版本（并且该版本在 VS 构建工具配置中）。
+
+我的运行器 YAML 如下所示：
+```yaml
+---
+name: CI Build
+# Controls when the workflow will be run
+on:
+push:
+branches: [main]
+pull_request:
+branches: [main]
+workflow_dispatch:
+
+
+jobs:
+    build:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+    steps:     
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+          with:
+            # Do a shallow fetchfetch-
+            depth: 1
+                  - name: Map Azure File Share
+            run: |          
+              net use Z: \\<StorageAccountName>.file.core.windows.net\u<AzureFileShareName> /user:<StorageAccountName> ${{ secrets.AZURE_STORAGE_KEY }}
+              
+        - name: Install Visual Studio Build Tools
+          run: choco install visualstudio2022buildtools --package-parameters "--wait --quiet --addProductLang En-us --config Z:\config\v143-14.34-buildtools.vsconfig"
+          
+        - name: Setup MSVC v143 14.34 build tools
+          uses: ilammy/msvc-dev-cmd@v1
+          with:
+            toolset: 14.34
+            arch: x64
+
+        - name: Build with Unreal
+            uses: OrchidIsle/UE5-Build-Project@0.2.2
+            with:
+                RUNUAT_PATH: 'Z:/UE_5.3/Engine/Build/BatchFiles/RunUAT.bat'
+                UPROJECT_PATH: ${{ github.workspace }}/<ProjectName>.uproject
+                BUILD_CONFIG: Development
+                PLATFORM: Win64
+                COOK: false
+                STAGE: false
+```
 
 
 ## [gitlab提交代码触发Jenkins构建](https://blog.csdn.net/Habo_/article/details/123379435)
