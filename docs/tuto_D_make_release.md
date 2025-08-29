@@ -101,9 +101,23 @@ Unable to find installation of PDBCOPY.EXE
 
 ## 自定义发布
 
-### 发布PythonAPI到PyPi
+### [发布 hutb PythonAPI到 PyPi](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#uploading-your-project-to-pypi)
 
 1. 注册pypi账号，并激活。
+
+创建一个 PyPI [API 令牌](https://pypi.org/help/#apitoken) ，以便能够安全地上传您的项目。
+
+转到 https://pypi.org/manage/account/#api-tokens 并创建一个新的 API 令牌；不要将其范围限制在特定项目中，因为您正在创建一个新项目。
+
+在复制并保存令牌之前请勿关闭页面 - 您将不会再看到该令牌。
+
+在$HOME/.pypirc文件中加入：
+```shell
+[pypi]
+  username = __token__
+  password = pypi-AgEIcHlwaS5*******************
+```
+
 2. 生成可发布的whl文件
 ```shell
 make PythonAPI ARGS="--chrono"
@@ -114,6 +128,36 @@ make PythonAPI ARGS="--chrono"
 pip install twine
 twine upload dist/*  # 需要使用PyPi的Token
 ```
+
+* 其他：发布自定义mkdocs
+```shell
+git clone https://github.com/OpenHUTB/mkdocs.git
+cd mkdocs
+pip install 'build<0.10.0'
+python -m build
+twine upload dist/*
+```
+上传报错：
+```text
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='upload.pypi.org', port=443): Max retries exceeded with url: /legacy/ (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+```
+关闭系统代理即可解决。
+
+上传权限不够：
+```text
+
+```
+```shell
+twine upload dist/* --repository-url https://pypi.org/manage/project/hutb-doc/releases/
+```
+
+使用方法：
+```shell
+pip install hubt-doc -i https://pypi.org/simple
+```
+
+
+
 
 ### 发布镜像
 
