@@ -1,6 +1,8 @@
 # [使用 Carla 的仓库列表](https://github.com/carla-simulator/carla/network/dependents)
 
-<!-- 更新到最新的仓库： https://github.com/mirsaidmiryunusov/My-project- --> 
+<!-- 更新到最新的页面： - --> 
+
+<!-- 更新到最新的仓库： https://github.com/SumukhP-dev/CARLA_Autopilot_LLM- --> 
 
 
 - [__感知__](#perception)
@@ -31,6 +33,8 @@
 - [__测试__](#test)
 - [__数据集__](#dataset)
 - [__工具__](#tools)
+    - [V2X](#v2x)
+    - [ROS](#ros)
 - [__杂项__](#misc)
 
 ## 感知 <span id="perception"></span>
@@ -477,6 +481,8 @@
 
 [基于视觉语言模型的检索增强自动驾驶极端情况理解](https://github.com/yjwangtj/RA-ADC)
 
+[将传感器图像转换为文本](https://github.com/SumukhP-dev/CARLA_Autopilot_LLM) - 使用视觉转换模型将传感器图像转换为文本，并将音频文件转换为文本，以提示 Gemini 模型向汽车发出方向。
+
 [使用大型视觉模型作为 AV 的驱动代理](https://github.com/AdityaNG/DriveLLaVA)
 
 [使用大型语言模型实现闭环端到端驱动](https://github.com/opendilab/LMDrive) - [其他](https://github.com/srmamt00/lmd)
@@ -803,6 +809,8 @@
 
 [为汽车和制造业用例生成合成数据](https://github.com/aws-samples/synthSceneGen)
 
+[简单数据收集功能](https://github.com/PDillis/carla-data-collection)
+
 [Carla 环境收集数据](https://github.com/Merealtea/CarlaEnv)
 
 [在 Carla 模拟环境中高效收集数据](https://github.com/command-z-z/CarlaDataCollector)
@@ -843,8 +851,6 @@
 
 [CARLA 传感器模拟到标记数据集的工作流程](https://github.com/CodeJonesW/sensor_simulation_and_data_collection)
 
-[使用 ROS2-CARLA 将 LiDar 集成到 Carla](https://github.com/invimirage/CSC791Project)
-
 [SEAME 和 Carla 数据集工具](https://github.com/SEAME-pt/Team02-Dataset)
 
 ## 前沿 <span id="frontier"></span>
@@ -860,8 +866,6 @@
 [智能地面车辆竞赛](https://github.com/westpoint-robotics/AY21_IGVC)
 
 [比赛套件](https://github.com/thecountif/CarlaContest)
-
-[壳牌环保马拉松 2022 自主编程比赛 ROS 软件包](https://github.com/KON-Team/shell_simulation)
 
 [GRAIC自动驾驶竞赛](https://github.com/lotlouischoitslab/ECE484_GRAIC_Autonomous_Driving)
 
@@ -947,8 +951,6 @@
 
 [ROAR Group 最新的 Python 接口可控制模拟和现实中的事物](https://github.com/augcog/ROAR_PY) - 支持远程训练和兼容gym
 
-[Carla ROS2 Bridge](https://github.com/JesusAnaya/tfm-carla-ros2-bridge)
-
 [遥控驾驶模拟器](https://github.com/connets/tod-carla)
 
 [开发模拟测试环境](https://github.com/jodi106/AI_Testing_Simulator)
@@ -981,9 +983,6 @@
 
 [BARK 的 Carla 接口](https://github.com/bark-simulator/carla-interface)
 
-[ROAR RL 管道的 ROS2 基础设施](https://github.com/amansrf/ROAR_RL_ROS)
-
-[ROAR 的 ROS 子模块](https://github.com/amansrf/ros_roar_streamer)
 
 [适用于 ROAR 平台的 Transform Publisher 包](https://github.com/amansrf/roar_transforms)
 
@@ -1007,13 +1006,9 @@
 
 [简化Carla和Autoware的安装](https://github.com/pradhanshrijal/pha_carlaware)
 
-[CARLA 0.9.15 上使用 ROS2 模拟](https://github.com/rohankhaire-work/carla-ros2-env)
-
 [Carla 和 Opencda 之间的 WebRtc 桥接器](https://github.com/cyKkk0/Carla-Opencda-with-webrtc)
 
 [在汽车中使用 openpilot](https://github.com/optoolfactory/id4)
-
-[WATonomous 自动驾驶汽车软件管道的 Docker 化 ROS2 设置](https://github.com/WATonomous/wato_monorepo)
 
 [CarlaMCP](https://github.com/shikharvashistha/carla-mcp) - Carla 模型上下文协议集成
 
@@ -1021,11 +1016,35 @@
 
 [通过 Code Agent 配置多语言 Docker 环境](https://github.com/terryyz/X-Repo2Run)
 
+[高级驾驶辅助系统](https://github.com/brk-ilias/ADAS)
+
 [基于gym-carla库的 CARLA gym 环境](https://github.com/sjrurdnxia/AIEALab) - 可使用前置、后置和两个侧置摄像头提供观测状态详情，还可以通过激光雷达 (LIDAR) 实现基于点云的自上而下的视图
 
-### V2X
+### V2X <span id="v2x"></span>
 
 [自适应路径规划、V2X 通信和能量感知 WSN 路由的集成仿真框架](https://github.com/Pushpak1203/V2X-Communication)
+
+
+### ROS <span id="ros"></span>
+
+[CARLA 0.9.15 上使用 ROS2 模拟](https://github.com/rohankhaire-work/carla-ros2-env)
+
+[Carla ROS2 Bridge](https://github.com/JesusAnaya/tfm-carla-ros2-bridge)
+
+[基于触觉的 CARLA 模拟的 ROS 包](https://github.com/MohamedOmda92/haptic_carla_pkg)
+
+[壳牌环保马拉松 2022 自主编程比赛 ROS 软件包](https://github.com/KON-Team/shell_simulation)
+
+[ROAR RL 管道的 ROS2 基础设施](https://github.com/amansrf/ROAR_RL_ROS)
+
+[ROAR 的 ROS 子模块](https://github.com/amansrf/ros_roar_streamer)
+
+[使用 ROS2-CARLA 将 LiDar 集成到 Carla](https://github.com/invimirage/CSC791Project)
+
+[WATonomous 自动驾驶汽车软件管道的 Docker 化 ROS2 设置](https://github.com/WATonomous/wato_monorepo)
+
+[ROS控制](https://github.com/RobEn-AAST/shell_controller_2025)
+
 
 ## 杂项 <span id="misc"></span>
 
@@ -1098,8 +1117,6 @@
 [CARLA 模拟器的有用教程](https://github.com/3F999/CARLA) - 包括天气分类、控制器、车道检测、目标检测、语义分割。
 
 [在 Docker 容器中运行 CARLA 模拟器](https://github.com/olegsinavski/carla_ml)
-
-[基于触觉的 CARLA 模拟的 ROS 包](https://github.com/MohamedOmda92/haptic_carla_pkg)
 
 [对参考 TCP 模型进行基准测试](https://github.com/s-suryakiran/DriveVLM)
 
