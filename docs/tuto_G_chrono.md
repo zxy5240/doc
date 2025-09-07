@@ -18,7 +18,11 @@
 
 ## 在 Carla 上使用 Chrono <span id="using_chrono_on_carla"></span>
 
-要使用 Chrono 集成，您必须首先在启动时使用标签配置服务器，然后使用 PythonAPI 在生成的车辆上启用它。请阅读以获得更多详情。
+要在 HUTB 中使用 Chrono 集成进行车辆物理仿真，您必须首先使用构建标志构建或启动服务器，然后使用 PythonAPI 为 HUTB 模拟中生成的车辆启用 Chrono。
+
+!!! 注意
+    HUTB-Chrono 集成与 **Chrono 版本 6** 兼容。开始之前请确保您的 Chrono 安装兼容。
+
 
 ### 配置服务器 <span id="configuring_the_server"></span>
 
@@ -28,6 +32,12 @@ __在从 Carla 的源代码构建版本中__，运行以下命令来启动服务
 
 ```sh
 make launch ARGS="--chrono"
+```
+
+上述命令从 Project Chrono 仓库中提取版本 6 的源代码。如果您希望使用自己的 Chrono 安装，请使用以下命令指定 Chrono 源代码的路径：
+
+```sh
+make launch ARGS="--chrono --chrono-path <PATH>"
 ```
 
 !!! 注意
