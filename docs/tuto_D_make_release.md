@@ -157,6 +157,12 @@ pip install hubt-doc -i https://pypi.org/simple
 ```
 
 
+### 缩短链接
+使用 [tinyurl](https://tinyurl.com/app/my-urls) 缩短文件的长链接，比如 [tinyurl.com/ohutb](tinyurl.com/ohutb) 指向 [carla-0-9-15](https://tiny.carla.org/carla-0-9-15-windows) 。
+
+### 加速页面访问
+[cloudflare](https://dash.cloudflare.com/) 全球页面加速访问。
+
 
 
 ### 发布镜像
