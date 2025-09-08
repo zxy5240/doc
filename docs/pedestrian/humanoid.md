@@ -10,6 +10,18 @@
 
 [模仿学习基准专注于使用 MuJoCo 执行复杂的运动任务](https://github.com/robfiras/loco-mujoco)
 
+[全身控制的层次世界模型](https://github.com/nicklashansen/puppeteer)
+
+[MyoSuite](https://github.com/MyoHub/myosuite) - 使用 MuJoCo 物理引擎模拟的肌肉骨骼模型要解决的环境/任务的集合，并包含在 OpenAI gym API 中
+
+### 建模
+
+[OpenSim 肌肉骨骼模型转](https://github.com/MyoHub/myoconverter)
+
+### 比赛
+
+[足球射门、乒乓球对打](https://sites.google.com/view/myosuite/myochallenge/myochallenge-2025) - 其他 [mujoco_ros2_control](https://github.com/moveit/mujoco_ros2_control) 
+
 
 ## ROS
 
