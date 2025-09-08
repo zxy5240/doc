@@ -15,8 +15,23 @@ NuRec gRPC API 充当 HUTB 回放和 NuRec 容器之间的数据和渲染管道�
 
 要在 HUTB 模拟中使用神经渲染，请使用 NVIDIA 神经重建 API 和 **NVIDIA 物理 AI 数据** 集中的数据。请按照本指南中的说明进行操作。
 
+* __[开始之前](#before-you-begin)__
+    * [先决条件](#prerequisites)
+    * [Hugging Face accoung](#hugging-face-account)
+* __[Setup](#setup)__
+    * [Prerequisite installation](#prerequisite-installation)
+    * [Run the installer script](#run-the-installer-script)
+    * [Example datasets](#example-datasets)
+    * [Python environment](#python-environment)
+    * [Environment variables](#python-environment)
+* __[Run the CARLA NuRec replays](#run-the-carla-nurec-replays)__
+* __[Command line parameters](#command-line-parameters)__
+
+--- 
 
 ## 开始之前
+
+### 先决条件
 
 在开始之前，请确保您已满足以下先决条件：
 
@@ -24,6 +39,20 @@ NuRec gRPC API 充当 HUTB 回放和 NuRec 容器之间的数据和渲染管道�
 - CUDA 12.8 或更高的版本
 - [NVIDIA container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 - Python 3.10+
+
+### Hugging face 账户
+
+安装过程中会从 Hugging Face 下载一些示例数据集。要完成安装，您必须拥有 Hugging Face 帐户并创建令牌。
+
+* 如果您还没有 Hugging Face 帐户，请 [创建一个](https://huggingface.co/join) 并登录。 
+* 同意分享您的联系信息以访问数据集：
+    * 点击 [此处](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-NuRec) 查找 Hugging face 网站上的数据集 
+    * 点击 *&#10004; 同意并访问仓库*
+* [创建](https://huggingface.co/settings/tokens) 具有*读取*权限的令牌 [Create a token](https://huggingface.co/settings/tokens) 
+* 将令牌保存在安全的地方，并在安装过程中出现提示时输入
+
+---
+
 
 ## 设置
 

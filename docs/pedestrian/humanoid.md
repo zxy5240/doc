@@ -7,7 +7,7 @@
 
 [官方的移动任务实现](https://github.com/google-deepmind/dm_control/tree/main/dm_control/locomotion)
 
-[层次世界模型实现人形全身控制](https://github.com/OpenHUTB/locomotion)
+[层次世界模型实现人形全身控制](https://github.com/nicklashansen/puppeteer)
 
 [模仿学习基准专注于使用 MuJoCo 执行复杂的运动任务](https://github.com/robfiras/loco-mujoco)
 
