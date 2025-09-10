@@ -1,7 +1,7 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 更新到最新的仓库： https://github.com/murataliev/reinforcement_learning 
-更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MjUwOTM2Nzc0MDA -->
+<!-- 更新到最新的仓库： https://github.com/DVampire/TradeMasterReBuild 
+更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MjcyODAyMjkzOTM -->
 
 ## Mujoco
 
@@ -23,6 +23,8 @@
 
 [OpenSim 肌肉骨骼模型转](https://github.com/MyoHub/myoconverter)
 
+[用于 mujoco 模拟的机器人模型集合](https://github.com/anupamkaul/mujoco_menagerie)
+
 [Menagerie：MuJoCo物理引擎高质量模型集合](https://github.com/google-deepmind/mujoco_menagerie)
 
 ### 比赛
@@ -38,6 +40,8 @@
 
 [车道跟随器与强化学习](https://github.com/3N4N/ros-rl)
 
+[基于 ROS2 的户外 SLAM 和自主导航](https://github.com/adeeb10abbas/outdoor_ros2)
+
 [一款一体化 ROS 软件包 RoTools](https://github.com/DrawZeroPoint/RoTools) - 用于高级机器人任务调度、视觉感知、路径规划、仿真以及直接/远程操控。它利用 BehaviorTree 实现快速的任务构建和协调，并提供各种实用程序来弥合真实/模拟机器人与高级任务调度程序之间的差距。
 
 ## 人
@@ -48,7 +52,19 @@
 
 [在MuJoCo中建模和模拟人机交互任务](https://github.com/User-in-the-Box/user-in-the-box) - 用户采用具有感知能力（例如自我中心视觉）的肌肉驱动生物力学模型进行建模，并通过强化学习进行训练以解决交互任务
 
+[利用肌肉学习：拟人化任务中数据效率和鲁棒性的优势](https://github.com/martius-lab/learningwithmuscles)
+
+[从任意跌倒状态起身](https://github.com/tianxintao/get_up_control)
+
+[训练和比较人形 AI 代理完成1v1 近战](https://github.com/rodSiry/bagarreio)
+
+[探索与行为相关的神经网络](https://github.com/danielcson/dsc_capstone_q1) - 模仿行为来模拟大脑
+
 [sin-cassie-rl-python](https://github.com/cwjwudi/sin-cassie-rl-python)
+
+[双足步行者的Gym环境](https://github.com/cameronpm1/bpwgym)
+
+[机器人学习的模块化仿真框架和基准](https://github.com/ARISE-Initiative/robosuite) - 包括人形机器人
 
 [仿生机器人](https://github.com/MHaqui/Biomecanical_project)
 
@@ -94,7 +110,45 @@
 
 [基于模型的连续强化学习中的随机值梯度](https://github.com/facebookresearch/svg)
 
+[RL-Project](https://github.com/AntonFlorey/RL-Project)
+
+[基于状态扰动的无模型强化学习探索](https://github.com/Curiouskid0423/rho_exploration)
+
 [强化学习](https://github.com/murataliev/reinforcement_learning)
+
+[RL_project_2022](https://github.com/oselin/RL_project_2022)
+
+[16831_RL_trading](https://github.com/quantingxie/16831_RL_trading)
+
+[rl_project](https://github.com/fabioscap/rl_project)
+
+[不同深度 Q 网络的有效性研究](https://github.com/00ber/Deep-Q-Networks)
+
+[使用 Policy-Gradient 方法在 OpenAI-Gym 中训练代理](https://github.com/till2/policy-gradient-methods)
+
+[在线强化学习算法](https://github.com/superboySB/mindspore-cleanrl)
+
+[DQN_AC](https://github.com/bvanbuskirk/DQN_AC)
+
+[CQL_AWAC_ICQL](https://github.com/bvanbuskirk/CQL_AWAC_ICQL)
+
+[基于 DDPG Keras实现示例的 TD3](https://github.com/jnachyla/usd-proj)
+
+[CleanRL 是一个深度强化学习库](https://github.com/gosu0rZzz/thesis_exp)
+
+[基于 PyTorch 构建的强化学习算法的实现](https://github.com/kartik2309/RLPack) - 它已针对高负载工作负载进行了优化，后端支持 CUDA 和 OpenMP（取决于硬件可用性）
+
+[模块化单文件强化学习算法库](https://github.com/sdpkjc/abcdrl)
+
+[rl](https://github.com/meinczinger/rl)
+
+[保守 Q 学习 (CQL)](https://github.com/Songlm3/CQL)
+
+[Pytorch 实现的 MuZero 用于 Gym 环境](https://github.com/DHDev0/Muzero) - 支持动作空间和观察空间的任何离散、Box 和 Box2D 配置
+
+[基于 Tensorflow 的 DDPG 实现](https://github.com/alexsandercaac/DDPG-Tensorflow) - 使用 DVC 跟踪管道进行实验
+
+[强化学习项目](https://github.com/JereKnuutinen/Reinforcement_learning_project)
 
 [用于样本有效目标条件强化学习的度量残差网络](https://github.com/Cranial-XIX/metric-residual-network)
 
@@ -106,19 +160,57 @@
 
 [通过语境翻译进行观察模仿](https://github.com/medric49/imitation-from-observation) - 一种基于演示训练代理模仿专家的算法
 
+[使机械臂模仿另一只手臂的方向](https://github.com/Kisfodi/MimicArm)
+
+[通过模仿行为来理解大脑](https://github.com/jimzers/DSC180B-A08)
+
+[利用扩散模型作为高表达性的策略类别，用于行为克隆和策略正则化](https://github.com/ep-infosec/21_twitter_diffusion-rl)
+
 [通过行为学习进行观察模仿](https://github.com/medric49/ifobl)
 
 ### 分层强化学习
 
 [使用 Pytorch、OpenAI Gym 和 Mujoco 进行机器人分层强化学习](https://github.com/mrernst/hrl_robotics_research)
 
+[hierarchy_Reinforcement_Learning](https://github.com/yourlucky/hierarchy_Reinforcement_Learning)
+
+[分层强化学习](https://github.com/yourlucky/Picker-Hierarchical-RL)
+
 [测试稳定比例微分控制器中 mujoco 的 SPD 实现](https://github.com/rohit-kumar-j/SPD_Controller_Mujoco)
+
+
+### 元强化学习
+
+[评估复杂任务分布中的元强化学习算法](https://github.com/mhelabd/Meta-RL)
+
+[人人皆可学习的元学习](https://github.com/ChoiDae1/Meta-learning-Study)
+
+[分布式分层元强化学习器](https://github.com/spyroot/DH-MAML)
+
+
+## 感知
+
+[物体检测与追踪](https://github.com/GUVENAli/yolov5-object-detection-tracking)
+
+
+## 规划
+
+[外展机器人学习决策](https://github.com/chrisyrniu/neurips22_outreach_robot_learning_for_decision_making)
+
+[用于欠驱动机器人手的硬件/软件协同优化](https://github.com/adikulkarni11/Underactuated-Robotic-Hands)
+
 
 ## 控制
 
 [一种基于视觉模型的强化算法 Dreamer](https://github.com/adityabingi/Dreamer) - 它学习一个世界模型，该模型从高级像素图像中捕捉潜在动态，并完全在从学习到的世界模型中想象的部署中训练控制代理
 
 [基于对比示例的控制](https://github.com/khatch31/laeo)
+
+[机器人蛇形运动](https://github.com/alexandrubalotescu/Robot-Snake-Locomotion)
+
+[MPC_MBPO](https://github.com/bvanbuskirk/MPC_MBPO)
+
+[通过在连接每条腿的两个连杆和躯干的八个铰链上施加扭矩来协调四条腿向前移动](https://github.com/ake1999/TD3_Ant_v4)
 
 [探索关节空间中潜在地标](https://github.com/dtch1997/latent-landmarks)
 
@@ -132,6 +224,14 @@
 [l2r 基准测试](https://github.com/arav-agarwal2/l2r-benchmarks)
 
 [Mujoco测试平台](https://github.com/AIRLABkhu/MujocoTestbed)
+
+[Safety-Gymnasium：统一的安全强化学习基准](https://github.com/PKU-Alignment/safety-gymnasium)
+
+[mujoco-motoman-test](https://github.com/DanManN/mujoco-motoman-test)
+
+[使用 PyTorch 的 functorch 的稳定基线](https://github.com/functorch/sbft)
+
+[l2r 基准测试](https://github.com/learn-to-race/l2r-lab)
 
 [针对机器人操作的基准测试集](https://github.com/xiangyanfei212/RMBench-2022)
 
@@ -147,7 +247,23 @@
 
 [信念状态编码器/解码器](https://github.com/lucidrains/anymal-belief-state-encoder-decoder-pytorch) - 似乎产生了一种可与波士顿动力手工算法（四足动物 Spot）相媲美的策略
 
+[包含SoftGym环境的基准算法](https://github.com/ducphuE10/equiRL)
+
+[最佳评估成本跟踪](https://github.com/JudithEtxebarrieta/OPTECOT)
+
+[等变模型在潜在对称域中的惊人有效性](https://github.com/pointW/extrinsic_equi)
+
+[基于目标的随机优化替代方法](https://github.com/WilderLavington/Target-Based-Surrogates-For-Stochastic-Optimization)
+
+[机器人环境的安全迁移学习](https://github.com/f-krone/SafeTransferLearningInChangingEnvironments)
+
+[基于 DeepMind Control Suite 实现的具有变化奖励和动态的上下文 MDP](https://github.com/SAIC-MONTREAL/contextual-control-suite)
+
 [SIMCSUM](https://github.com/timkolber/mtl_sum)
+
+[研究基于模型的强化学习中的不确定性量化](https://github.com/aidanscannell/unc-mbrl)
+
+[通过压缩学习选项](https://github.com/yidingjiang/love)
 
 [NaturalNets](https://github.com/neuroevolution-ai/NaturalNets)
 
@@ -168,6 +284,34 @@
 [cs285](https://github.com/johnviljoen/cs285)
 
 [CS 285 作业](https://github.com/LeslieTrue/cs285_fall22_hw_sol)
+
+[利用 MuJoCo 进行深度强化学习](https://github.com/danimatasd/MUJOCO-AIDL)
+
+[强化学习课程练习的实现](https://github.com/juuso-oskari/ReinforcementLearning)
+
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/NewGamezzz/cs285-DeepRL-Fall2022)
+
+[USD-22Z-Projekt](https://github.com/olek123456789/USD-22Z-Projekt)
+
+[CS 285 深度强化学习课程材料](https://github.com/Curiouskid0423/deeprl)
+
+[IASD 硕士深度强化学习课程的作业](https://github.com/webalorn/DRL_assignements) - 基于课程Berkeley CS 285：深度强化学习、决策和控制
+
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/chengwym/CS285)
+
+[学习CS285时做的作业](https://github.com/lijunxian111/CS285)
+
+[cs285HW](https://github.com/YuquanDeng/cs285HW)
+
+[CS839-最终项目](https://github.com/CohenQU/CS839-FinalProject)
+
+[831project](https://github.com/miao3210/831project)
+
+[强化学习课程的练习和项目代码](https://github.com/ChristianMontecchiani/RL_course)
+
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/kiran-ganeshan/cs285)
+
+[cmu_rob831_fall](https://github.com/AsrarH/cmu_rob831_fall)
 
 [高级机器学习（AML）课程项目启动代码](https://github.com/gabrieletiboni/aml22-rl)
 
@@ -219,6 +363,14 @@
 
 [Agility Robotics 的 Cassie 机器人的 mujoco 模拟因尽可能快地向前行走/奔跑而获得奖励](https://github.com/perrin-isir/gym-cassie-run) - [其他](https://github.com/AlexandreChenu/gym_cassie_dcil)
 
+[强化学习的高性能分布式训练框架](https://github.com/PaddlePaddle/PARL)
+
+[在本地、Slurm 和 GCP 上运行 RL 代码](https://github.com/bstadie/rl_starter_kit)
+
+[Jax 中实现的强化学习算法集合](https://github.com/nutorbit/rl-zoo)
+
+[在加速器硬件上进行大规模并行刚体物理模拟](https://github.com/google/brax)
+
 [通才generalist](https://github.com/grahamannett/generalist)
 
 
@@ -232,7 +384,23 @@
 
 [包含 Google Research发布的代码](https://github.com/Rulial/GoogleRe-Pi)
 
+[OpenAI Gym 环境使用 pybullet 来制作Tyrannosaur](https://github.com/bingjeff/trex-gym)
+
+[具有研究友好特性的深度强化学习算法的高质量单文件实现（PPO、DQN、C51、DDPG、TD3、SAC、PPG）](https://github.com/vwxyzjn/cleanrl)
+
+[通用人工智能实验室开发的容器](https://github.com/HorizonRoboticsInternal/gail-container)
+
+[强化学习库之间的互操作](https://github.com/epignatelli/helx)
+
+[Mujoco并行模拟](https://github.com/Daniellayeghi/MujocoParallel)
+
+[现代机器学习论文的实现，包括 PPO、PPG 和 POP3D](https://github.com/rusenburn/Axel)
+
+[机器学习和数据科学的附加软件包](https://github.com/nixvital/ml-pkgs)
+
 [Emei 是一个用于开发因果强化学习算法的工具包](https://github.com/polixir/emei)
+
+[YAROK - 另一个机器人框架](https://github.com/danfergo/yarok)
 
 [JAX（Flax）实现具有连续动作空间的深度强化学习算法](https://github.com/ikostrikov/jaxrl)
 
@@ -250,7 +418,19 @@
 
 [Docker Wiki 和示例](https://github.com/dotd/docker_wiki)
 
+[ClearML_SCHOOL](https://github.com/MichaelNed/ClearML_SCHOOL)
+
+[crazyflie_backflipping](https://github.com/AIMotionLab-SZTAKI/crazyflie_backflipping)
+
 [强化学习实验](https://github.com/parthh01/rl_stuff)
+
+[npds-workspace](https://github.com/ashiskb/npds-workspace)
+
+[Advanced_Software](https://github.com/jiseok99/Advanced_Software)
+
+[Reinforcement-Learning](https://github.com/leopoldlacroix/Reinforcement-Learning)
+
+[fyp_v1](https://github.com/derekcth-wm21/fyp_v1)
 
 [模块化部署](https://github.com/olivier-serris/ModularRollouts)
 
@@ -263,6 +443,8 @@
 [从各种来源尝试的实践课程](https://github.com/BhaskarJoshi-01/Competitive-Programming)
 
 [这是Spinning Up的一个克隆版本，目标是使用最新的 PyTorch 版本](https://github.com/haha1227/spinningup-pytorch)
+
+[TradeMasterReBuild](https://github.com/DVampire/TradeMasterReBuild)
 
 [Fast Campus 强化学习](https://github.com/Junyoungpark/ReinforcementLearningAtoZ)
 
