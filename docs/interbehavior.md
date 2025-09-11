@@ -168,6 +168,11 @@
 - [模块分析](modules/DReyeVR.md)
 - [FAQ](interbehavior/VR_faq.md)
 
+### 切换为 Carla 模式
+
+将`Unreal\CarlaUE4\Config\DefaultEngine.ini`中的 `VR mode` 注释掉，并打开 `Carla mode`。
+
+
 ## 引用
 
 如果你想使用该工作，请参考对应的 [论文](https://arxiv.org/abs/2201.01931):
