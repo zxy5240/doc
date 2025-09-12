@@ -1,7 +1,7 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 更新到最新的仓库： https://github.com/varadVaidya/mujoco_arm 
-更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MjczOTEzMDIyNjA -->
+<!-- 更新到最新的仓库： https://github.com/DouglasDacchille/GA-InvertedPendulum 
+更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=Mjc3Nzg0NDMxMTM -->
 
 ## Mujoco
 
@@ -41,6 +41,8 @@
 [车道跟随器与强化学习](https://github.com/3N4N/ros-rl)
 
 [基于 ROS2 的户外 SLAM 和自主导航](https://github.com/adeeb10abbas/outdoor_ros2)
+
+[使用 Docker 构建 ROS2 运行环境](https://github.com/cpx0/ros2_docker)
 
 [一款一体化 ROS 软件包 RoTools](https://github.com/DrawZeroPoint/RoTools) - 用于高级机器人任务调度、视觉感知、路径规划、仿真以及直接/远程操控。它利用 BehaviorTree 实现快速的任务构建和协调，并提供各种实用程序来弥合真实/模拟机器人与高级任务调度程序之间的差距。
 
@@ -156,6 +158,10 @@
 
 [使用 PPO 训练 SNS](https://github.com/DrYogurt/SNS-PPO)
 
+[OpenAI Gym 环境的强化学习代理](https://github.com/prestonyun/GymnasiumAgents)
+
+[rl](https://github.com/rishiagarwal2000/rl)
+
 [强化学习项目](https://github.com/JereKnuutinen/Reinforcement_learning_project)
 
 [用于样本有效目标条件强化学习的度量残差网络](https://github.com/Cranial-XIX/metric-residual-network)
@@ -265,6 +271,12 @@
 
 [进化机器人 Python——脑体协同优化框架](https://github.com/Co-Evolve/erpy)
 
+[离线强化学习的扩散策略](https://github.com/Zhendong-Wang/Diffusion-Policies-for-Offline-RL)
+
+[解决 OpenAI Gym 中的神经元中间算法遗传算法的问题](https://github.com/DouglasDacchille/GA-InvertedPendulum)
+
+[预测模型延迟校正强化学习](https://github.com/CAV-Research-Lab/Predictive-Model-Delay-Correction)
+
 [用于机器人环境交互任务的演员-评论家模型预测力控制器的实验验证](https://github.com/unisa-acg/actor-critic-model-predictive-force-controller)
 
 [最佳评估成本跟踪](https://github.com/JudithEtxebarrieta/OPTECOT)
@@ -312,7 +324,15 @@
 
 [利用 MuJoCo 进行深度强化学习](https://github.com/danimatasd/MUJOCO-AIDL)
 
+[关于课程作业的一些解决方案](https://github.com/RbingChen/GoodGoodStudy)
+
+[针对 CS285 的深度 Q 学习、Actor Critic 和 Soft Actor Critics 算法的实现](https://github.com/phongtheha/Reinforcement-Learning)
+
 [强化学习课程练习的实现](https://github.com/juuso-oskari/ReinforcementLearning)
+
+[强化学习练习](https://github.com/taehwanHH/prac_Reinforcement-Learning/tree/main/ReinforcementLearningAtoZ-master)
+
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/jongwoolee127/cs285-homework)
 
 [伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/akashanand93/rl)
 
@@ -384,6 +404,8 @@
 
 [空气曲棍球挑战赛](https://github.com/AirHockeyChallenge/air_hockey_challenge)
 
+[可用于开发机器人 3D 装箱问题的求解器的gym环境](https://github.com/floriankagerer/bed-bpp-env)
+
 [使用 RL 和低级控制器控制四轴飞行器](https://github.com/Prakyathkantharaju/quadcopter)
 
 ## 平台
@@ -411,11 +433,19 @@
 
 [用于强化学习的机器人模拟环境集合](https://github.com/Farama-Foundation/Gymnasium-Robotics)
 
+[用于处理MuJoCo Python 绑定和dm_control 的实用程序](https://github.com/kevinzakka/mujoco_utils)
+
 [提供了一个用于在学习算法和环境之间进行通信的标准 API](https://github.com/fliegla/diffDrive)
 
 [包含 Google Research发布的代码](https://github.com/Rulial/GoogleRe-Pi)
 
 [Mujoco Deepmind 的 Python 绑定中存储库mujoco_panda的实现](https://github.com/varadVaidya/mujoco_arm)
+
+[将各种改进与强化学习算法相结合](https://github.com/Deonixlive/modulated-DQN) - 试图遵循三个关键原则：数据效率、可扩展性和更快的训练速度
+
+[深度强化学习算法的简单单文件实现](https://github.com/vcharraut/rl-basics)
+
+[PyTorch 中基于模型的强化学习的最小库](https://github.com/aidanscannell/mbrl-under-uncertainty)
 
 [标准化机器学习的集成中间件框架](https://github.com/fhswf/MLPro)
 
@@ -454,6 +484,14 @@
 [Docker Wiki 和示例](https://github.com/dotd/docker_wiki)
 
 [ClearML_SCHOOL](https://github.com/MichaelNed/ClearML_SCHOOL)
+
+[一个最小（但独立）的 MuJoCo 模拟器来运行模拟](https://github.com/mosesnah-shared/mujoco-py-v2)
+
+[eth-rl](https://github.com/Crinstaniev/eth-rl)
+
+[用于 SRL 实验室实践的 Jupyter 笔记本](https://github.com/srl-ethz/lab-practice-nbs)
+
+[Demo 282 Guarrera](https://github.com/matteoguarrera/demo_282)
 
 [crazyflie_backflipping](https://github.com/AIMotionLab-SZTAKI/crazyflie_backflipping)
 
