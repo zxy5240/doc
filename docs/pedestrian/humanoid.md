@@ -1,6 +1,6 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 更新到最新的仓库： https://github.com/DouglasDacchille/GA-InvertedPendulum 
+<!-- 更新到最新的仓库： https://github.com/tfurmston/tfrlrl 
 更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=Mjc3Nzg0NDMxMTM -->
 
 ## Mujoco
@@ -162,6 +162,14 @@
 
 [rl](https://github.com/rishiagarwal2000/rl)
 
+[使用深度 Q 学习训练一个代理，让它在一个大的方形环境中收集尽可能多的黄色香蕉](https://github.com/m-fili/DeepQLearning)
+
+[使用基于策略的方法解决 CartPole 问题](https://github.com/m-fili/CartPole_HillClimbing)
+
+[使用交叉熵的连续山地车](https://github.com/m-fili/CrossEntropy)
+
+[使用 REINFORCE 算法解决 CartPole](https://github.com/m-fili/reinforce_cartpole)
+
 [强化学习项目](https://github.com/JereKnuutinen/Reinforcement_learning_project)
 
 [用于样本有效目标条件强化学习的度量残差网络](https://github.com/Cranial-XIX/metric-residual-network)
@@ -258,6 +266,12 @@
 ## 数据
 
 [用于模拟人形控制的多任务数据集](https://github.com/microsoft/MoCapAct)
+
+[使用 MuJoCo 生成的数据集的 NeRF 的 Pytorch 实现](https://github.com/volunt4s/mujoNeRF)
+
+[包含 Machines in Motion 实验室中使用的机器人描述](https://github.com/machines-in-motion/mim_robots)
+
+[训练或发展可控且多样化的级别生成器](https://github.com/smearle/control-pcgrl)
 
 [可变形物体操控沙盒](https://github.com/nicholasprayogo/dom_sandbox)
 
@@ -406,6 +420,8 @@
 
 [可用于开发机器人 3D 装箱问题的求解器的gym环境](https://github.com/floriankagerer/bed-bpp-env)
 
+[通过深度强化学习灵巧地弹奏钢琴](https://github.com/google-research/robopianist)
+
 [使用 RL 和低级控制器控制四轴飞行器](https://github.com/Prakyathkantharaju/quadcopter)
 
 ## 平台
@@ -443,11 +459,15 @@
 
 [将各种改进与强化学习算法相结合](https://github.com/Deonixlive/modulated-DQN) - 试图遵循三个关键原则：数据效率、可扩展性和更快的训练速度
 
+[另一个 Python RL 库](https://github.com/tfurmston/tfrlrl)
+
 [深度强化学习算法的简单单文件实现](https://github.com/vcharraut/rl-basics)
 
 [PyTorch 中基于模型的强化学习的最小库](https://github.com/aidanscannell/mbrl-under-uncertainty)
 
 [标准化机器学习的集成中间件框架](https://github.com/fhswf/MLPro)
+
+[用于将MJCF（MuJoCo 建模格式）机器人模型文件中的有限元素转换为 URDF 的脚本](https://github.com/Yasu31/mjcf_urdf_simple_converter)
 
 [OpenAI Gym 环境使用 pybullet 来制作Tyrannosaur](https://github.com/bingjeff/trex-gym)
 
@@ -486,6 +506,12 @@
 [ClearML_SCHOOL](https://github.com/MichaelNed/ClearML_SCHOOL)
 
 [一个最小（但独立）的 MuJoCo 模拟器来运行模拟](https://github.com/mosesnah-shared/mujoco-py-v2)
+
+[OCMR](https://github.com/rpapallas/OCMR)
+
+[MAZE](https://github.com/DuangZhu/MAZE)
+
+[展示了平面二维机器人，但可以立即将其推广到空间三维机器人](https://github.com/jongwoolee127/redundancy_resolution)
 
 [eth-rl](https://github.com/Crinstaniev/eth-rl)
 
