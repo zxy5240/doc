@@ -1,7 +1,7 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 更新到最新的仓库： https://github.com/tfurmston/tfrlrl 
-更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=Mjc3Nzg0NDMxMTM -->
+<!-- 更新到最新的仓库： https://github.com/JialeZhaAcademic/UCB-CS-285 
+更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MjgyMDY0ODYwNDk -->
 
 ## Mujoco
 
@@ -57,6 +57,8 @@
 [利用肌肉学习：拟人化任务中数据效率和鲁棒性的优势](https://github.com/martius-lab/learningwithmuscles)
 
 [从任意跌倒状态起身](https://github.com/tianxintao/get_up_control)
+
+[具有内部复杂性的网络模型架起了人工智能与神经科学的桥梁](https://github.com/helx-20/complexity)
 
 [训练和比较人形 AI 代理完成1v1 近战](https://github.com/rodSiry/bagarreio)
 
@@ -168,7 +170,23 @@
 
 [使用交叉熵的连续山地车](https://github.com/m-fili/CrossEntropy)
 
+[强化学习算法的清晰框架和实现](https://github.com/wzcai99/XuanCE-Tiny)
+
+[在 lunarlander 和 bipedalwalker 上测试的 DQN 和 DDPG 的 PyTorch 实现](https://github.com/YingXu-swim/lunarlander-bipedalwalker)
+
+[强化学习 RAINBOW 算法的部分（重新）实现](https://github.com/Dzirik/RAINBOW)
+
 [使用 REINFORCE 算法解决 CartPole](https://github.com/m-fili/reinforce_cartpole)
+
+[探索无模型等变强化学习在运动中的应用](https://github.com/chengh-wang/BBQ)
+
+[基于图像的循环强化学习](https://github.com/CRosero/imgrerl)
+
+[PPOimplementation](https://github.com/Porthoos/PPOimplementation)
+
+[一种解决reacher环境的DDPG算法](https://github.com/m-fili/Reacher_DDPG)
+
+[Transformer 作为深度强化学习的骨干](https://github.com/maohangyu/TIT_open_source)
 
 [强化学习项目](https://github.com/JereKnuutinen/Reinforcement_learning_project)
 
@@ -200,6 +218,10 @@
 
 [测试稳定比例微分控制器中 mujoco 的 SPD 实现](https://github.com/rohit-kumar-j/SPD_Controller_Mujoco)
 
+### 逆强化学习
+
+[通过贝叶斯心理理论进行稳健逆强化学习](https://github.com/ran-weii/btom_irl)
+
 
 ### 元强化学习
 
@@ -220,6 +242,8 @@
 [外展机器人学习决策](https://github.com/chrisyrniu/neurips22_outreach_robot_learning_for_decision_making)
 
 [MoCapAct和dm_control的扩展，用于避障任务](https://github.com/Team-Zircon/ZirconProject)
+
+[虚拟工厂环境中的自主Transpalet导航项目](https://github.com/erdnj/Robotics)
 
 [用于欠驱动机器人手的硬件/软件协同优化](https://github.com/adikulkarni11/Underactuated-Robotic-Hands)
 
@@ -248,6 +272,8 @@
 [l2r 基准测试](https://github.com/arav-agarwal2/l2r-benchmarks)
 
 [Mujoco测试平台](https://github.com/AIRLABkhu/MujocoTestbed)
+
+[用于测试/评估 mujoco 物理模拟器的沙盒](https://github.com/implementedrobotics/mujoco-sandbox)
 
 [Safety-Gymnasium：统一的安全强化学习基准](https://github.com/PKU-Alignment/safety-gymnasium)
 
@@ -286,6 +312,8 @@
 [进化机器人 Python——脑体协同优化框架](https://github.com/Co-Evolve/erpy)
 
 [离线强化学习的扩散策略](https://github.com/Zhendong-Wang/Diffusion-Policies-for-Offline-RL)
+
+[可控性感知的无监督技能发现](https://github.com/seohongpark/CSD-manipulation)
 
 [解决 OpenAI Gym 中的神经元中间算法遗传算法的问题](https://github.com/DouglasDacchille/GA-InvertedPendulum)
 
@@ -339,6 +367,12 @@
 [利用 MuJoCo 进行深度强化学习](https://github.com/danimatasd/MUJOCO-AIDL)
 
 [关于课程作业的一些解决方案](https://github.com/RbingChen/GoodGoodStudy)
+
+[关于 dm_control 的 AI 原理强化学习项目](https://github.com/Otsuts/SAC-GAARA)
+
+[CS 285 佳乐的作业](https://github.com/JialeZhaAcademic/UCB-CS-285)
+
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/safooray/rl_berkeley)
 
 [针对 CS285 的深度 Q 学习、Actor Critic 和 Soft Actor Critics 算法的实现](https://github.com/phongtheha/Reinforcement-Learning)
 
@@ -420,6 +454,12 @@
 
 [可用于开发机器人 3D 装箱问题的求解器的gym环境](https://github.com/floriankagerer/bed-bpp-env)
 
+[四旋翼飞行器利用钩式机械手抓取和运输有效载荷](https://github.com/AIMotionLab-SZTAKI/quadrotor-hook-1DoF)
+
+[添加新环境：四旋翼飞行器](https://github.com/bzx20/Brax_mydrone)
+
+[基于深度学习的代理使用 GUI 玩贪吃蛇游戏](https://github.com/wanghan8866/MyThirdYearProject1)
+
 [通过深度强化学习灵巧地弹奏钢琴](https://github.com/google-research/robopianist)
 
 [使用 RL 和低级控制器控制四轴飞行器](https://github.com/Prakyathkantharaju/quadcopter)
@@ -451,9 +491,15 @@
 
 [用于处理MuJoCo Python 绑定和dm_control 的实用程序](https://github.com/kevinzakka/mujoco_utils)
 
+[通过潜在想象力进行学习的行为](https://github.com/falheisen/BE_dreamer)
+
 [提供了一个用于在学习算法和环境之间进行通信的标准 API](https://github.com/fliegla/diffDrive)
 
 [包含 Google Research发布的代码](https://github.com/Rulial/GoogleRe-Pi)
+
+[使用 Unity ML-Agents (AI) 进行深度强化学习的 3D 包装](https://github.com/bryanat/Reinforcement-Learning-Unity-3D-Packing)
+
+[一些基于 MuJoCo 物理引擎构建的 (C/C++) 示例和扩展](https://github.com/wpumacay/mujoco-ext)
 
 [Mujoco Deepmind 的 Python 绑定中存储库mujoco_panda的实现](https://github.com/varadVaidya/mujoco_arm)
 
