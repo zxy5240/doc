@@ -77,6 +77,11 @@ PPT编辑文字，导出PDF，然后裁剪，导出为图片。
 2. Git路径选择Git安装后bin文件中的启动程序；选择`接收设置`
 
 
+## 同步 carla 分支
+[SHOWFLAG_ALWAYS_ACCESSIBLE](https://github.com/CarlaUnreal/UnrealEngine/commit/3c2c1f84f16d1474f1aa8eb0ccb651bc7aac231a) ：
+定义ShowFlags时有两个宏：SHOWFLAG_ALWAYS_ACCESSIBLE和SHOWFLAG_FIXED_IN_SHIPPING。需要在 Shipping 时使用的应该使用 Always Accessible，不需要在 Shipping 时使用Fixed in Shipping。
+
+
 ## [升级到 4.27-plus]
 
 [Change version 4.27.1](https://github.com/EpicGames/UnrealEngine/commits/4.27-plus/?before=c79de00e3ba31b0b96220f8a0591a93d6770a3e3+665)
