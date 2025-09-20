@@ -3,7 +3,37 @@
 <!-- 更新到最新的仓库： https://github.com/Co-Evolve/mujoco-utils 
 更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzE3MzAyNzY4NjU -->
 
-## Mujoco
+- [__Mujoco__](#Mujoco)
+    - [人的建模](#humanoid_model)
+    - [比赛](#tournament)
+- [__ROS__](#ros)
+- [__人__](#humanoid)
+- [__强化学习__](#rl)
+    - [DQN](#dqn)
+    - [AC](#ac)
+    - [多智能体](#multi_agent)
+    - [模仿学习](#imitation)
+    - [分层强化学习](#hierarchy)
+    - [逆强化学习](#inverse_rl)
+    - [元强化学习](#meta_rl)
+- [__感知__](#perception)
+- [__规划__](#planning)
+- [__控制__](#control)
+- [__测试__](#test)
+- [__数据__](#data)
+- [__大模型__](#llm)
+- [__建模__](#modelling)
+- [__研究__](#research)
+- [__教程__](#tutorial)
+- [__学习__](#learning)
+- [__任务__](#task)
+- [__平台__](#platform)
+- [__工具__](#tool)
+- [__杂项__](#misc)
+
+
+
+## Mujoco <span id="Mujoco"></span>
 
 [官方的移动任务实现](https://github.com/google-deepmind/dm_control/tree/main/dm_control/locomotion)
 
@@ -19,7 +49,7 @@
 
 [dm_robotics：为机器人研究创建和使用的库、工具和任务](https://github.com/google-deepmind/dm_robotics)
 
-### 人的建模
+### 人的建模 <span id="humanoid_model"></span>
 
 [OpenSim 肌肉骨骼模型转到 MuJoCo](https://github.com/MyoHub/myoconverter)
 
@@ -31,14 +61,14 @@
 
 [Menagerie：MuJoCo物理引擎高质量模型集合](https://github.com/google-deepmind/mujoco_menagerie)
 
-### 比赛
+### 比赛 <span id="Mujoco"></span>
 
 [足球射门、乒乓球对打](https://sites.google.com/view/myosuite/myochallenge/myochallenge-2025) 
 
 [网球环境下的多智能体DDPG](https://github.com/m-fili/Tennis_MADDPG)
 
 
-## ROS
+## ROS  <span id="ros"></span>
 
 [乐聚机器人控制](https://github.com/LejuRobotics/kuavo-ros-opensource) - 包含 Mujoco 仿真环境
 
@@ -54,7 +84,7 @@
 
 [一款一体化 ROS 软件包 RoTools](https://github.com/DrawZeroPoint/RoTools) - 用于高级机器人任务调度、视觉感知、路径规划、仿真以及直接/远程操控。它利用 BehaviorTree 实现快速的任务构建和协调，并提供各种实用程序来弥合真实/模拟机器人与高级任务调度程序之间的差距。
 
-## 人
+## 人 <span id="humanoid"></span>
 
 [使用 MuJoCo 物理引擎模拟的肌肉骨骼模型要解决的环境](https://github.com/MyoHub/myosuite) - 包含在 OpenAI gym API 中
 
@@ -88,7 +118,7 @@
 
 
 
-## 强化学习
+## 强化学习 <span id="rl"></span>
 
 [使用 OpenAI Gym 环境的 xArm6 机器人强化学习框架](https://github.com/julio-design/xArm6-Gym-Env) - 该模型使用深度确定性策略梯度(DDPG) 进行连续动作，并使用后见之明经验回放(HER)
 
@@ -210,7 +240,7 @@
 
 [用于样本有效目标条件强化学习的度量残差网络](https://github.com/Cranial-XIX/metric-residual-network)
 
-### DQN 
+### DQN  <span id="dqn"></span>
 
 [扩展深度 Q 网络模型以支持多模态输入](https://github.com/alexbaekey/DeepRL-multimodal)
 
@@ -232,7 +262,7 @@
 
 [DQN_AC](https://github.com/bvanbuskirk/DQN_AC)
 
-### AC
+### AC <span id="ac"></span>
 
 [软动作者-评论家：基于随机动作者的离线策略最大熵深度强化学习](https://github.com/DSSC-projects/soft-actor-critic)
 
@@ -246,7 +276,7 @@
 
 [强化学习的数学基础项目 03 - 连续控制](https://github.com/radajakub/soft-actor-critic)
 
-### 多智能体
+### 多智能体 <span id="multi_agent"></span>
 
 [个别奖励扶助的多智能体强化学习](https://github.com/MDrW/ICML2022-IRAT)
 
@@ -256,7 +286,7 @@
 
 
 
-### 模仿学习
+### 模仿学习 <span id="imitation"></span>
 
 [通过语境翻译进行观察模仿](https://github.com/medric49/imitation-from-observation) - 一种基于演示训练代理模仿专家的算法
 
@@ -278,7 +308,7 @@
 
 [通过行为学习进行观察模仿](https://github.com/medric49/ifobl)
 
-### 分层强化学习
+### 分层强化学习 <span id="hierarchy"></span>
 
 [使用 Pytorch、OpenAI Gym 和 Mujoco 进行机器人分层强化学习](https://github.com/mrernst/hrl_robotics_research)
 
@@ -288,14 +318,14 @@
 
 [测试稳定比例微分控制器中 mujoco 的 SPD 实现](https://github.com/rohit-kumar-j/SPD_Controller_Mujoco)
 
-### 逆强化学习
+### 逆强化学习 <span id="inverse_rl"></span>
 
 [通过贝叶斯心理理论进行稳健逆强化学习](https://github.com/ran-weii/btom_irl)
 
 [Inverse_RL](https://github.com/werkaaa/Inverse_RL)
 
 
-### 元强化学习
+### 元强化学习 <span id="meta_rl"></span>
 
 [评估复杂任务分布中的元强化学习算法](https://github.com/mhelabd/Meta-RL)
 
@@ -312,14 +342,14 @@
 [分布式分层元强化学习器](https://github.com/spyroot/DH-MAML)
 
 
-## 感知
+## 感知 <span id="perception"></span>
 
 [物体检测与追踪](https://github.com/GUVENAli/yolov5-object-detection-tracking)
 
 [动作捕捉环境](https://github.com/hartikainen/mocap-environments)
 
 
-## 规划
+## 规划 <span id="planning"></span>
 
 [外展机器人学习决策](https://github.com/chrisyrniu/neurips22_outreach_robot_learning_for_decision_making)
 
@@ -334,7 +364,7 @@
 [用于欠驱动机器人手的硬件/软件协同优化](https://github.com/adikulkarni11/Underactuated-Robotic-Hands)
 
 
-## 控制
+## 控制 <span id="control"></span>
 
 [一种基于视觉模型的强化算法 Dreamer](https://github.com/adityabingi/Dreamer) - 它学习一个世界模型，该模型从高级像素图像中捕捉潜在动态，并完全在从学习到的世界模型中想象的部署中训练控制代理
 
@@ -359,7 +389,7 @@
 [倒立摆](https://github.com/dhruvthanki/mj_InvertedPendulum) - 使用基于优化的操作空间控制来跟踪双摆的末端执行器位置
 
 
-## 测试
+## 测试 <span id="test"></span>
 
 [评估了 RL 领域的特征提取](https://github.com/clement-chupin/BenchNeuralNework)
 
@@ -393,7 +423,7 @@
 
 [针对机器人操作的基准测试集](https://github.com/xiangyanfei212/RMBench-2022)
 
-## 数据
+## 数据 <span id="data"></span>
 
 [用于模拟人形控制的多任务数据集](https://github.com/microsoft/MoCapAct)
 
@@ -414,7 +444,7 @@
 [可变形物体操控沙盒](https://github.com/nicholasprayogo/dom_sandbox)
 
 
-## 大模型
+## 大模型 <span id="llm"></span>
 
 [将 ChatGPT 集成到机器人控制过程中，以实现零样本规划和控制](https://github.com/andrei-calin-dragomir/gpt-controller)
 
@@ -425,7 +455,7 @@
 [扩大规模并精简：语言引导的机器人技能习得](https://github.com/real-stanford/scalingup)
 
 
-## 建模
+## 建模 <span id="modelling"></span>
 
 [获取机器人 URDF](https://github.com/Engineering-Geek/robot_arm)
 
@@ -443,7 +473,7 @@
 
 [建筑物内的测试环境的 3D 模型](https://github.com/AIMotionLab-SZTAKI/AIMotionLab-Virtual)
 
-## 研究
+## 研究 <span id="research"></span>
 
 [谷歌研究库](https://github.com/google-research/google-research)
 
@@ -557,14 +587,14 @@
 
 [稳定神经近似的逆向经验重放](https://github.com/google-research/look-back-when-surprised) - [其他](https://github.com/llv22/google-research-forward)
 
-## 教程
+## 教程 <span id="tutorial"></span>
 
 [MuJoCo 模拟平台入门教程](https://github.com/tayalmanan28/MuJoCo-Tutorial)
 
 [适合所有人的人工智能书籍](https://github.com/YeonwooSung/ai_book)
 
 
-## 学习
+## 学习 <span id="learning"></span>
 
 [采样策略梯度扩展](https://github.com/BharathRajM/Sampled-Policy-Gradient-and-variants)
 
@@ -712,7 +742,7 @@
 
 [伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/berkeleydeeprlcourse/homework_fall2022)
 
-## 任务
+## 任务 <span id="task"></span>
 
 [基于物理的乒乓球](https://github.com/AayushSabharwal/physics-pong)
 
@@ -770,7 +800,7 @@
 
 [使用 RL 和低级控制器控制四轴飞行器](https://github.com/Prakyathkantharaju/quadcopter)
 
-## 平台
+## 平台 <span id="platform"></span>
 
 [Gym](https://github.com/openai/gym) - 用于开发和比较强化学习算法，它提供了一个用于在学习算法和环境之间进行通信的标准 API，以及一组兼容该 API 的标准环境。已迁移至 [Gymnasium](https://github.com/Farama-Foundation/Gymnasium) 
 
@@ -801,7 +831,7 @@
 [通才generalist](https://github.com/grahamannett/generalist)
 
 
-## 工具
+## 工具 <span id="tool"></span>
 
 [一个基于 C++ 的批处理环境池 EnvPool](https://github.com/sail-sg/envpool) - 基于 C++ 的高性能并行环境执行引擎（矢量化环境），适用于通用 RL 环境
 
@@ -887,7 +917,7 @@
 
 
 
-## 杂项
+## 杂项 <span id="misc"></span>
 
 [InterGP](https://github.com/tdardinier/InterGP) - 收集数据、训练代理的流程
 
