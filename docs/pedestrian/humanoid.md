@@ -1,7 +1,7 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 更新到最新的仓库： https://github.com/hsp-iit/rl-icub-dexterous-manipulation 
-更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzEzNTUyOTU5Mzc -->
+<!-- 更新到最新的仓库： https://github.com/Co-Evolve/mujoco-utils 
+更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzE3MzAyNzY4NjU -->
 
 ## Mujoco
 
@@ -21,11 +21,13 @@
 
 ### 人的建模
 
-[OpenSim 肌肉骨骼模型转](https://github.com/MyoHub/myoconverter)
+[OpenSim 肌肉骨骼模型转到 MuJoCo](https://github.com/MyoHub/myoconverter)
 
 [用于 mujoco 模拟的机器人模型集合](https://github.com/anupamkaul/mujoco_menagerie)
 
 [模和模拟人机交互任务的源代码](https://github.com/BaiYunpeng1949/heads-up-multitasker)
+
+[用于研究婴儿认知发展的平台](https://github.com/trieschlab/MIMo) - 可产生视觉、触觉、本体感觉和前庭系统模拟感官输入的模块组成
 
 [Menagerie：MuJoCo物理引擎高质量模型集合](https://github.com/google-deepmind/mujoco_menagerie)
 
@@ -192,6 +194,10 @@
 
 [学徒强化第二阶段](https://github.com/CafeKrem/internship_DL_project)
 
+[使用 Gymnasium 简单实现 PPO](https://github.com/KJaebye/ppo-mujoco)
+
+[TD3](https://github.com/LTBach/TD3)
+
 [reinforcement_learning_dataframe_matching](https://github.com/lhcnetop/reinforcement_learning_dataframe_matching)
 
 [基础设施目标条件强化学习者](https://github.com/spyroot/igc)
@@ -199,6 +205,8 @@
 [多目标最大后验策略优化](https://github.com/ToooooooT/MOMPO)
 
 [强化学习项目](https://github.com/JereKnuutinen/Reinforcement_learning_project)
+
+[离线强化学习算法](https://github.com/stanford-iris-lab/d5rl)
 
 [用于样本有效目标条件强化学习的度量残差网络](https://github.com/Cranial-XIX/metric-residual-network)
 
@@ -230,6 +238,8 @@
 
 [用于机器人环境交互任务的演员-评论家模型预测力控制器的实验验证](https://github.com/unisa-acg/actor-critic-model-predictive-force-controller)
 
+[SAC](https://github.com/LTBach/SAC)
+
 [针对 CS285 的深度 Q 学习、Actor Critic 和 Soft Actor Critics 算法的实现](https://github.com/phongtheha/Reinforcement-Learning)
 
 [实现的主要算法是 Soft Actor-Critic (SAC)](https://github.com/tomaskak/neural)
@@ -257,6 +267,8 @@
 [利用扩散模型作为高表达性的策略类别，用于行为克隆和策略正则化](https://github.com/ep-infosec/21_twitter_diffusion-rl)
 
 [模仿预训练](https://github.com/davidbrandfonbrener/imitation_pretraining)
+
+[柔性机器人非线性模型预测控制的安全模仿学习](https://github.com/shamilmamedov/flexible_arm)
 
 [Imitation-Learning](https://github.com/vsreyas/Imitation-Learning)
 
@@ -291,6 +303,8 @@
 
 [PAC-贝叶斯离线元强化学习](https://github.com/outshine-J/PAC-Bayesian-Offline-Meta-Reinforcement-Learning)
 
+[Meta QLearning 实验优化机器人步行模式](https://github.com/gokulp01/meta-qlearning-humanoid)
+
 [Meta-World 是一个开源基准，用于开发和评估用于连续控制机器人操作环境的多任务和元强化学习算法](https://github.com/Farama-Foundation/Metaworld)
 
 [Optm-MetaRL](https://github.com/LucienJi/OptmMeta-RL)
@@ -301,6 +315,8 @@
 ## 感知
 
 [物体检测与追踪](https://github.com/GUVENAli/yolov5-object-detection-tracking)
+
+[动作捕捉环境](https://github.com/hartikainen/mocap-environments)
 
 
 ## 规划
@@ -333,6 +349,8 @@
 [探索关节空间中潜在地标](https://github.com/dtch1997/latent-landmarks)
 
 [ Kinova Gen3 机器人控制](https://github.com/jerrywrx/kinova_control)
+
+[为 Allegro Hand（一款拥有 16 个独立可控关节的机械手）实现了比例积分微分 (PID) 控制器](https://github.com/premtc/Human_Robot_Hand_Grasping_Mujoco)
 
 [利用强化学习和 VAE 控制千足虫](https://github.com/savanagrawal/Millipede-Control-with-Reinforcement-Learning-and-VAEs)
 
@@ -383,7 +401,11 @@
 
 [包含 Machines in Motion 实验室中使用的机器人描述](https://github.com/machines-in-motion/mim_robots)
 
+[R2D2：住宅机器人演示数据集](https://github.com/zehanma/r2d2_autolab)
+
 [域随机化示例](https://github.com/ugo-nama-kun/domain_randomization)
+
+[从完全离线策略数据中学习](https://github.com/dldnxks12/Offline-RL)
 
 [结果分享](https://github.com/ykh6581394/resultshare)
 
@@ -398,6 +420,10 @@
 
 [使用 3GPP 文件微调不同的 LLM](https://github.com/hang-zou/LLM_FT_3GPP)
 
+[大型语言模型项目想法](https://github.com/abdalrahmenyousifMohamed/LLM)
+
+[扩大规模并精简：语言引导的机器人技能习得](https://github.com/real-stanford/scalingup)
+
 
 ## 建模
 
@@ -410,6 +436,8 @@
 [扩展控制器环境](https://github.com/RX-00/ext_ctrl_envs) - 包括推车上的倒立摆、弹簧加载倒立摆
 
 [飞行和漂浮模型，例如四旋翼飞行器、悬挂有效载荷的四旋翼飞行器等](https://github.com/vkotaru/udaan)
+
+[使用 V-HACD 将凹网格分解为凸包来创建 MJCF 模型](https://github.com/tudorjnu/stl2mjcf)
 
 [用于训练四足机器人的gym](https://github.com/dtch1997/gymnasium-quadruped)
 
@@ -431,7 +459,13 @@
 
 [DeFog: 随机丢帧下的决策变换器](https://github.com/hukz18/DeFog)
 
+[通过准度量学习实现最优目标达成强化学习](https://github.com/quasimetric-learning/quasimetric-rl)
+
 [基于 DeepMind Control Suite 实现的具有对称性的 MDP 集合](https://github.com/sahandrez/symmetry_RL)
+
+[利用多源工作负载知识促进指数顾问学习](https://github.com/XMUDM/BALANCE)
+
+[保守离线策略评估的幻觉控制](https://github.com/tobiabir/hambo)
 
 [HIQL：以潜在状态为行动的离线目标条件强化学习](https://github.com/seohongpark/HIQL)
 
@@ -542,11 +576,15 @@
 
 [利用 MuJoCo 进行深度强化学习](https://github.com/danimatasd/MUJOCO-AIDL)
 
+[大学强化学习考试（9 CFU）材料的组成部分](https://github.com/ProjectoOfficial/ReinforcementLearningProject)
+
 [2022 年高级机器学习 (AML) 课程项目的最终代码](https://github.com/marcopra/RL-vision-based)
 
 [关于课程作业的一些解决方案](https://github.com/RbingChen/GoodGoodStudy)
 
 [关于 dm_control 的 AI 原理强化学习项目](https://github.com/Otsuts/SAC-GAARA)
+
+[RL相关项目](https://github.com/Pippo809/rl_projects) - 模仿学习、策略梯度
 
 [用于强化学习研究的快速且可定制的gym兼容零售店环境](https://github.com/kenminglee/COMP579-FinalProject)
 
@@ -577,6 +615,8 @@
 [cs285hw](https://github.com/Grant-Tao/cs285hw)
 
 [CS 285 佳乐的作业](https://github.com/JialeZhaAcademic/UCB-CS-285)
+
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/Manaro-Alpha/CS285_DeepRL_hw_sols)
 
 [伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/Hoponga/cs285)
 
@@ -686,9 +726,15 @@
 
 [用于机器人插入任务的 MuJoCo 模拟](https://github.com/gintautas12358/Mujoco-Eleanor)
 
+[曲棍球环境中的强化学习](https://github.com/JSteegmueller/The-Q-Learners)
+
 [通过双手灵活性掌握钢琴演奏技巧](https://github.com/halo2718/Commented-RoboPianist)
 
+[自动驾驶汽车SoC](https://github.com/shambhavii13/Autonomous_Moving_Vehicle_SoC)
+
 [使用 Panda 的非常简单的 MuJoCo 拾取和放置任务](https://github.com/volunt4s/Simple-MuJoCo-PickNPlace)
+
+[三足蚂蚁](https://github.com/ugo-nama-kun/three_legged_ant)
 
 [使用 NEAT RL 算法解决 ATARI Retro Pong](https://github.com/MatSaf123/neat-retro-pong)
 
@@ -772,6 +818,8 @@
 [结构化的模块化设置，用于使用 Ray RLlib 库训练强化学习 (RL) 模型](https://github.com/artificial-experience/ray-rllib-proto)
 
 [用于机器人操作的模块化接口](https://github.com/raunaqbhirangi/manimo)
+
+[统一原生 MuJoCo (MJC) 和 MuJoCo-XLA (MJX) 中实现的环境的开发和接口](https://github.com/Co-Evolve/mujoco-utils)
 
 [专注于快速构建 DQN 模型原型](https://github.com/odiaz1066/lagomorph)
 
@@ -861,9 +909,13 @@
 
 [简单的独立平面推动焦点示例](https://github.com/UM-ARM-Lab/pushing_FOCUS)
 
+[CQL_sepsis](https://github.com/NanFang2023/CQL_sepsis)
+
 [长期记忆系统](https://github.com/grahamseamans/ltm)
 
 [OCMR](https://github.com/rpapallas/OCMR)
+
+[HybridSim](https://github.com/dmiller12/HybridSim)
 
 [关键用户旅程（CUJ）](https://github.com/woshiyyya/CUJ)
 
@@ -871,11 +923,15 @@
 
 [MAZE](https://github.com/DuangZhu/MAZE)
 
+[safetyBraxFramework](https://github.com/YusenWu2022/safetyBraxFramework)
+
 [旅游预测项目](https://github.com/VorkovN/TourismPredictionProject)
 
 [InfusedHKS](https://github.com/SSHAY007/InfusedHKS)
 
 [mario-icm](https://github.com/denmanorwatCDS/mario-icm)
+
+[inctxdt](https://github.com/grahamannett/inctxdt)
 
 [web3env](https://github.com/Crinstaniev/web3env)
 
