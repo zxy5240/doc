@@ -1,7 +1,7 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 更新到最新的仓库： https://github.com/Kallinteris-Andreas/gym-mjc-v5-model-validation 
-更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=Mjk1Mzg1Njk3NjA -->
+<!-- 更新到最新的仓库： https://github.com/elicassion/active-gym 
+更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=Mjk5NzI0NTY5MDM -->
 
 ## Mujoco
 
@@ -228,6 +228,8 @@
 
 [利用扩散模型作为高表达性的策略类别，用于行为克隆和策略正则化](https://github.com/ep-infosec/21_twitter_diffusion-rl)
 
+[四足动物行为克隆实验](https://github.com/dtch1997/quadruped-bc)
+
 [通过行为学习进行观察模仿](https://github.com/medric49/ifobl)
 
 ### 分层强化学习
@@ -290,6 +292,8 @@
 
 [探索关节空间中潜在地标](https://github.com/dtch1997/latent-landmarks)
 
+[刚体操作](https://github.com/barikata1984/rigid-body-manipulation)
+
 [倒立摆](https://github.com/dhruvthanki/mj_InvertedPendulum) - 使用基于优化的操作空间控制来跟踪双摆的末端执行器位置
 
 
@@ -333,6 +337,8 @@
 
 [域随机化示例](https://github.com/ugo-nama-kun/domain_randomization)
 
+[结果分享](https://github.com/ykh6581394/resultshare)
+
 [训练或发展可控且多样化的级别生成器](https://github.com/smearle/control-pcgrl)
 
 [可变形物体操控沙盒](https://github.com/nicholasprayogo/dom_sandbox)
@@ -343,6 +349,8 @@
 [获取机器人 URDF](https://github.com/Engineering-Geek/robot_arm)
 
 [MuJoCo 的 3x3x3 拼图立方体模型](https://github.com/kevinzakka/mujoco_cube)
+
+[主动视觉强化学习的环境集合](https://github.com/elicassion/active-gym)
 
 [建筑物内的测试环境的 3D 模型](https://github.com/AIMotionLab-SZTAKI/AIMotionLab-Virtual)
 
@@ -360,13 +368,27 @@
 
 [基于 DeepMind Control Suite 实现的具有对称性的 MDP 集合](https://github.com/sahandrez/symmetry_RL)
 
+[引入基于评论家估计的不确定性抽样](https://github.com/juliusott/uncertainty-buffer)
+
+[可控性感知的无监督技能发现](https://github.com/seohongpark/CSD-locomotion)
+
+[合成经验回放 (SynthER) 是一种基于扩散的方法](https://github.com/conglu1997/SynthER) - 可以对强化学习 (RL) 代理收集的经验进行任意上采样，从而大幅提升采样效率和扩展优势
+
 [受控的多样性与偏好：迈向学习多样化的所需技能](https://github.com/HussonnoisMaxence/CDP)
+
+[SNS-Toolbox 方法论文中关于不同类型优化的代码](https://github.com/DrYogurt/SNS-Toolbox-Optimization)
 
 [具有重要性加权参与者-学习者架构的可扩展分布式深度强化学习](https://github.com/KSB21ST/IMPALA_memory_maze)
 
 [从受限专家演示中学习软约束](https://github.com/ashishgaurav13/ICL)
 
 [离线强化学习的扩散策略](https://github.com/Zhendong-Wang/Diffusion-Policies-for-Offline-RL)
+
+[通过中间目标的监督学习进行强化学习](https://github.com/StanfordAI4HI/waypoint-transformer)
+
+[用于测试概念或尝试重现孤立问题的简单区域](https://github.com/EricCousineau-TRI/repro)
+
+[通过扩散概率模型进行强化学习的策略表示](https://github.com/BellmanTimeHut/DIPO)
 
 [突破强化学习中重放率障碍，实现连续控制](https://github.com/proceduralia/high_replay_ratio_continuous_control)
 
@@ -437,7 +459,13 @@
 
 [用于强化学习研究的快速且可定制的gym兼容零售店环境](https://github.com/kenminglee/COMP579-FinalProject)
 
+[人工智能中心 2023 年春季项目的存储库](https://github.com/xiaoxiaoshikui/Machine-Learning-Project-for-ETH-AI-Center)
+
+[加州大学伯克利分校 CS285 深度强化学习 2022 年秋季](https://github.com/xd00099/CS285-DeepReinforcementLearning-Berkeley)
+
 [fa22-cs285-project](https://github.com/inferee/fa22-cs285-project)
+
+[一些训练和微调决策转换器的实验](https://github.com/bhaveshgawri/decision-transformer-transfer-learning)
 
 [学习强化学习的笔记](https://github.com/asuzukosi/reinforcement-learning-study-notes)
 
@@ -447,7 +475,11 @@
 
 [CS 285 佳乐的作业](https://github.com/JialeZhaAcademic/UCB-CS-285)
 
+[伯克利 CS 285的作业：深度强化学习、决策和控制 2021](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021)
+
 [伯克利 CS 285 深度强化学习、决策与控制 2022 年秋季](https://github.com/Arenaa/CS-285)
+
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/brunonishimoto/cs285-drl)
 
 [XAI611项目提案](https://github.com/tlatjddnd101/xai611_project_proposal_2023)
 
@@ -549,9 +581,17 @@
 
 [用于机器人插入任务的 MuJoCo 模拟](https://github.com/gintautas12358/Mujoco-Eleanor)
 
+[通过双手灵活性掌握钢琴演奏技巧](https://github.com/halo2718/Commented-RoboPianist)
+
 [使用 Panda 的非常简单的 MuJoCo 拾取和放置任务](https://github.com/volunt4s/Simple-MuJoCo-PickNPlace)
 
 [四旋翼飞行器利用钩式机械手抓取和运输有效载荷](https://github.com/AIMotionLab-SZTAKI/quadrotor-hook-1DoF)
+
+[山地车强化学习](https://github.com/ryota0051/rl-mountaincar)
+
+[DRL_Taxi_Custom](https://github.com/Douglch/DRL_Taxi_Custom)
+
+[工业机器人机械手（KUKA KR16-2）接住发出的网球](https://github.com/LuanGBR/Kuka_RL_Control)
 
 [在 OpenAI gym 中从 Ant-v4 环境衍生的自定义环境中实现 PPO，以学习穿越模板障碍](https://github.com/Ketan13294/PPO-ant)
 
@@ -581,6 +621,8 @@
 
 [可定制的多用途生产系统框架]()
 
+[包含 REINFORCE、AC2、SAC 和 PPO 等热门算法的实现，并集成到 Gymnasium 环境](https://github.com/zachoines/RL-Grimoire)
+
 [ReDMan 是一个开源模拟平台，为可靠的灵巧操作提供了安全 RL 算法的标准化实现](https://github.com/PKU-Alignment/ReDMan)
 
 [Jax 中实现的强化学习算法集合](https://github.com/nutorbit/rl-zoo)
@@ -606,7 +648,11 @@
 
 [Mechcat Mujoco 查看器](https://github.com/ialab-yale/meshcat-mujoco)
 
+[加速多智能体强化学习的程序环境生成](https://github.com/tomalner18/MAax)
+
 [用于机器人操作的模块化接口](https://github.com/raunaqbhirangi/manimo)
+
+[深度强化学习库，提供高质量的单文件实现](https://github.com/IanWangg/CleanRL-Projects) - [其他](https://github.com/eleninisioti/dirtyrl)
 
 [提供了一个用于在学习算法和环境之间进行通信的标准 API](https://github.com/fliegla/diffDrive)
 
@@ -656,7 +702,7 @@
 
 [YAROK - 另一个机器人框架](https://github.com/danfergo/yarok)
 
-[JAX（Flax）实现具有连续动作空间的深度强化学习算法](https://github.com/ikostrikov/jaxrl)
+[JAX（Flax）实现具有连续动作空间的深度强化学习算法](https://github.com/ikostrikov/jaxrl) 
 
 [用于处理 MuJoCo 中使用的复合 Wavefront OBJ 文件的 CLI](https://github.com/kevinzakka/obj2mjcf)
 
@@ -686,6 +732,8 @@
 
 [简单的独立平面推动焦点示例](https://github.com/UM-ARM-Lab/pushing_FOCUS)
 
+[长期记忆系统](https://github.com/grahamseamans/ltm)
+
 [OCMR](https://github.com/rpapallas/OCMR)
 
 [MAZE](https://github.com/DuangZhu/MAZE)
@@ -693,6 +741,8 @@
 [web3env](https://github.com/Crinstaniev/web3env)
 
 [VKR](https://github.com/Crechted/VKR)
+
+[RLproject](https://github.com/ttopeor/RLproject)
 
 [展示了平面二维机器人，但可以立即将其推广到空间三维机器人](https://github.com/jongwoolee127/redundancy_resolution)
 
