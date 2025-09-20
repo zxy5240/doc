@@ -77,6 +77,19 @@ PPT编辑文字，导出PDF，然后裁剪，导出为图片。
 2. Git路径选择Git安装后bin文件中的启动程序；选择`接收设置`
 
 
+## 打包报错
+
+* `ERROR: A conflicting instance of UnrealBuildTool is already running.`
+> [打开任务结束AutomationTool.exe进程](https://www.cnblogs.com/linqing/p/7107015.html)
+
+
+## [崩溃报告服务器](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/crash-reporting-in-unreal-engine)
+
+UFS（虚幻文件系统）
+
+[崩溃报告的路径](https://dev.epicgames.com/documentation/en-us/unreal-engine/crash-reporting-in-unreal-engine?application_version=4.27)
+
+
 ## 同步 carla 分支
 [SHOWFLAG_ALWAYS_ACCESSIBLE](https://github.com/CarlaUnreal/UnrealEngine/commit/3c2c1f84f16d1474f1aa8eb0ccb651bc7aac231a) ：
 定义ShowFlags时有两个宏：SHOWFLAG_ALWAYS_ACCESSIBLE和SHOWFLAG_FIXED_IN_SHIPPING。需要在 Shipping 时使用的应该使用 Always Accessible，不需要在 Shipping 时使用Fixed in Shipping。

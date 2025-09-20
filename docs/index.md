@@ -111,7 +111,7 @@ title: 主页
 
 [__自行车__](pedestrian/cycle.md) - 可提供最高程度的游戏内控制和反馈的自行车模拟器
 
-[__人形机器人仿真__](./pedestrian/humanoid.md) - 提供人形机器人 Mujoco、肌肉骨骼OpenSim的仿真环境介绍
+[__人形机器人仿真__](./pedestrian/humanoid.md) - 提供人形机器人 Mujoco、肌肉骨骼[OpenSim](pedestrian/OpenSim.md) 的仿真环境介绍
 
 [__生成行人导航__](tuto_M_generate_pedestrian_navigation.md) — 获取行人四处走动所需的信息
 

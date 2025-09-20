@@ -382,5 +382,7 @@ TGitCache.exe将从进程列表中消失。
 * [社区的持续集成地址](http://158.109.8.172:8080)
 * [Jenkins之Email配置与任务邮件发送实践与踩坑](https://juejin.cn/post/6844904119707123719)
 * [QQ邮箱：什么是授权码，它又是如何设置？]()
+* [gitlab仓库的CICD功能](https://mp.weixin.qq.com/s/AcmvXyWrdpIAmemfdkvgtA)
+
 
 
