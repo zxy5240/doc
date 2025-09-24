@@ -1,6 +1,6 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 共4581个仓库，更新到最新的仓库： https://github.com/airvlab/cathsim 
+<!-- 共4581个仓库，更新到最新的仓库： https://github.com/ayton-zhang/Learning-Reinforcement-Learning 
 更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzMzOTk2NjgxMDc -->
 
 - [__Mujoco__](#Mujoco)
@@ -253,6 +253,8 @@
 
 [离散扩散 Q 学习](https://github.com/dxwhood/honours-thesis)
 
+[通过基于强化学习的调度实现安全高效的多系统神经控制器](通过基于强化学习的调度实现安全高效的多系统神经控制器)
+
 [通过自适应策略正则化实现高效的现实世界强化学习，实现腿部运动](https://github.com/realquantumcookie/APRL)
 
 [通过情景控制进行安全强化学习](https://github.com/lizhuo-1994/saferl-ec)
@@ -462,6 +464,8 @@
 
 [基于 RL 的 6 自由度机械臂逆运动学控制](https://github.com/Pranav-Malpure/B-Tech-Project)
 
+[学习使用 2-DoF 夹持器进行力控制](https://github.com/llach/learning_fc)
+
 [通过在连接每条腿的两个连杆和躯干的八个铰链上施加扭矩来协调四条腿向前移动](https://github.com/ake1999/TD3_Ant_v4)
 
 [探索关节空间中潜在地标](https://github.com/dtch1997/latent-landmarks)
@@ -496,6 +500,8 @@
 [offline_rl_benchmark_by_argo](https://github.com/hjcwuhuqifei/offline_rl_benchmark_by_argo)
 
 [验证gymnasium_roboticsmujoco 环境的 MuJoCo 模型变化](https://github.com/Kallinteris-Andreas/gym-mjc-v5-model-validation) - [其他](https://github.com/Kallinteris-Andreas/gymnasium-mujuco-v5-envs-validation)
+
+[CQL，PDQN，离线RL评估](https://github.com/zhuhxi/DriverOrderOfflineRL)
 
 [用于 RL 实验的模块化基准测试程序](https://github.com/athkand/Benches)
 
@@ -536,6 +542,8 @@
 [R2D2：住宅机器人演示数据集](https://github.com/zehanma/r2d2_autolab)
 
 [域随机化示例](https://github.com/ugo-nama-kun/domain_randomization)
+
+[MimicGen：使用人类演示的可扩展机器人学习的数据生成系统](https://github.com/NVlabs/mimicgen)
 
 [结果分享](https://github.com/ykh6581394/resultshare)
 
@@ -612,6 +620,10 @@
 [METRA：具有度量感知抽象的可扩展无监督强化学习](https://github.com/seohongpark/METRA)
 
 [对于 safe_exploration 任务，既需要数据多样性，又需要在线训练安全保障](https://github.com/JackQin007/Safe_Exploration)
+
+[带有注意力缓存和批量束搜索的轨迹变换器实现](https://github.com/Howuhh/faster-trajectory-transformer)
+
+[TimewarpVAE：同时进行时间扭曲和轨迹表示学习](https://github.com/travers-rhodes/TimewarpVAE)
 
 [任意跌倒状态起身](https://github.com/TeshShin/UE5-GetupControl) - UE5
 
@@ -739,6 +751,8 @@
 
 [适合所有人的人工智能书籍](https://github.com/YeonwooSung/ai_book)
 
+[学习-强化学习](https://github.com/ayton-zhang/Learning-Reinforcement-Learning)
+
 [强化学习的深入讲解](https://github.com/rogerwater/Reinforcement-Learning)
 
 [强化学习教程](https://github.com/weiminn/reinforcement_learning_tutorials)
@@ -746,7 +760,7 @@
 
 ## 学习 <span id="learning"></span>
 
-[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/Roger-Li/ucb_cs285_homework_fall2023) - [其他1](https://github.com/LuK2019/DeepRL) 、[其他2](https://github.com/aayushg55/cs285_hw1_dagger) 、[其他3](https://github.com/berkeleydeeprlcourse/homework_fall2023) 、[其他4](https://github.com/carola-niu/RL_cs285) 、 [其他5](https://github.com/Manaro-Alpha/CS285_DeepRL_hw_sols) 、[其他6](https://github.com/Hoponga/cs285) 、 [其他7](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他8](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他9](https://github.com/Applewonder/CS285-2022) 、[其他10](https://github.com/Arenaa/CS-285) 、[其他11](https://github.com/brunonishimoto/cs285-drl) 、 [其他12](https://github.com/ElPescadoPerezoso1291/cs285-hw3) 、 [其他13](https://github.com/dylan-goetting/RL285) 、 [其他14](https://github.com/nikhil-pitta/CS285Hw) 、[其他15](https://github.com/prestonmccrary/temp) 、 [其他16](https://github.com/jnzhao3/Behavior-Cloning-with-MuJoCo)
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/Roger-Li/ucb_cs285_homework_fall2023) - [其他1](https://github.com/LuK2019/DeepRL) 、[其他2](https://github.com/aayushg55/cs285_hw1_dagger) 、[其他3](https://github.com/berkeleydeeprlcourse/homework_fall2023) 、[其他4](https://github.com/carola-niu/RL_cs285) 、 [其他5](https://github.com/Manaro-Alpha/CS285_DeepRL_hw_sols) 、[其他6](https://github.com/Hoponga/cs285) 、 [其他7](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他8](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他9](https://github.com/Applewonder/CS285-2022) 、[其他10](https://github.com/Arenaa/CS-285) 、[其他11](https://github.com/brunonishimoto/cs285-drl) 、 [其他12](https://github.com/ElPescadoPerezoso1291/cs285-hw3) 、 [其他13](https://github.com/dylan-goetting/RL285) 、 [其他14](https://github.com/nikhil-pitta/CS285Hw) 、[其他15](https://github.com/prestonmccrary/temp) 、 [其他16](https://github.com/jnzhao3/Behavior-Cloning-with-MuJoCo) 、[其他17](https://github.com/levje/cs285_fall2023) 、
 
 [采样策略梯度扩展](https://github.com/BharathRajM/Sampled-Policy-Gradient-and-variants)
 
@@ -755,6 +769,10 @@
 [cs285](https://github.com/johnviljoen/cs285)
 
 [CS 285 作业](https://github.com/LeslieTrue/cs285_fall22_hw_sol)
+
+[CS 285 最终项目：双人不完美信息合作博弈的强化学习](https://github.com/edwardneo/collaboration-strategy)
+
+[CS285-proj](https://github.com/KaushikKunal/CS285-proj)
 
 [symmetry-cs285](https://github.com/YasinSonmez/symmetry-cs285)
 
@@ -1127,6 +1145,12 @@
 [微电网的 IRIS 代码](https://github.com/shukla-yash/IRIS-Minigrid)
 
 [使用 mujoco 进行 DOQ 模拟](https://github.com/griffinaddison/doq_viz)
+
+[RoboDog项目](https://github.com/Stblacq/robodog)
+
+[SIMCSUM](https://github.com/MehwishFatimah/SimCSum)
+
+[factored-rl-ppo-handson](https://github.com/davera-017/factored-rl-ppo-handson)
 
 [oc-jax](https://github.com/Shunichi09/oc-jax)
 

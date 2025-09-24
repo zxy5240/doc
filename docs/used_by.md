@@ -481,6 +481,8 @@
 
 [基于视觉语言模型的检索增强自动驾驶极端情况理解](https://github.com/yjwangtj/RA-ADC)
 
+[iLLM-TSC：集成强化学习和大型语言模型以改进交通信号控制策略](https://github.com/Traffic-Alpha/iLLM-TSC)
+
 [将传感器图像转换为文本](https://github.com/SumukhP-dev/CARLA_Autopilot_LLM) - 使用视觉转换模型将传感器图像转换为文本，并将音频文件转换为文本，以提示 Gemini 模型向汽车发出方向。
 
 [使用大型视觉模型作为 AV 的驱动代理](https://github.com/AdityaNG/DriveLLaVA)
