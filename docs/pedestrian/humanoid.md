@@ -1,7 +1,7 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 共4581个仓库，更新到最新的仓库： https://github.com/JJulessNL/S7-RL 
-更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzMzOTk2NjgxMDc -->
+<!-- 共4581个仓库，更新到最新的仓库： https://github.com/Badger-RL/ROPE 
+更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzQxMDM2MTU5MzM -->
 
 - [__Mujoco__](#Mujoco)
     - [人的建模](#humanoid_model)
@@ -89,6 +89,8 @@
 
 [online_hdif_ws](https://github.com/mateoguaman/online_hdif_ws)
 
+[Faur 手控制](https://github.com/MihneaToader/RWR_control)
+
 [适用于 ROS 机器人的 FastRLAP 实现、相关的 Gazebo 环境，以及用于越野驾驶的 MuJoCo 环境](https://github.com/kylestach/fastrlap-release)
 
 [一款一体化 ROS 软件包 RoTools](https://github.com/DrawZeroPoint/RoTools) - 用于高级机器人任务调度、视觉感知、路径规划、仿真以及直接/远程操控。它利用 BehaviorTree 实现快速的任务构建和协调，并提供各种实用程序来弥合真实/模拟机器人与高级任务调度程序之间的差距。
@@ -114,6 +116,8 @@
 [sin-cassie-rl-python](https://github.com/cwjwudi/sin-cassie-rl-python)
 
 [双足步行者的Gym环境](https://github.com/cameronpm1/bpwgym)
+
+[PACER：行人动画控制器](https://github.com/nv-tlabs/pacer)
 
 [机器人学习的模块化仿真框架和基准](https://github.com/ARISE-Initiative/robosuite) - 包括人形机器人
 
@@ -173,13 +177,9 @@
 
 [使用 Policy-Gradient 方法在 OpenAI-Gym 中训练代理](https://github.com/till2/policy-gradient-methods)
 
-[在线强化学习算法](https://github.com/superboySB/mindspore-cleanrl)
-
 [CQL_AWAC_ICQL](https://github.com/bvanbuskirk/CQL_AWAC_ICQL)
 
 [基于 DDPG Keras实现示例的 TD3](https://github.com/jnachyla/usd-proj)
-
-[CleanRL 是一个深度强化学习库](https://github.com/gosu0rZzz/thesis_exp)
 
 [基于 PyTorch 构建的强化学习算法的实现](https://github.com/kartik2309/RLPack) - 它已针对高负载工作负载进行了优化，后端支持 CUDA 和 OpenMP（取决于硬件可用性）
 
@@ -310,6 +310,8 @@
 [UE5 SAC](https://github.com/ryutyke/Learning-To-Get-Up)
 
 [针对 CS285 的深度 Q 学习、Actor Critic 和 Soft Actor Critics 算法的实现](https://github.com/phongtheha/Reinforcement-Learning)
+
+[实施监督 Actor-Critic 策略提炼作为其他迁移学习 RL 方法的基础](https://github.com/andbalch/policy-distillation)
 
 [实现的主要算法是 Soft Actor-Critic (SAC)](https://github.com/tomaskak/neural)
 
@@ -597,11 +599,15 @@
 
 [仿生鼠机器人跨越多种地形工作](https://github.com/GrumpySloths/ForCode)
 
+[跳跃机器人 使用MuJoCo研究跳跃机器人腿部机构设计](https://github.com/changqiy/robot)
+
 [使用MuJoCo研究跳跃机器人腿部机构设计](https://github.com/yinfanyi/hopper)
 
 [使用变分自编码器 (VAE) 和生成对抗网络 (GAN) 等深度学习人工智能算法，可以使用训练数据集自动创建新的游戏内容](https://github.com/RusherRG/RLGymBoost)
 
 [用于 RL 的生成细胞自动机类学习环境](https://github.com/smearle/autoverse)
+
+[用于评估强化学习代理的适应和探索的环境](https://github.com/izkula/adaptgym)
 
 [IsaacGym 环境示例 KukaTwoArms](https://github.com/intelligent-control-lab/guardX)
 
@@ -648,6 +654,14 @@
 [从示例对象轨迹和预抓取中学习灵巧操作](https://github.com/ishaanshah15/TCDMdev)
 
 [对于 safe_exploration 任务，既需要数据多样性，又需要在线训练安全保障](https://github.com/JackQin007/Safe_Exploration)
+
+[PyTorch 机器人运动学](https://github.com/UM-ARM-Lab/pytorch_kinematics)
+
+[用于模仿学习的记忆一致神经网络](https://github.com/kaustubhsridhar/MCNN) - [其他1](https://github.com/mem-net/MCNN)
+
+[TimewarpVAE：同时进行时间扭曲和轨迹表征学习](https://github.com/anonymousauthor913/iclr2024submission)
+
+[基于像素观测的状态安全强化学习](https://github.com/SimonZhan-code/Step-Wise_SafeRL_Pixel)
 
 [带有注意力缓存和批量束搜索的轨迹变换器实现](https://github.com/Howuhh/faster-trajectory-transformer)
 
@@ -783,6 +797,8 @@
 
 [Open AI Gym 基础教程](https://github.com/mahen2-cmd/Open-AI-Gym-Basic-Tutorial)
 
+[介绍机器人系统（主要为全驱动系统）控制的入门课程](https://github.com/simeon-ned/forc)
+
 [适合所有人的人工智能书籍](https://github.com/YeonwooSung/ai_book)
 
 [学习-强化学习](https://github.com/ayton-zhang/Learning-Reinforcement-Learning)
@@ -794,9 +810,15 @@
 
 ## 学习 <span id="learning"></span>
 
-[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/Roger-Li/ucb_cs285_homework_fall2023) - [其他1](https://github.com/LuK2019/DeepRL) 、[其他2](https://github.com/aayushg55/cs285_hw1_dagger) 、[其他3](https://github.com/berkeleydeeprlcourse/homework_fall2023) 、[其他4](https://github.com/carola-niu/RL_cs285) 、 [其他5](https://github.com/Manaro-Alpha/CS285_DeepRL_hw_sols) 、[其他6](https://github.com/Hoponga/cs285) 、 [其他7](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他8](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他9](https://github.com/Applewonder/CS285-2022) 、[其他10](https://github.com/Arenaa/CS-285) 、[其他11](https://github.com/brunonishimoto/cs285-drl) 、 [其他12](https://github.com/ElPescadoPerezoso1291/cs285-hw3) 、 [其他13](https://github.com/dylan-goetting/RL285) 、 [其他14](https://github.com/nikhil-pitta/CS285Hw) 、[其他15](https://github.com/prestonmccrary/temp) 、 [其他16](https://github.com/jnzhao3/Behavior-Cloning-with-MuJoCo) 、[其他17](https://github.com/levje/cs285_fall2023) 、[其他18](https://github.com/prestonmccrary/garbage) 、[其他19](https://github.com/WangYCheng23/rl_cs285_hw) 、[其他20](https://github.com/nicholaschenai/cs285_2022_soln)
+[伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/Roger-Li/ucb_cs285_homework_fall2023) - [其他1](https://github.com/LuK2019/DeepRL) 、[其他2](https://github.com/aayushg55/cs285_hw1_dagger) 、[其他3](https://github.com/berkeleydeeprlcourse/homework_fall2023) 、[其他4](https://github.com/carola-niu/RL_cs285) 、 [其他5](https://github.com/Manaro-Alpha/CS285_DeepRL_hw_sols) 、[其他6](https://github.com/Hoponga/cs285) 、 [其他7](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他8](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他9](https://github.com/Applewonder/CS285-2022) 、[其他10](https://github.com/Arenaa/CS-285) 、[其他11](https://github.com/brunonishimoto/cs285-drl) 、 [其他12](https://github.com/ElPescadoPerezoso1291/cs285-hw3) 、 [其他13](https://github.com/dylan-goetting/RL285) 、 [其他14](https://github.com/nikhil-pitta/CS285Hw) 、[其他15](https://github.com/prestonmccrary/temp) 、 [其他16](https://github.com/jnzhao3/Behavior-Cloning-with-MuJoCo) 、[其他17](https://github.com/levje/cs285_fall2023) 、[其他18](https://github.com/prestonmccrary/garbage) 、[其他19](https://github.com/WangYCheng23/rl_cs285_hw) 、[其他20](https://github.com/nicholaschenai/cs285_2022_soln) 、
 
 [采样策略梯度扩展](https://github.com/BharathRajM/Sampled-Policy-Gradient-and-variants)
+
+[一个专门用于学习使用 Half Cheetah 模型进行强化学习的存储库](https://github.com/GustavoSanches55/HalfCheetah)
+
+[面向初学者的深度学习资料](https://github.com/KEIO-ALS/Lecture_DeepLearning)
+
+[学习走路](https://github.com/kenma8/LearningToWalk)
 
 [用于试验模拟器以举办第二届人工智能大奖赛的存储库](https://github.com/FT-Autonomous/ft_grandprix)
 
@@ -805,6 +827,8 @@
 [cs285](https://github.com/johnviljoen/cs285)
 
 [CS 285 作业](https://github.com/LeslieTrue/cs285_fall22_hw_sol)
+
+[机器人相关课程](https://github.com/waris8/courses)
 
 [通过传统的机器学习方法和强化学习解决课程作业任务](https://github.com/RabbltMan/MachineLearningCoursework)
 
@@ -967,7 +991,7 @@
 
 [基于物理的乒乓球](https://github.com/AayushSabharwal/physics-pong)
 
-[空气曲棍球挑战赛](https://github.com/AirHockeyChallenge/air_hockey_challenge)
+[空气曲棍球挑战赛](https://github.com/AirHockeyChallenge/air_hockey_challenge) 、[其他](https://github.com/thomasbonenfant/air_hockey_challenge) 、[其他2](https://github.com/Elizabeth-Palacios/Curriculum) 、[其他3](https://github.com/hzm2016/sea_robot_sim)
 
 [可用于开发机器人 3D 装箱问题的求解器的gym环境](https://github.com/floriankagerer/bed-bpp-env)
 
@@ -1073,6 +1097,8 @@
 
 [包含 REINFORCE、AC2、SAC 和 PPO 等热门算法的实现，并集成到 Gymnasium 环境](https://github.com/zachoines/RL-Grimoire)
 
+[七种机器人模型、八种夹爪模型、六种控制器模式和九种标准化任务](https://github.com/lemonlemonde/robosuite1.4-modded)
+
 [ReDMan 是一个开源模拟平台，为可靠的灵巧操作提供了安全 RL 算法的标准化实现](https://github.com/PKU-Alignment/ReDMan)
 
 [Ray 由一个核心分布式运行时和一组用于加速 ML 工作负载的 AI 库组成](https://github.com/ray-project/ray)
@@ -1104,7 +1130,7 @@
 
 [流行的 DRL 算法的简单实现](https://github.com/HengLuRepos/lighter-RL)
 
-[样本高效机器人强化学习软件套件](https://github.com/serl-robot/serl)
+[SERL：用于样本高效机器人强化学习的软件套件](https://github.com/serl-robot/serl)
 
 [为许多有用的机器人库提供通用 API](https://github.com/Tass0sm/corallab-lib)
 
@@ -1130,7 +1156,7 @@
 
 [Transformer (TIT) 中 Transformer 作为深度强化学习骨干的官方实现](https://github.com/anonymoussubmission321/TIT_anonymous)
 
-[深度强化学习库，提供高质量的单文件实现](https://github.com/IanWangg/CleanRL-Projects) - [其他](https://github.com/eleninisioti/dirtyrl) 、 [其他2](CleanRL：深度强化学习算法的高质量单文件实现)
+[cleanrl 具有研究友好特性的深度强化学习算法的高质量单文件实现（PPO、DQN、C51、DDPG、TD3、SAC、PPG）](https://github.com/IanWangg/CleanRL-Projects) - [其他](https://github.com/eleninisioti/dirtyrl) 、 [其他2](CleanRL：深度强化学习算法的高质量单文件实现) 、 [其他3](https://github.com/jyoung2247/dl_project) 、[其他4](分布式、循环、深度强化学习算法的最小实现) 、[其他5](https://github.com/vwxyzjn/cleanrl) 、[其他6](https://github.com/superboySB/mindspore-cleanrl) 、  [其他7](https://github.com/gosu0rZzz/thesis_exp)
 
 [基于 OpenAI 的 RL 库](https://github.com/MnSBlog/Pinokio.RL)
 
@@ -1165,8 +1191,6 @@
 [用于将MJCF（MuJoCo 建模格式）机器人模型文件中的有限元素转换为 URDF 的脚本](https://github.com/Yasu31/mjcf_urdf_simple_converter)
 
 [OpenAI Gym 环境使用 pybullet 来制作Tyrannosaur](https://github.com/bingjeff/trex-gym)
-
-[具有研究友好特性的深度强化学习算法的高质量单文件实现（PPO、DQN、C51、DDPG、TD3、SAC、PPG）](https://github.com/vwxyzjn/cleanrl)
 
 [通用人工智能实验室开发的容器](https://github.com/HorizonRoboticsInternal/gail-container)
 
@@ -1206,11 +1230,23 @@
 
 [使用 mujoco 进行 DOQ 模拟](https://github.com/griffinaddison/doq_viz)
 
+[使用 GP 作为探索指标](https://github.com/contagon/gp4expl)
+
 [高级软件实践](https://github.com/YongBonJeon/Advanced-Software-Practices)
 
-[DRL-AirHockey](https://github.com/zhalehmehrabi/DRL-AirHockey)
+[DRL-AirHockey](https://github.com/zhalehmehrabi/DRL-AirHockey) - [其他1](https://github.com/ShuoZheLi/air_hockey_challenge_robosuite)
 
 [RoboDog项目](https://github.com/Stblacq/robodog)
+
+[231A_project](https://github.com/johnviljoen/231A_project)
+
+[cs340lab4](https://github.com/Dylan920424/cs340lab4)
+
+[DPC_for_robotics](https://github.com/pnnl/DPC_for_robotics)
+
+[talar-openreview-fork](https://github.com/ezhang7423/talar-openreview-fork)
+
+[pytorch-TD3fG-fast](https://github.com/www8098/pytorch-TD3fG-fast)
 
 [symmetry-cs285-2](https://github.com/YasinSonmez/symmetry-cs285-2)
 
@@ -1219,6 +1255,8 @@
 [S7-RL](https://github.com/JJulessNL/S7-RL)
 
 [SIMCSUM](https://github.com/MehwishFatimah/SimCSum)
+
+[mb-强化](https://github.com/nhaij/mb-reinforcement)
 
 [CQLEnsemble](https://github.com/XGsombra/CQLEnsemble)
 
