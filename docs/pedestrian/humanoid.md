@@ -1,7 +1,7 @@
 # [人形机器人仿真](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 共4581个仓库，更新到最新的仓库： https://github.com/Badger-RL/ROPE 
-更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzQxMDM2MTU5MzM -->
+<!-- 共4581个仓库，更新到最新的仓库： https://github.com/samlobel/many_gamma 
+更新到的页面： https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=MzQ0MTU1MzUzOTU -->
 
 - [__Mujoco__](#Mujoco)
     - [人的建模](#humanoid_model)
@@ -122,6 +122,8 @@
 [机器人学习的模块化仿真框架和基准](https://github.com/ARISE-Initiative/robosuite) - 包括人形机器人
 
 [使用 mujoco 和类人神经机械模型（而非人形机器人）实现 DeepMimic](https://github.com/DanielCastillo03/DeepMimic_Research)
+
+[带有通用规划器的 H-GAP 人形控制代码发布](https://github.com/facebookresearch/hgap)
 
 [仿生机器人](https://github.com/MHaqui/Biomecanical_project)
 
@@ -420,6 +422,8 @@
 
 [通过贝叶斯心理理论进行稳健逆强化学习](https://github.com/ran-weii/btom_irl)
 
+[机器人手部操作任务的逆向强化学习](https://github.com/saqib1707/RL-Robot-Manipulation)
+
 [Inverse_RL](https://github.com/werkaaa/Inverse_RL)
 
 
@@ -443,6 +447,10 @@
 ## 感知 <span id="perception"></span>
 
 [物体检测与追踪](https://github.com/GUVENAli/yolov5-object-detection-tracking)
+
+[利用物理运动定律从二维标签学习单目三维物体定位](https://github.com/KieDani/Towards_3D_Object_Localization)
+
+[利用“任何事物分割”模型进行通用视觉强化学习](https://github.com/wadiuvatzy/SAM-G)
 
 [动作捕捉环境](https://github.com/hartikainen/mocap-environments)
 
@@ -484,9 +492,13 @@
 
 [探索关节空间中潜在地标](https://github.com/dtch1997/latent-landmarks)
 
+[用于调试应用于 mujoco 模型的控制器实现](https://github.com/peterdavidfagan/mujoco_controllers)
+
 [简化 Mujoco 中机械手的设置和控制](https://github.com/ian-chuang/Manipulator-Mujoco)
 
 [CMU 16-831 机器人学习简介的作业](https://github.com/dhanvi97/16831_RL)
+
+[带手掌的四轴控制器，包括 RL 控制器和 IK 控制器](https://github.com/Prakyathkantharaju/test_walking_with_palm)
 
 [ Kinova Gen3 机器人控制](https://github.com/jerrywrx/kinova_control)
 
@@ -609,6 +621,8 @@
 
 [用于评估强化学习代理的适应和探索的环境](https://github.com/izkula/adaptgym)
 
+[CoLeCT 项目的 MuJoCo 模拟环境](https://github.com/lbusellato/CoLeCT_sim)
+
 [IsaacGym 环境示例 KukaTwoArms](https://github.com/intelligent-control-lab/guardX)
 
 [CathSim：一种用于血管内介入的开源模拟器](https://github.com/airvlab/cathsim)
@@ -647,7 +661,15 @@
 
 [强化学习中技能转移的分层启动源代码](https://github.com/SSHAY007/MiniHackThePlanet)
 
+[描述符条件强化学习 MAP-Elites](https://github.com/adaptive-intelligent-robotics/DCRL-MAP-Elites)
+
 [OPTIMUS：利用视觉运动变换器进行模拟任务和运动规划](https://github.com/NVlabs/Optimus)
+
+[从不平衡演示中进行半监督模仿学习](https://github.com/tRNAoO/Ess-InfoGAIL)
+
+[通过最大化证据进行行动推断：基于世界模型的观察零样本模仿](https://github.com/argmax-ai/aime)
+
+[按复杂性和关节数量的递增顺序训练 MuJoCo 环境（Hopper、Half-Cheetah 和 Ant）的模型](https://github.com/Panjete/mujocoagents)
 
 [METRA：具有度量感知抽象的可扩展无监督强化学习](https://github.com/seohongpark/METRA)
 
@@ -661,6 +683,12 @@
 
 [TimewarpVAE：同时进行时间扭曲和轨迹表征学习](https://github.com/anonymousauthor913/iclr2024submission)
 
+[PyTorch 中时间对称数据增强（TSDA）的实现](https://github.com/CLeARoboticsLab/tsymRL)
+
+[JAX 中的在线策略梯度算法](https://github.com/Matt00n/PolicyGradientsJax)
+
+[好奇探索中的目标条件离线规划](https://github.com/martius-lab/gcopfce)
+
 [基于像素观测的状态安全强化学习](https://github.com/SimonZhan-code/Step-Wise_SafeRL_Pixel)
 
 [带有注意力缓存和批量束搜索的轨迹变换器实现](https://github.com/Howuhh/faster-trajectory-transformer)
@@ -668,6 +696,8 @@
 [深海宝藏问题中采用帕累托主导策略的多目标强化学习](https://github.com/GiovaniCenta/cityflowpql)
 
 [TimewarpVAE：同时进行时间扭曲和轨迹表示学习](https://github.com/travers-rhodes/TimewarpVAE)
+
+[实验机器人操作代理的PLEX 架构的代码和说明](https://github.com/microsoft/PLEX)
 
 [任意跌倒状态起身](https://github.com/TeshShin/UE5-GetupControl) - UE5
 
@@ -823,6 +853,8 @@
 [用于试验模拟器以举办第二届人工智能大奖赛的存储库](https://github.com/FT-Autonomous/ft_grandprix)
 
 [CMU 16-831 机器人学习简介的作业](https://github.com/shriishwaryaa/Introduction-to-Robot-Learning)
+
+[使用 JAX 实现各种学习算法的练习代码](https://github.com/TheUnsolvedDev/JaxStormer)
 
 [cs285](https://github.com/johnviljoen/cs285)
 
@@ -993,17 +1025,27 @@
 
 [空气曲棍球挑战赛](https://github.com/AirHockeyChallenge/air_hockey_challenge) 、[其他](https://github.com/thomasbonenfant/air_hockey_challenge) 、[其他2](https://github.com/Elizabeth-Palacios/Curriculum) 、[其他3](https://github.com/hzm2016/sea_robot_sim)
 
+[2023年空气曲棍球挑战赛](https://github.com/verma-rishabh/air_hockey_qualifying)
+
 [可用于开发机器人 3D 装箱问题的求解器的gym环境](https://github.com/floriankagerer/bed-bpp-env)
 
 [测试 RL 在量子控制中的应用](https://github.com/AnikenC/QuantumControlWithRL) - 特别关注电路级和脉冲级门校准任务
 
 [用于机器人插入任务的 MuJoCo 模拟](https://github.com/gintautas12358/Mujoco-Eleanor)
 
+[多任务机器人学习](https://github.com/Eyshika/Multi_Task_Robot_Learning)
+
 [与 ROS NIAS-API 类似的 CoppeliaSim 机器人模拟器的绑定](https://github.com/knowledgetechnologyuhh/nicol_coppeliasim)
+
+[竞技体育的两步法：以击剑为例](https://github.com/YCK1130/IMRL-HF)
 
 [曲棍球环境中的强化学习](https://github.com/JSteegmueller/The-Q-Learners)
 
 [一个用于自动生成伸手动作以抓取扁平电缆连接器插入姿势的环境](https://github.com/maki8maki/Gym_Cable_RL)
+
+[研究如何训练自适应人机界面，以在获得良好控制的同时最大限度地减少用户交互](https://github.com/KilianFt/Adaptive-HCI)
+
+[赛车v2](https://github.com/Merealtea/CarRacingv2)
 
 [深度Q学习解决俄罗斯方块模拟器](https://github.com/ItaiBear/TetrisGameMaster)
 
@@ -1072,6 +1114,8 @@
 
 [无人机RL](https://github.com/jasonjabbour/DroneRL)
 
+[通过遗传算法改进滑翔机的设计](https://github.com/featherware/glider)
+
 [无人机仿真](https://github.com/C-monC/Drone-simluation)
 
 [四轴飞行器有效载荷抓取与运输轨迹规划与控制设计](https://github.com/antalpeter1/tdk-2022)
@@ -1116,6 +1160,8 @@
 
 ## 工具 <span id="tool"></span>
 
+[将 URDF 模型转换为 MJCF 模型的实用工具](https://github.com/ipa320/urdf2mjcf)
+
 [一个基于 C++ 的批处理环境池 EnvPool](https://github.com/sail-sg/envpool) - 基于 C++ 的高性能并行环境执行引擎（矢量化环境），适用于通用 RL 环境
 
 [用于强化学习的机器人模拟环境集合](https://github.com/Farama-Foundation/Gymnasium-Robotics)
@@ -1143,6 +1189,8 @@
 [深度强化学习算法和环境的 PyTorch 实现](https://github.com/liu-cui/Deep-Reinforcement-Learning-in-Action-with-PyTorch)
 
 [reboot-toolkit](https://github.com/RebootMotion/reboot-toolkit)
+
+[unfaithful-cot-replication](https://github.com/bpwu1/unfaithful-cot-replication)
 
 [结构化的模块化设置，用于使用 Ray RLlib 库训练强化学习 (RL) 模型](https://github.com/artificial-experience/ray-rllib-proto)
 
@@ -1238,9 +1286,13 @@
 
 [RoboDog项目](https://github.com/Stblacq/robodog)
 
+[many_gamma](https://github.com/samlobel/many_gamma)
+
 [231A_project](https://github.com/johnviljoen/231A_project)
 
 [cs340lab4](https://github.com/Dylan920424/cs340lab4)
+
+[强化学习研究](https://github.com/fredsonaguiar/bang_bang_mountain_car)
 
 [DPC_for_robotics](https://github.com/pnnl/DPC_for_robotics)
 
@@ -1252,7 +1304,11 @@
 
 [training-gym](https://github.com/joshbrowning2358/training-gym)
 
+[尝试实施强化学习](https://github.com/WhoKnowsWhoCares/RL)
+
 [S7-RL](https://github.com/JJulessNL/S7-RL)
+
+[clean-jax-rl](https://github.com/chkda/clean-jax-rl)
 
 [SIMCSUM](https://github.com/MehwishFatimah/SimCSum)
 
