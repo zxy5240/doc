@@ -293,6 +293,8 @@
 
 [dqn-探索-集成](https://github.com/pranavkrishnamoorthi/dqn-exploration-ensemble)
 
+[targeted-double-q-learning](https://github.com/alishiraliGit/targeted-double-q-learning)
+
 [使用 OpenAI gym 环境训练 DQN 的简单脚本](https://github.com/eyalhagai12/simple_dqn)
 
 [DQN_AC](https://github.com/bvanbuskirk/DQN_AC)
@@ -452,6 +454,8 @@
 
 [利用“任何事物分割”模型进行通用视觉强化学习](https://github.com/wadiuvatzy/SAM-G)
 
+[盲文识别](https://github.com/takaya-hirano-hayashibeLabo/braille-recognition)
+
 [动作捕捉环境](https://github.com/hartikainen/mocap-environments)
 
 
@@ -536,6 +540,8 @@
 [视觉泛化的强化学习基准](https://github.com/gemcollector/RL-ViGen)
 
 [专注于使用稳定基线 3方法和Gymnasium界面进行目标条件强化学习](https://github.com/Scilab-RL/Scilab-RL) - [其他](https://github.com/meppe/Scilab-rl)
+
+[GUARD ：通用统一安全强化学习开发基准](https://github.com/intelligent-control-lab/guard)
 
 [d4rl-slim-benchmark](https://github.com/dtch1997/d4rl-slim-benchmark)
 
@@ -675,6 +681,8 @@
 
 [从示例对象轨迹和预抓取中学习灵巧操作](https://github.com/ishaanshah15/TCDMdev)
 
+[解决情境强化学习的新方法](https://github.com/rpanackal/rl-msc-pro)
+
 [对于 safe_exploration 任务，既需要数据多样性，又需要在线训练安全保障](https://github.com/JackQin007/Safe_Exploration)
 
 [PyTorch 机器人运动学](https://github.com/UM-ARM-Lab/pytorch_kinematics)
@@ -739,8 +747,6 @@
 
 [自适应强化学习的表征学习](https://github.com/stevenabreu7/adaptiveRL2) - 使用可微分可塑性、状态空间模型和深度强化学习
 
-[用示例代替奖励：通过递归分类进行基于示例的策略搜索 的 pytorch 实现](https://github.com/Ricky-Zhu/RCE)
-
 [具有大型语言模型的辩证多机器人协作](https://github.com/MandiZhao/robot-collab)
 
 [通过多任务策略提炼解决任务干扰](https://github.com/AndreiLix/mutlitask_policy_distillation)
@@ -791,8 +797,6 @@
 
 [机器人环境的安全迁移学习](https://github.com/f-krone/SafeTransferLearningInChangingEnvironments)
 
-[基于 DeepMind Control Suite 实现的具有变化奖励和动态的上下文 MDP](https://github.com/SAIC-MONTREAL/contextual-control-suite)
-
 [SIMCSUM](https://github.com/timkolber/mtl_sum)
 
 [研究基于模型的强化学习中的不确定性量化](https://github.com/aidanscannell/unc-mbrl)
@@ -812,6 +816,15 @@
 [构建目标驱动的具身化大脑模型](https://github.com/ccnmaastricht/angorapy)
 
 [稳定神经近似的逆向经验重放](https://github.com/google-research/look-back-when-surprised) - [其他](https://github.com/llv22/google-research-forward)
+
+
+### 奖励
+
+[规律性作为自由游戏的内在奖励](https://github.com/martius-lab/rair-mbrl)
+
+[基于 DeepMind Control Suite 实现的具有变化奖励和动态的上下文 MDP](https://github.com/SAIC-MONTREAL/contextual-control-suite)
+
+[用示例代替奖励：通过递归分类进行基于示例的策略搜索 的 pytorch 实现](https://github.com/Ricky-Zhu/RCE)
 
 
 ## 毕业论文 <span id="contest"></span>
@@ -858,6 +871,14 @@
 
 [cs285](https://github.com/johnviljoen/cs285)
 
+[CS 285 最终项目：基于连续时间模型的强化学习中的动态学习的神经常微分方程](https://github.com/ZekaiWang04/cs285_proj)
+
+[交互式机器人学习课程项目](https://github.com/LeonardoWjq/NP-RAM)
+
+[CS285 最终项目](https://github.com/skrider/draftsman)
+
+[CS285](https://github.com/ayton-zhang/CS285)
+
 [CS 285 作业](https://github.com/LeslieTrue/cs285_fall22_hw_sol)
 
 [机器人相关课程](https://github.com/waris8/courses)
@@ -865,6 +886,8 @@
 [通过传统的机器学习方法和强化学习解决课程作业任务](https://github.com/RabbltMan/MachineLearningCoursework)
 
 [CMU 16-831 机器人学习简介的作业](https://github.com/chaitanya1chawla/16831_F23_HW)
+
+[自己实现的深度强化学习算法](https://github.com/minghongx/deeprl)
 
 [CS 285 最终项目：双人不完美信息合作博弈的强化学习](https://github.com/edwardneo/collaboration-strategy)
 
@@ -1037,6 +1060,8 @@
 
 [与 ROS NIAS-API 类似的 CoppeliaSim 机器人模拟器的绑定](https://github.com/knowledgetechnologyuhh/nicol_coppeliasim)
 
+[实现 DDPG 进行简单的倒水](https://github.com/yashas-salankimatt/csce642-finalproj)
+
 [竞技体育的两步法：以击剑为例](https://github.com/YCK1130/IMRL-HF)
 
 [曲棍球环境中的强化学习](https://github.com/JSteegmueller/The-Q-Learners)
@@ -1162,6 +1187,8 @@
 
 [将 URDF 模型转换为 MJCF 模型的实用工具](https://github.com/ipa320/urdf2mjcf)
 
+[基于 Web 的模拟环境可视化工具](https://github.com/NVlabs/sim-web-visualizer)
+
 [一个基于 C++ 的批处理环境池 EnvPool](https://github.com/sail-sg/envpool) - 基于 C++ 的高性能并行环境执行引擎（矢量化环境），适用于通用 RL 环境
 
 [用于强化学习的机器人模拟环境集合](https://github.com/Farama-Foundation/Gymnasium-Robotics)
@@ -1286,6 +1313,8 @@
 
 [RoboDog项目](https://github.com/Stblacq/robodog)
 
+[network-plasticity](https://github.com/arjunpat/network-plasticity)
+
 [many_gamma](https://github.com/samlobel/many_gamma)
 
 [231A_project](https://github.com/johnviljoen/231A_project)
@@ -1293,6 +1322,8 @@
 [cs340lab4](https://github.com/Dylan920424/cs340lab4)
 
 [强化学习研究](https://github.com/fredsonaguiar/bang_bang_mountain_car)
+
+[rl_learning](https://github.com/yuxuehui/rl_learning)
 
 [DPC_for_robotics](https://github.com/pnnl/DPC_for_robotics)
 
